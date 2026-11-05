@@ -6,30 +6,41 @@
 <title>Install Swiss QC Guru</title>
 <meta name="description" content="Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%231b1c1f'/%3E%3Cg fill='none' stroke='%23c9ccd2' stroke-width='3'%3E%3Cpath d='M7 14V7h7M26 7h7v7M33 26v7h-7M14 33H7v-7'/%3E%3C/g%3E%3Cpath d='M12.5 20 18 25.5 27.5 15' fill='none' stroke='%234cd964' stroke-width='4'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=4">
+<link rel="preload" href="fonts/IBMPlexSans-Var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="guru.css?v=1">
+<link rel="stylesheet" href="site.css?v=5">
 </head>
 <body>
 
-<div class="page" id="page">
 <header class="top">
-  <a class="logo" href="index.html"><svg class="mark-new" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#1b1c1f"/><g fill="none" stroke="#c9ccd2" stroke-width="3" stroke-linecap="square"><path d="M7 14V7h7"/><path d="M26 7h7v7"/><path d="M33 26v7h-7"/><path d="M14 33H7v-7"/></g><path d="M12.5 20 18 25.5 27.5 15" fill="none" stroke="#4cd964" stroke-width="4" stroke-linecap="square"/></svg>Swiss QC Guru</a>
-  <nav>
-    <a href="index.html"><span lang="en">Product</span><span lang="de">Produkt</span></a>
-    <a href="#install"><span lang="en">Install</span><span lang="de">Installieren</span></a>
-    <a href="#new"><span lang="en">What's new</span><span lang="de">Neu</span></a>
-    <a href="#requirements"><span lang="en">Requirements</span><span lang="de">Voraussetzungen</span></a>
-    <button class="lang-switch" type="button" data-lang-switch>Deutsch</button>
-  </nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#1b1c1f"/><g fill="none" stroke="#c9ccd2" stroke-width="3" stroke-linecap="square"><path d="M7 14V7h7"/><path d="M26 7h7v7"/><path d="M33 26v7h-7"/><path d="M14 33H7v-7"/></g><path d="M12.5 20 18 25.5 27.5 15" fill="none" stroke="#4cd964" stroke-width="4" stroke-linecap="square"/></svg>
+      Swiss QC Guru
+    </a>
+    <nav aria-label="On this page">
+      <a class="hide-s" href="index.html"><span lang="en">Product</span><span lang="de">Produkt</span></a>
+      <a href="#install"><span lang="en">Install</span><span lang="de">Installieren</span></a>
+      <a class="hide-s" href="#new"><span lang="en">What's new</span><span lang="de">Neu</span></a>
+      <a class="hide-s" href="#requirements"><span lang="en">Requirements</span><span lang="de">Voraussetzungen</span></a>
+      <button class="lang-switch" type="button" data-lang-switch>Deutsch</button>
+    </nav>
+  </div>
 </header>
 
 <main>
   <section class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Install · version 0.2.0</span><span lang="de">Installieren · Version 0.2.0</span></p>
     <h1><span lang="en">QC before delivery – in one window</span><span lang="de">QC vor der Abgabe – in einem Fenster</span></h1>
     <p class="lead"><span lang="en">Swiss QC Guru checks transmission masters against the delivery specs of ARD, ZDF, ORF and SRF (TPR 2025, EBU R 103 / R 128): container, codec, start timecode, levels and gamut, loudness and True Peak, interlace, black and freeze frames, flashes, pixel faults. Every finding has a timecode, a frame and its source in the spec.</span><span lang="de">Swiss QC Guru prüft Sendemaster gegen die Pflichtenhefte von ARD, ZDF, ORF und SRF (TPR 2025, EBU R 103 / R 128): Container, Codec, Start-Timecode, Pegel und Gamut, Lautheit und True Peak, Halbbilder, Schwarz- und Standbilder, Blitze, Pixelfehler. Jeder Befund hat Timecode, Bild und seine Quelle im Pflichtenheft.</span></p>
     <img class="shot" src="img/app-player.jpg" width="1600" height="1012" alt="Swiss QC Guru player with frame-accurate timeline, findings list, safe areas, zebra and waveform scope">
+  </div>
   </section>
 
-  <section id="install" class="card install">
+  <section id="install">
+  <div class="wrap">
+    <p class="eyebrow">Windows · macOS</p>
     <h2><span lang="en">Install</span><span lang="de">Installieren</span></h2>
     <p><span lang="en">One line installs the app and the command line <code>qccheck</code> – no administrator rights. The package comes from GitHub and is only unpacked if its Ed25519 signature is valid.</span><span lang="de">Eine Zeile installiert die App und die Kommandozeile <code>qccheck</code> – ohne Administratorrechte. Das Paket kommt von GitHub und wird nur entpackt, wenn seine Ed25519-Signatur stimmt.</span></p>
 
@@ -79,9 +90,12 @@
       <div class="copyable small"><code>curl -fsSL https://swissqcguru.com/beta/install.sh | bash</code><button class="copy" type="button">Copy</button></div>
       <p><span lang="en">The normal line switches back to the stable channel. To uninstall, delete the Swiss QC Guru shortcuts and the folder <code>%LOCALAPPDATA%\QCCheck</code> (Mac: <code>~/Applications/QCCheck.app</code>, <code>~/.local/bin/qccheck</code> and <code>~/Library/Application Support/QCCheck</code>).</span><span lang="de">Die normale Zeile stellt zurück auf stabil. Entfernen: Verknüpfungen Swiss QC Guru löschen und den Ordner <code>%LOCALAPPDATA%\QCCheck</code> (Mac: <code>~/Applications/QCCheck.app</code>, <code>~/.local/bin/qccheck</code> und <code>~/Library/Application Support/QCCheck</code>).</span></p>
     </details>
+  </div>
   </section>
 
-  <section id="new" class="card">
+  <section id="new">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Release notes</span><span lang="de">Versionshinweise</span></p>
     <h2><span lang="en">What's new in 0.2.0</span><span lang="de">Neu in 0.2.0</span></h2>
     <ul class="news">
       <li><span lang="en"><b>Swiss QC Guru</b> – new name, new icon and a stricter, precise interface: every measurement in a fixed-width figure, colour only where it means something.</span><span lang="de"><b>Swiss QC Guru</b> – neuer Name, neues Icon und eine strengere, genaue Oberfläche: jeder Messwert mit festen Ziffern, Farbe nur, wo sie etwas bedeutet.</span></li>
@@ -93,9 +107,12 @@
     </ul>
 
     <img class="shot" src="img/app-batch.jpg" width="1600" height="439" loading="lazy" alt="Swiss QC Guru batch with verdicts and the key findings per file">
+  </div>
   </section>
 
-  <section id="requirements" class="card">
+  <section id="requirements">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">System</span><span lang="de">System</span></p>
     <h2><span lang="en">Requirements</span><span lang="de">Voraussetzungen</span></h2>
     <ul class="req">
       <li><span lang="en">Windows 10 or 11 (64-bit), or macOS 12 or later on Apple Silicon or Intel</span><span lang="de">Windows 10 oder 11 (64 bit) oder macOS 12 oder neuer auf Apple Silicon oder Intel</span></li>
@@ -104,15 +121,17 @@
       <li><span lang="en">Nothing else: Swiss QC Guru brings its own ffmpeg (LGPL, source offer in the package)</span><span lang="de">Sonst nichts: Swiss QC Guru bringt sein eigenes ffmpeg mit (LGPL, Quellangebot im Paket)</span></li>
     </ul>
     <p class="hint"><span lang="en">Swiss QC Guru is a technical pre-check. It does not replace the broadcaster's acceptance, and the flash check is not a Harding test.</span><span lang="de">Swiss QC Guru ist eine technische Vorprüfung. Sie ersetzt nicht die Abnahme des Senders, und die Blitz-Prüfung ist kein Harding-Test.</span></p>
+  </div>
   </section>
 </main>
 
 <footer>
-  <span>Swiss QC Guru · Marc van Nuffel</span>
-  <a href="https://github.com/marcvannuffel/qccheck-releases/releases/latest"><span lang="en">Release files and checksums</span><span lang="de">Release-Dateien und Prüfsummen</span></a>
+  <div class="wrap">
+    <span>Swiss QC Guru by NuNu Soft · <a href="index.html"><span lang="en">Product</span><span lang="de">Produkt</span></a> · <a href="https://podcastmagic360.com/" rel="noopener">PodcastMagic 360</a></span>
+    <span><span lang="en">ARD, ZDF, ORF and SRF are trademarks of their owners. Swiss QC Guru is not affiliated with any broadcaster; the templates follow their published delivery specs.</span><span lang="de">ARD, ZDF, ORF und SRF sind Marken ihrer Inhaber. Swiss QC Guru ist mit keinem Sender verbunden; die Vorlagen folgen den veröffentlichten Pflichtenheften.</span></span>
+  </div>
 </footer>
-</div>
 
-<script src="site.js?v=4"></script>
+<script src="site.js?v=5"></script>
 </body>
 </html>
