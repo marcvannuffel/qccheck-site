@@ -3,32 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow">
 <title>Install Swiss QC Guru</title>
 <meta name="description" content="Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a83e4'/%3E%3Cstop offset='1' stop-color='%237a5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M24.5 10 13.5 21l-5-5' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%231b1c1f'/%3E%3Cg fill='none' stroke='%23c9ccd2' stroke-width='3'%3E%3Cpath d='M7 14V7h7M26 7h7v7M33 26v7h-7M14 33H7v-7'/%3E%3C/g%3E%3Cpath d='M12.5 20 18 25.5 27.5 15' fill='none' stroke='%234cd964' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site.css?v=4">
 </head>
 <body>
 
-<!-- Zugang: nur damit nicht jeder auf der Seite landet (kein Schutz der Pakete – die liegen öffentlich und sind signiert) -->
-<section class="gate" id="gate">
-  <div class="gate-box">
-    <div class="logo"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Swiss QC Guru</div>
-    <p><span lang="en">This page is for invited testers. Please enter the access code you received.</span><span lang="de">Diese Seite ist für eingeladene Tester. Bitte den Zugangscode eingeben, den du bekommen hast.</span></p>
-    <form id="gate-form" autocomplete="off">
-      <input id="gate-code" type="password" aria-label="Access code" placeholder="Access code" autofocus>
-      <button type="submit"><span lang="en">Open</span><span lang="de">Öffnen</span></button>
-    </form>
-    <p class="gate-err" id="gate-err" hidden><span lang="en">That code is not right.</span><span lang="de">Der Code stimmt nicht.</span></p>
-    <button class="lang-switch" type="button" data-lang-switch>Deutsch</button>
-  </div>
-</section>
-
-<div class="page" id="page" hidden>
+<div class="page" id="page">
 <header class="top">
-  <a class="logo" href="index.html"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Swiss QC Guru</a>
+  <a class="logo" href="index.html"><svg class="mark-new" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#1b1c1f"/><g fill="none" stroke="#c9ccd2" stroke-width="3" stroke-linecap="square"><path d="M7 14V7h7"/><path d="M26 7h7v7"/><path d="M33 26v7h-7"/><path d="M14 33H7v-7"/></g><path d="M12.5 20 18 25.5 27.5 15" fill="none" stroke="#4cd964" stroke-width="4" stroke-linecap="square"/></svg>Swiss QC Guru</a>
   <nav>
+    <a href="index.html"><span lang="en">Product</span><span lang="de">Produkt</span></a>
     <a href="#install"><span lang="en">Install</span><span lang="de">Installieren</span></a>
     <a href="#new"><span lang="en">What's new</span><span lang="de">Neu</span></a>
     <a href="#requirements"><span lang="en">Requirements</span><span lang="de">Voraussetzungen</span></a>
@@ -40,7 +26,7 @@
   <section class="hero">
     <h1><span lang="en">QC before delivery – in one window</span><span lang="de">QC vor der Abgabe – in einem Fenster</span></h1>
     <p class="lead"><span lang="en">Swiss QC Guru checks transmission masters against the delivery specs of ARD, ZDF, ORF and SRF (TPR 2025, EBU R 103 / R 128): container, codec, start timecode, levels and gamut, loudness and True Peak, interlace, black and freeze frames, flashes, pixel faults. Every finding has a timecode, a frame and its source in the spec.</span><span lang="de">Swiss QC Guru prüft Sendemaster gegen die Pflichtenhefte von ARD, ZDF, ORF und SRF (TPR 2025, EBU R 103 / R 128): Container, Codec, Start-Timecode, Pegel und Gamut, Lautheit und True Peak, Halbbilder, Schwarz- und Standbilder, Blitze, Pixelfehler. Jeder Befund hat Timecode, Bild und seine Quelle im Pflichtenheft.</span></p>
-    <img class="shot" src="img/player.jpg" srcset="img/player.jpg 1008w, img/player@2x.jpg 2016w" sizes="(max-width: 1040px) calc(100vw - 32px), 1008px" width="1008" height="630" alt="Swiss QC Guru player with frame-accurate timeline, findings list, safe areas, zebra and waveform scope">
+    <img class="shot" src="img/app-player.jpg" width="1600" height="1012" alt="Swiss QC Guru player with frame-accurate timeline, findings list, safe areas, zebra and waveform scope">
   </section>
 
   <section id="install" class="card install">
@@ -54,7 +40,7 @@
       </button>
       <button type="button" role="tab" id="tab-mac" data-os="mac" aria-controls="pane-mac" aria-selected="false">
         <svg class="os-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.2 8.5c0-1.6 1.3-2.4 1.4-2.4-.8-1.1-2-1.3-2.4-1.3-1-.1-2 .6-2.5.6s-1.3-.6-2.2-.6C4.4 4.8 3.2 5.5 2.6 6.6c-1.2 2.1-.3 5.3.9 7 .6.8 1.3 1.8 2.2 1.7.9 0 1.2-.6 2.3-.6s1.4.6 2.3.6c1 0 1.6-.9 2.1-1.7.7-1 1-1.9 1-2-.1 0-1.9-.7-2.2-3.1zM9.5 3.6c.5-.6.8-1.4.7-2.2-.7 0-1.6.5-2.1 1.1-.5.5-.9 1.4-.8 2.2.8.1 1.7-.4 2.2-1.1z"/></svg>
-        <span><span lang="en">macOS 11 or later</span><span lang="de">macOS 11 oder neuer</span></span>
+        <span><span lang="en">macOS 12 or later</span><span lang="de">macOS 12 oder neuer</span></span>
       </button>
     </div>
 
@@ -83,6 +69,7 @@
       <p class="hint"><span lang="en">Apple Silicon and Intel – one package for both.</span><span lang="de">Apple Silicon und Intel – ein Paket für beide.</span></p>
     </div>
 
+    <p class="after"><span lang="en">The download is the free trial. Enter your licence key in the app under Settings › Licence – <a href="index.html#price">buy a licence</a>.</span><span lang="de">Der Download ist die kostenlose Demo. Den Lizenzschlüssel trägst du in der App unter Einstellungen › Lizenz ein – <a href="index.html#price">Lizenz kaufen</a>.</span></p>
     <p class="after"><span lang="en">Updates arrive by themselves: the app shows them at the top right and installs them after checking the signature again.</span><span lang="de">Updates kommen von selbst: Die App zeigt sie oben rechts und installiert sie, nachdem sie die Signatur wieder geprüft hat.</span></p>
 
     <details>
@@ -90,28 +77,28 @@
       <p><span lang="en">Beta (pre-releases, may be unfinished):</span><span lang="de">Beta (Vorabversionen, können unfertig sein):</span></p>
       <div class="copyable small"><code>irm https://swissqcguru.com/beta/install.ps1 | iex</code><button class="copy" type="button">Copy</button></div>
       <div class="copyable small"><code>curl -fsSL https://swissqcguru.com/beta/install.sh | bash</code><button class="copy" type="button">Copy</button></div>
-      <p><span lang="en">The normal line switches back to the stable channel. To uninstall, delete the Swiss QC Guru shortcuts and the folder <code>%LOCALAPPDATA%\QCCheck</code> (Mac: <code>~/Library/Application Support/Swiss QC Guru</code> and <code>~/Applications/Swiss QC Guru.app</code>).</span><span lang="de">Die normale Zeile stellt zurück auf stabil. Entfernen: Verknüpfungen Swiss QC Guru löschen und den Ordner <code>%LOCALAPPDATA%\QCCheck</code> (Mac: <code>~/Library/Application Support/Swiss QC Guru</code> und <code>~/Applications/Swiss QC Guru.app</code>).</span></p>
+      <p><span lang="en">The normal line switches back to the stable channel. To uninstall, delete the Swiss QC Guru shortcuts and the folder <code>%LOCALAPPDATA%\QCCheck</code> (Mac: <code>~/Applications/QCCheck.app</code>, <code>~/.local/bin/qccheck</code> and <code>~/Library/Application Support/QCCheck</code>).</span><span lang="de">Die normale Zeile stellt zurück auf stabil. Entfernen: Verknüpfungen Swiss QC Guru löschen und den Ordner <code>%LOCALAPPDATA%\QCCheck</code> (Mac: <code>~/Applications/QCCheck.app</code>, <code>~/.local/bin/qccheck</code> und <code>~/Library/Application Support/QCCheck</code>).</span></p>
     </details>
   </section>
 
   <section id="new" class="card">
-    <h2><span lang="en">What's new in 0.1.4</span><span lang="de">Neu in 0.1.4</span></h2>
+    <h2><span lang="en">What's new in 0.2.0</span><span lang="de">Neu in 0.2.0</span></h2>
     <ul class="news">
-      <li><span lang="en"><b>Repair with a plan</b> – before anything is written you see what will be fixed (before → after) and what cannot be fixed here, and why. Optional re-encode to XDCAM HD422 when the template allows it; the original stays untouched.</span><span lang="de"><b>Reparieren mit Plan</b> – bevor etwas geschrieben wird, siehst du, was behoben wird (vorher → nachher) und was hier nicht geht, mit Grund. Auf Wunsch neu kodieren nach XDCAM HD422, wenn die Vorlage es erlaubt; das Original bleibt.</span></li>
-      <li><span lang="en"><b>Player tools</b> – safe areas, zebra and false colour by the template's limits, pixel faults circled, blanking, single fields, waveform, vectorscope and RGB parade; J/K/L shuttle up to 8× and slow motion; findings list linked to the timeline; optional thumbnail lane.</span><span lang="de"><b>Werkzeuge im Player</b> – Safe Areas, Zebra und Falschfarben nach den Grenzen der Vorlage, Pixelfehler eingekreist, schwarze Ränder, einzelne Halbbilder, Waveform, Vectorscope und RGB-Parade; J/K/L bis 8× und Zeitlupe; Befundliste mit der Zeitleiste verknüpft; zuschaltbare Bildleiste.</span></li>
-      <li><span lang="en"><b>Batch with thumbnails</b> – hover over a file to scrub through it, click to open the player at that frame. Drop files or folders, or click to choose several at once.</span><span lang="de"><b>Stapel mit Vorschaubildern</b> – mit der Maus über eine Datei fahren und durchscrubben, Klick öffnet den Player an der Stelle. Dateien oder Ordner hineinziehen oder per Klick mehrere auf einmal wählen.</span></li>
-      <li><span lang="en"><b>Templates</b> – new templates from scratch or inherited, a reference of all 23 checks with their limits and spec sources, export and import of all settings when you move to another computer.</span><span lang="de"><b>Prüfvorlagen</b> – neue Vorlagen leer oder geerbt, eine Übersicht aller 23 Prüfungen mit Grenzen und Quellen im Pflichtenheft, alle Einstellungen exportieren und auf einem anderen Rechner importieren.</span></li>
-      <li><span lang="en"><b>Exact timecode</b> – picture timecode against container timecode, frame-accurate; any offset or jump is a finding.</span><span lang="de"><b>Timecode bildgenau</b> – Timecode im Bild gegen den des Containers; jeder Versatz und jeder Sprung ist ein Befund.</span></li>
-      <li><span lang="en"><b>Clear verdicts</b> – Passed, Passed with warnings, Failed, Incomplete; a delivery package of a failing file says so on every page.</span><span lang="de"><b>Klare Urteile</b> – Passed, Passed with warnings, Failed, Incomplete; ein Lieferpaket einer durchgefallenen Datei sagt das auf jeder Seite.</span></li>
-      <li><span lang="en">Also in Swiss QC Guru: delivery package with PDF report, client view (gamma 2.4 → 2.2, tagged 1-1-1) and markers for Resolve, Premiere and Final Cut; watch folder; accept findings with a note; English and German.</span><span lang="de">Ausserdem: Lieferpaket mit PDF-Bericht, Kundenansicht (Gamma 2.4 → 2.2, Tag 1-1-1) und Markern für Resolve, Premiere und Final Cut; Überwachungsordner; Befunde mit Notiz akzeptieren; Englisch und Deutsch.</span></li>
+      <li><span lang="en"><b>Swiss QC Guru</b> – new name, new icon and a stricter, precise interface: every measurement in a fixed-width figure, colour only where it means something.</span><span lang="de"><b>Swiss QC Guru</b> – neuer Name, neues Icon und eine strengere, genaue Oberfläche: jeder Messwert mit festen Ziffern, Farbe nur, wo sie etwas bedeutet.</span></li>
+      <li><span lang="en"><b>Free trial and licence</b> – the trial checks a fixed half of every file and marks the unchecked part clearly in the batch, the player and the report. A licence ($199 once) checks everything.</span><span lang="de"><b>Kostenlose Demo und Lizenz</b> – die Demo prüft eine feste Hälfte jeder Datei und markiert den ungeprüften Teil deutlich im Stapel, im Player und im Bericht. Eine Lizenz ($199 einmalig) prüft alles.</span></li>
+      <li><span lang="en"><b>Add-ons</b> – a new tab for extra broadcaster templates and looks. Included: the client view Rec.709 → desktop. More broadcasters are in preparation.</span><span lang="de"><b>Add-ons</b> – ein neuer Reiter für weitere Senderprofile und Looks. Inklusive: die Kundenansicht Rec.709 → Bildschirm. Weitere Sender sind in Vorbereitung.</span></li>
+      <li><span lang="en"><b>Feedback from the app</b> – report a bug or a wish with an optional screenshot and an anonymised log; nothing is sent without your click.</span><span lang="de"><b>Feedback aus der App</b> – Fehler oder Wunsch melden, auf Wunsch mit Bildschirmfoto und anonymisiertem Protokoll; nichts geht ohne deinen Klick weg.</span></li>
+      <li><span lang="en"><b>Banding</b> is now a note for ARD/ZDF/ORF and EBU R 103 instead of a warning – the broadcasters accept far more than the measurement flags.</span><span lang="de"><b>Banding</b> ist bei ARD/ZDF/ORF und EBU R 103 jetzt ein Hinweis statt einer Warnung – die Sender nehmen deutlich mehr ab, als die Messung anzeigt.</span></li>
+      <li><span lang="en">Also: safer handling of files and reports, installers in English and German, timeline labels easier to read.</span><span lang="de">Ausserdem: sichererer Umgang mit Dateien und Berichten, Installer auf Englisch und Deutsch, besser lesbare Zeitleiste.</span></li>
     </ul>
-    <img class="shot" src="img/batch.jpg" srcset="img/batch.jpg 1008w, img/batch@2x.jpg 2016w" sizes="(max-width: 1040px) calc(100vw - 32px), 1008px" width="1008" height="630" alt="Swiss QC Guru batch with thumbnails, verdicts, key findings and the result tab">
+
+    <img class="shot" src="img/app-batch.jpg" width="1600" height="439" loading="lazy" alt="Swiss QC Guru batch with verdicts and the key findings per file">
   </section>
 
   <section id="requirements" class="card">
     <h2><span lang="en">Requirements</span><span lang="de">Voraussetzungen</span></h2>
     <ul class="req">
-      <li><span lang="en">Windows 10 or 11 (64-bit), or macOS 11 or later on Apple Silicon or Intel</span><span lang="de">Windows 10 oder 11 (64 bit) oder macOS 11 oder neuer auf Apple Silicon oder Intel</span></li>
+      <li><span lang="en">Windows 10 or 11 (64-bit), or macOS 12 or later on Apple Silicon or Intel</span><span lang="de">Windows 10 oder 11 (64 bit) oder macOS 12 oder neuer auf Apple Silicon oder Intel</span></li>
       <li><span lang="en">About 500 MB disk space; more cores check faster (UHD ProRes: roughly half real time on 20 cores)</span><span lang="de">Etwa 500 MB Platz; mehr Kerne prüfen schneller (UHD-ProRes: etwa halbe Echtzeit auf 20 Kernen)</span></li>
       <li><span lang="en">Internet only for installing and updates – files are checked locally and never uploaded</span><span lang="de">Internet nur für Installation und Updates – geprüft wird lokal, nichts wird hochgeladen</span></li>
       <li><span lang="en">Nothing else: Swiss QC Guru brings its own ffmpeg (LGPL, source offer in the package)</span><span lang="de">Sonst nichts: Swiss QC Guru bringt sein eigenes ffmpeg mit (LGPL, Quellangebot im Paket)</span></li>
@@ -126,6 +113,6 @@
 </footer>
 </div>
 
-<script src="site.js?v=3"></script>
+<script src="site.js?v=4"></script>
 </body>
 </html>
