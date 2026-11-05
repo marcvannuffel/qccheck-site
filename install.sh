@@ -128,122 +128,127 @@ version_newer() {
 }
 # --- package check end ---
 
-[[ "$release_key" != __* ]] || { echo "Dieser Installer hat noch keinen Release-Schluessel (tools/release-key) - nichts installiert." >&2; exit 1; }
-get() { curl -fsSL -H "User-Agent: qccheck-install" "$@"; }
-# latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über das
-# Höhere von stabil und neuester Vorabversion der Release-Liste. Nur zum Testen: QC_INSTALL_TEST_BASE (<Quelle>/latest.json und
-# <Quelle>/download/<datei>) und QC_INSTALL_TEST_KEY – beide melden sich laut.
-BASE="${QC_INSTALL_TEST_BASE:-}"
-if [[ -n "$BASE" ]]; then
-  [[ -n "${QC_INSTALL_TEST_KEY:-}" ]] && release_key="$QC_INSTALL_TEST_KEY"
-  echo "TESTMODUS: Quelle $BASE. Nicht fuer Kunden." >&2
-  feed_url="$BASE/latest.json"
-elif [[ "$CHANNEL" == beta ]]; then
-  # das Höhere von stabil und neuester Vorabversion: Höchstes aller Releases ausser Entwürfen; nur eine Vorabversion
-  # ganz vorne zählt (tools/release löscht ältere, sobald eine stabile erscheint), sonst stabil – wie app/update.mjs
-  tag="$(get "https://api.github.com/repos/$REPO/releases?per_page=50" | perl -MJSON::PP -e '
-    local $/; my $list = eval { JSON::PP::decode_json(<STDIN>) } || [];
-    my @r = sort { my @a = split /\./, $a->[0]; my @b = split /\./, $b->[0]; $a[0] <=> $b[0] || $a[1] <=> $b[1] || $a[2] <=> $b[2] }
-      map { (defined $_->{tag_name} && $_->{tag_name} =~ /^v(\d+\.\d+\.\d+)$/) ? [$1, $_->{prerelease}] : () }
-      grep { ref $_ eq "HASH" && !$_->{draft} } (ref $list eq "ARRAY" ? @$list : ());
-    print $r[-1][0] if @r && $r[-1][1];')"
-  if [[ "$tag" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-    echo "BETA: $tag ist eine Vorabversion. / $tag is a pre-release." >&2
-    feed_url="https://github.com/$REPO/releases/download/v$tag/latest.json"
+# Alles Weitere erst in main(), aufgerufen in der letzten Zeile: bricht der Download von
+# "curl … | bash" mittendrin ab, steht main nie vollständig da und es passiert nichts (Review 5. November B16).
+main() {
+  [[ "$release_key" != __* ]] || { echo "Dieser Installer hat noch keinen Release-Schluessel (tools/release-key) - nichts installiert." >&2; exit 1; }
+  get() { curl -fsSL -H "User-Agent: qccheck-install" "$@"; }
+  # latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über das
+  # Höhere von stabil und neuester Vorabversion der Release-Liste. Nur zum Testen: QC_INSTALL_TEST_BASE (<Quelle>/latest.json und
+  # <Quelle>/download/<datei>) und QC_INSTALL_TEST_KEY – beide melden sich laut.
+  BASE="${QC_INSTALL_TEST_BASE:-}"
+  if [[ -n "$BASE" ]]; then
+    [[ -n "${QC_INSTALL_TEST_KEY:-}" ]] && release_key="$QC_INSTALL_TEST_KEY"
+    echo "TESTMODUS: Quelle $BASE. Nicht fuer Kunden." >&2
+    feed_url="$BASE/latest.json"
+  elif [[ "$CHANNEL" == beta ]]; then
+    # das Höhere von stabil und neuester Vorabversion: Höchstes aller Releases ausser Entwürfen; nur eine Vorabversion
+    # ganz vorne zählt (tools/release löscht ältere, sobald eine stabile erscheint), sonst stabil – wie app/update.mjs
+    tag="$(get "https://api.github.com/repos/$REPO/releases?per_page=50" | perl -MJSON::PP -e '
+      local $/; my $list = eval { JSON::PP::decode_json(<STDIN>) } || [];
+      my @r = sort { my @a = split /\./, $a->[0]; my @b = split /\./, $b->[0]; $a[0] <=> $b[0] || $a[1] <=> $b[1] || $a[2] <=> $b[2] }
+        map { (defined $_->{tag_name} && $_->{tag_name} =~ /^v(\d+\.\d+\.\d+)$/) ? [$1, $_->{prerelease}] : () }
+        grep { ref $_ eq "HASH" && !$_->{draft} } (ref $list eq "ARRAY" ? @$list : ());
+      print $r[-1][0] if @r && $r[-1][1];')"
+    if [[ "$tag" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+      echo "BETA: $tag ist eine Vorabversion. / $tag is a pre-release." >&2
+      feed_url="https://github.com/$REPO/releases/download/v$tag/latest.json"
+    else
+      echo "Beta: keine neuere Vorabversion - die stabile Version wird installiert. / No newer pre-release - installing the stable version." >&2
+      feed_url="https://github.com/$REPO/releases/latest/download/latest.json"
+    fi
   else
-    echo "Beta: keine neuere Vorabversion - die stabile Version wird installiert. / No newer pre-release - installing the stable version." >&2
     feed_url="https://github.com/$REPO/releases/latest/download/latest.json"
   fi
-else
-  feed_url="https://github.com/$REPO/releases/latest/download/latest.json"
-fi
-json="$(get "$feed_url")"
-version="$(printf '%s' "$json" | perl -MJSON::PP -e 'local $/; my $j = decode_json(<STDIN>); print $j->{version} // ""')"
-name="$(printf '%s' "$json" | perl -MJSON::PP -e 'local $/; my $j = decode_json(<STDIN>); print $j->{packages}{macos} // ""')"
-[[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "Unerwartete Version '$version'." >&2; exit 1; }
-[[ "$name" == "qccheck-$version-macos.tar.gz" ]] || { echo "Unerwarteter Paketname '$name'." >&2; exit 1; }
+  json="$(get "$feed_url")"
+  version="$(printf '%s' "$json" | perl -MJSON::PP -e 'local $/; my $j = decode_json(<STDIN>); print $j->{version} // ""')"
+  name="$(printf '%s' "$json" | perl -MJSON::PP -e 'local $/; my $j = decode_json(<STDIN>); print $j->{packages}{macos} // ""')"
+  [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "Unerwartete Version '$version'." >&2; exit 1; }
+  [[ "$name" == "qccheck-$version-macos.tar.gz" ]] || { echo "Unerwarteter Paketname '$name'." >&2; exit 1; }
 
-app="$HOME/Library/Application Support/QCCheck"
-mkdir -p "$app"
-printf '{"channel":"%s"}' "$CHANNEL" > "$app/channel.json"
-installed="$(perl -MJSON::PP -e 'local $/; open my $f, "<", $ARGV[0] or exit; my $j = eval { decode_json(<$f>) }; print $j->{version} // ""' "$app/current.json" 2>/dev/null || true)"
-if [[ "$installed" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] && version_newer "$installed" "$version" && [[ "${QC_INSTALL_DOWNGRADE:-}" != 1 ]]; then
-  echo "Installiert ist $installed, neuer als $version - Version bleibt. Aeltere nur mit QC_INSTALL_DOWNGRADE=1." >&2; exit 1
-fi
-echo "QCCheck $version wird installiert ..."
-tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT
-dl="https://github.com/$REPO/releases/download/v$version"; [[ -n "$BASE" ]] && dl="$BASE/download"
-get -o "$tmp/$name" "$dl/$name"
-get -o "$tmp/$name.sig" "$dl/$name.sig"
-echo "Signatur wird geprueft ..."
-verify_sig "$tmp/$name" "$tmp/$name.sig" "$release_key" ||
-  { echo "Signatur ungueltig - Paket nicht von QCCheck signiert oder beschaedigt. Nichts installiert." >&2; exit 1; }
-dir="$app/versions/$version"
-rm -rf "$dir"; mkdir -p "$dir"
-tar -xzf "$tmp/$name" -C "$dir"
-check_package "$dir" "$version" || { rm -rf "$dir"; exit 1; }
-xattr -dr com.apple.quarantine "$dir" 2>/dev/null || true
-printf '{"version":"%s"}' "$version" > "$app/current.json"
-# Für die Update-Prüfung der App: woher (GitHub-Repo; im Testmodus die Testquelle)
-if [[ -n "$BASE" ]]; then perl -MJSON::PP -e 'print JSON::PP->new->canonical->encode({ base => $ARGV[0] })' "$BASE" > "$app/install.json"
-else perl -MJSON::PP -e 'print JSON::PP->new->canonical->encode({ repo => $ARGV[0] })' "$REPO" > "$app/install.json"; fi
-chmod 600 "$app/install.json"
+  app="$HOME/Library/Application Support/QCCheck"
+  mkdir -p "$app"
+  printf '{"channel":"%s"}' "$CHANNEL" > "$app/channel.json"
+  installed="$(perl -MJSON::PP -e 'local $/; open my $f, "<", $ARGV[0] or exit; my $j = eval { decode_json(<$f>) }; print $j->{version} // ""' "$app/current.json" 2>/dev/null || true)"
+  if [[ "$installed" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] && version_newer "$installed" "$version" && [[ "${QC_INSTALL_DOWNGRADE:-}" != 1 ]]; then
+    echo "Installiert ist $installed, neuer als $version - Version bleibt. Aeltere nur mit QC_INSTALL_DOWNGRADE=1." >&2; exit 1
+  fi
+  echo "QCCheck $version wird installiert ..."
+  tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT
+  dl="https://github.com/$REPO/releases/download/v$version"; [[ -n "$BASE" ]] && dl="$BASE/download"
+  get -o "$tmp/$name" "$dl/$name"
+  get -o "$tmp/$name.sig" "$dl/$name.sig"
+  echo "Signatur wird geprueft ..."
+  verify_sig "$tmp/$name" "$tmp/$name.sig" "$release_key" ||
+    { echo "Signatur ungueltig - Paket nicht von QCCheck signiert oder beschaedigt. Nichts installiert." >&2; exit 1; }
+  dir="$app/versions/$version"
+  rm -rf "$dir"; mkdir -p "$dir"
+  tar -xzf "$tmp/$name" -C "$dir"
+  check_package "$dir" "$version" || { rm -rf "$dir"; exit 1; }
+  xattr -dr com.apple.quarantine "$dir" 2>/dev/null || true
+  printf '{"version":"%s"}' "$version" > "$app/current.json"
+  # Für die Update-Prüfung der App: woher (GitHub-Repo; im Testmodus die Testquelle)
+  if [[ -n "$BASE" ]]; then perl -MJSON::PP -e 'print JSON::PP->new->canonical->encode({ base => $ARGV[0] })' "$BASE" > "$app/install.json"
+  else perl -MJSON::PP -e 'print JSON::PP->new->canonical->encode({ repo => $ARGV[0] })' "$REPO" > "$app/install.json"; fi
+  chmod 600 "$app/install.json"
 
-# --- die App: Electron als "QCCheck.app", der Starter als Contents/Resources/app
-if [[ "$(sysctl -n hw.optional.arm64 2>/dev/null || echo 0)" == "1" ]]; then
-  electron_platform="darwin-arm64"; electron_sha="$electron_sha_arm64"
-else
-  electron_platform="darwin-x64"; electron_sha="$electron_sha_x64"
-fi
-bundle="$HOME/Applications/QCCheck.app"
-bundle_id="com.dudagroup.qccheck"
-marker="$bundle/Contents/Resources/qc-electron"
-if [[ "$(cat "$marker" 2>/dev/null || true)" != "$electron_version-$electron_platform" || ! -x "$bundle/Contents/MacOS/Electron" ]]; then
-  echo "Laufzeit der App wird geladen (Electron $electron_version, ca. 100 MB) ..."
-  curl -fsSL -o "$tmp/electron.zip" "https://github.com/electron/electron/releases/download/v$electron_version/electron-v$electron_version-$electron_platform.zip"
-  got="$(shasum -a 256 "$tmp/electron.zip" | cut -d' ' -f1)"
-  [[ "$got" == "$electron_sha" ]] || { echo "Electron: falsche Pruefsumme ($got) - App nicht installiert." >&2; exit 1; }
-  ditto -x -k "$tmp/electron.zip" "$tmp/electron"
-  mkdir -p "$HOME/Applications"
-  rm -rf "$bundle"
-  mv "$tmp/electron/Electron.app" "$bundle"
-  cp "$tmp/electron/LICENSE" "$tmp/electron/LICENSES.chromium.html" "$bundle/Contents/Resources/"
-  printf '%s\n' "$electron_version-$electron_platform" > "$marker"
-fi
-res="$bundle/Contents/Resources"
-rm -rf "$res/app"; mkdir -p "$res/app"
-cp "$dir"/starter/* "$res/app/"
-plutil -replace CFBundleName -string "QCCheck" "$bundle/Contents/Info.plist"
-plutil -replace CFBundleDisplayName -string "QCCheck" "$bundle/Contents/Info.plist"
-plutil -replace CFBundleIdentifier -string "$bundle_id" "$bundle/Contents/Info.plist"
-for helper in "$bundle"/Contents/Frameworks/*.app; do
-  id="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$helper/Contents/Info.plist" 2>/dev/null || true)"
-  [[ "$id" == com.github.Electron* ]] && plutil -replace CFBundleIdentifier -string "${id/com.github.Electron/$bundle_id}" "$helper/Contents/Info.plist"
-done
-codesign --force --deep --sign - "$bundle" >/dev/null 2>&1 ||
-  echo "Hinweis: die App liess sich nicht neu signieren (codesign) - startet sie nicht, bitte melden." >&2
-xattr -dr com.apple.quarantine "$bundle" 2>/dev/null || true
-touch "$bundle"
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "$bundle" 2>/dev/null || true
-desktop_link="$HOME/Desktop/QCCheck.app"
-if [[ -L "$desktop_link" || ! -e "$desktop_link" ]]; then ln -sfn "$bundle" "$desktop_link" 2>/dev/null || true; fi
+  # --- die App: Electron als "QCCheck.app", der Starter als Contents/Resources/app
+  if [[ "$(sysctl -n hw.optional.arm64 2>/dev/null || echo 0)" == "1" ]]; then
+    electron_platform="darwin-arm64"; electron_sha="$electron_sha_arm64"
+  else
+    electron_platform="darwin-x64"; electron_sha="$electron_sha_x64"
+  fi
+  bundle="$HOME/Applications/QCCheck.app"
+  bundle_id="com.dudagroup.qccheck"
+  marker="$bundle/Contents/Resources/qc-electron"
+  if [[ "$(cat "$marker" 2>/dev/null || true)" != "$electron_version-$electron_platform" || ! -x "$bundle/Contents/MacOS/Electron" ]]; then
+    echo "Laufzeit der App wird geladen (Electron $electron_version, ca. 100 MB) ..."
+    curl -fsSL -o "$tmp/electron.zip" "https://github.com/electron/electron/releases/download/v$electron_version/electron-v$electron_version-$electron_platform.zip"
+    got="$(shasum -a 256 "$tmp/electron.zip" | cut -d' ' -f1)"
+    [[ "$got" == "$electron_sha" ]] || { echo "Electron: falsche Pruefsumme ($got) - App nicht installiert." >&2; exit 1; }
+    ditto -x -k "$tmp/electron.zip" "$tmp/electron"
+    mkdir -p "$HOME/Applications"
+    rm -rf "$bundle"
+    mv "$tmp/electron/Electron.app" "$bundle"
+    cp "$tmp/electron/LICENSE" "$tmp/electron/LICENSES.chromium.html" "$bundle/Contents/Resources/"
+    printf '%s\n' "$electron_version-$electron_platform" > "$marker"
+  fi
+  res="$bundle/Contents/Resources"
+  rm -rf "$res/app"; mkdir -p "$res/app"
+  cp "$dir"/starter/* "$res/app/"
+  plutil -replace CFBundleName -string "QCCheck" "$bundle/Contents/Info.plist"
+  plutil -replace CFBundleDisplayName -string "QCCheck" "$bundle/Contents/Info.plist"
+  plutil -replace CFBundleIdentifier -string "$bundle_id" "$bundle/Contents/Info.plist"
+  for helper in "$bundle"/Contents/Frameworks/*.app; do
+    id="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$helper/Contents/Info.plist" 2>/dev/null || true)"
+    [[ "$id" == com.github.Electron* ]] && plutil -replace CFBundleIdentifier -string "${id/com.github.Electron/$bundle_id}" "$helper/Contents/Info.plist"
+  done
+  codesign --force --deep --sign - "$bundle" >/dev/null 2>&1 ||
+    echo "Hinweis: die App liess sich nicht neu signieren (codesign) - startet sie nicht, bitte melden." >&2
+  xattr -dr com.apple.quarantine "$bundle" 2>/dev/null || true
+  touch "$bundle"
+  /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "$bundle" 2>/dev/null || true
+  desktop_link="$HOME/Desktop/QCCheck.app"
+  if [[ -L "$desktop_link" || ! -e "$desktop_link" ]]; then ln -sfn "$bundle" "$desktop_link" 2>/dev/null || true; fi
 
-# --- die Kommandozeile
-mkdir -p "$HOME/.local/bin"
-cat > "$HOME/.local/bin/qccheck" <<'WRAP'
+  # --- die Kommandozeile
+  mkdir -p "$HOME/.local/bin"
+  cat > "$HOME/.local/bin/qccheck" <<'WRAP'
 #!/bin/sh
 # QCCheck-Kommandozeile: das Electron der App als Node mit dem CLI-Starter
 ELECTRON_RUN_AS_NODE=1 exec "$HOME/Applications/QCCheck.app/Contents/MacOS/Electron" "$HOME/Applications/QCCheck.app/Contents/Resources/app/cli.cjs" "$@"
 WRAP
-chmod +x "$HOME/.local/bin/qccheck"
+  chmod +x "$HOME/.local/bin/qccheck"
 
-echo ""
-echo "Fertig: QCCheck $version."
-echo "  App: ~/Applications/QCCheck.app (Link auf dem Schreibtisch). Dateien oder Ordner ins Fenster ziehen."
-echo "  Kommandozeile: ~/.local/bin/qccheck film.mxf --profile zdf"
-case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) echo "  (~/.local/bin ist nicht im PATH – z. B. in ~/.zprofile: export PATH=\"\$HOME/.local/bin:\$PATH\")" ;; esac
-echo "  Updates: die App meldet sie oben rechts."
-echo ""
-echo "Entfernen: ~/Applications/QCCheck.app, den Link auf dem Schreibtisch, ~/.local/bin/qccheck und"
-echo "  $app"
-echo "  $HOME/Library/Application Support/QCCheck (Einstellungen der App)"
+  echo ""
+  echo "Fertig: QCCheck $version."
+  echo "  App: ~/Applications/QCCheck.app (Link auf dem Schreibtisch). Dateien oder Ordner ins Fenster ziehen."
+  echo "  Kommandozeile: ~/.local/bin/qccheck film.mxf --profile zdf"
+  case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) echo "  (~/.local/bin ist nicht im PATH – z. B. in ~/.zprofile: export PATH=\"\$HOME/.local/bin:\$PATH\")" ;; esac
+  echo "  Updates: die App meldet sie oben rechts."
+  echo ""
+  echo "Entfernen: ~/Applications/QCCheck.app, den Link auf dem Schreibtisch, ~/.local/bin/qccheck und"
+  echo "  $app"
+  echo "  $HOME/Library/Application Support/QCCheck (Einstellungen der App)"
+}
+main "$@"

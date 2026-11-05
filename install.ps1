@@ -164,7 +164,7 @@ elseif ($Channel -eq 'beta') {
 $feedFile = [IO.Path]::GetTempFileName()
 Invoke-WebRequest $feedUrl -Headers $H -OutFile $feedFile -UseBasicParsing
 $latest = Get-Content -LiteralPath $feedFile -Raw | ConvertFrom-Json
-Remove-Item -Force $feedFile
+Remove-Item -Force -LiteralPath $feedFile
 $version = "$($latest.version)"
 if ($version -notmatch '^\d+\.\d+\.\d+$') { throw "Unerwartete Version '$version'." }
 $name = "$($latest.packages.win64)"
@@ -180,7 +180,8 @@ if ("$installed" -match '^\d+\.\d+\.\d+$' -and ([version]"$installed" -gt [versi
   throw "Installiert ist $installed, neuer als $version - Version bleibt. Aeltere nur mit `$env:QC_INSTALL_DOWNGRADE='1'."
 }
 Write-Host "QCCheck $version wird installiert ..."
-$tmp = Join-Path ([IO.Path]::GetTempPath()) "qccheck-$version"
+# zufälliger Temp-Ordner (Review B16), nicht vorhersagbar
+$tmp = Join-Path ([IO.Path]::GetTempPath()) ("qccheck-" + [guid]::NewGuid().ToString("N"))
 New-Item -ItemType Directory -Force $tmp | Out-Null
 $pkg = Join-Path $tmp $name
 $dl = if ($Base) { "$Base/download" } else { "https://github.com/$Repo/releases/download/v$version" }
@@ -188,18 +189,18 @@ Invoke-WebRequest "$dl/$name" -Headers $H -OutFile $pkg -UseBasicParsing
 $sigFile = Join-Path $tmp "$name.sig"
 Invoke-WebRequest "$dl/$name.sig" -Headers $H -OutFile $sigFile -UseBasicParsing
 Write-Host 'Signatur wird geprueft ...'
-if (-not (Test-Ed25519Signature $pkg (Get-Content $sigFile -Raw) $releaseKey)) {
-  Remove-Item -Recurse -Force $tmp
+if (-not (Test-Ed25519Signature $pkg (Get-Content -LiteralPath $sigFile -Raw) $releaseKey)) {
+  Remove-Item -Recurse -Force -LiteralPath $tmp
   throw 'Signatur ungueltig - Paket nicht von QCCheck signiert oder beschaedigt. Nichts installiert.'
 }
 $dir = Join-Path $app "versions\$version"
-if (Test-Path $dir) { Remove-Item -Recurse -Force $dir }
+if (Test-Path -LiteralPath $dir) { Remove-Item -Recurse -Force -LiteralPath $dir }
 New-Item -ItemType Directory -Force $dir | Out-Null
 $tarExe = Join-Path $env:SystemRoot 'System32\tar.exe'
 & $tarExe -xzf $pkg -C $dir
 if ($LASTEXITCODE -ne 0) { throw "Entpacken fehlgeschlagen (tar Code $LASTEXITCODE)." }
-try { Confirm-Package $dir $version } catch { Remove-Item -Recurse -Force $dir; Remove-Item -Recurse -Force $tmp; throw }
-Set-Content -Path (Join-Path $app 'current.json') -Value "{`"version`":`"$version`"}" -Encoding ascii
+try { Confirm-Package $dir $version } catch { Remove-Item -Recurse -Force -LiteralPath $dir; Remove-Item -Recurse -Force -LiteralPath $tmp; throw }
+Set-Content -LiteralPath (Join-Path $app 'current.json') -Value "{`"version`":`"$version`"}" -Encoding ascii
 # Für die Update-Prüfung der App: woher (GitHub-Repo; im Testmodus die Testquelle)
 $src = if ($Base) { @{ base = $Base } } else { @{ repo = $Repo } }
 [IO.File]::WriteAllText((Join-Path $app 'install.json'), ($src | ConvertTo-Json -Compress))
@@ -207,24 +208,24 @@ $src = if ($Base) { @{ base = $Base } } else { @{ repo = $Repo } }
 # --- die App: eigenes Electron, darin der Starter
 $electronDir = Join-Path $app 'electron'
 $exe = Join-Path $electronDir 'QCCheck.exe'
-if (-not ((Test-Path (Join-Path $electronDir ".ok-$electronVersion")) -and (Test-Path $exe))) {
+if (-not ((Test-Path -LiteralPath (Join-Path $electronDir ".ok-$electronVersion")) -and (Test-Path -LiteralPath $exe))) {
   Write-Host "Laufzeit der App wird geladen (Electron $electronVersion, ca. 110 MB) ..."
   $zip = Join-Path $tmp 'electron.zip'
   Invoke-WebRequest "https://github.com/electron/electron/releases/download/v$electronVersion/electron-v$electronVersion-win32-x64.zip" -OutFile $zip -UseBasicParsing
-  $got = (Get-FileHash $zip -Algorithm SHA256).Hash.ToLowerInvariant()
-  if ($got -ne $electronSha256) { Remove-Item -Recurse -Force $tmp; throw "Electron: falsche Pruefsumme ($got) - App nicht installiert." }
-  if (Test-Path $electronDir) {
-    try { Remove-Item -Recurse -Force $electronDir } catch { throw 'QCCheck laeuft noch - bitte schliessen und die Zeile noch einmal ausfuehren.' }
+  $got = (Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash.ToLowerInvariant()
+  if ($got -ne $electronSha256) { Remove-Item -Recurse -Force -LiteralPath $tmp; throw "Electron: falsche Pruefsumme ($got) - App nicht installiert." }
+  if (Test-Path -LiteralPath $electronDir) {
+    try { Remove-Item -Recurse -Force -LiteralPath $electronDir } catch { throw 'QCCheck laeuft noch - bitte schliessen und die Zeile noch einmal ausfuehren.' }
   }
   New-Item -ItemType Directory -Force $electronDir | Out-Null
   & $tarExe -xf $zip -C $electronDir
   if ($LASTEXITCODE -ne 0) { throw "Electron entpacken fehlgeschlagen (tar Code $LASTEXITCODE)." }
-  Rename-Item (Join-Path $electronDir 'electron.exe') 'QCCheck.exe'
-  Set-Content -Path (Join-Path $electronDir ".ok-$electronVersion") -Value $electronVersion -Encoding ascii
+  Rename-Item -LiteralPath (Join-Path $electronDir 'electron.exe') -NewName 'QCCheck.exe'
+  Set-Content -LiteralPath (Join-Path $electronDir ".ok-$electronVersion") -Value $electronVersion -Encoding ascii
 }
 $starter = Join-Path $electronDir 'resources\app'
 New-Item -ItemType Directory -Force $starter | Out-Null
-Copy-Item (Join-Path $dir 'starter\*') $starter -Force
+Get-ChildItem -LiteralPath (Join-Path $dir 'starter') -File | Copy-Item -Destination $starter -Force
 $shell = New-Object -ComObject WScript.Shell
 foreach ($l in $(if ($testRoot) { @() } else { @((Join-Path ([Environment]::GetFolderPath('Desktop')) 'QCCheck.lnk'), (Join-Path ([Environment]::GetFolderPath('Programs')) 'QCCheck.lnk')) })) {
   $s = $shell.CreateShortcut($l)
@@ -244,7 +245,7 @@ if (-not $testRoot -and -not ("$userPath" -split ';' | Where-Object { $_ -eq $bi
   [Environment]::SetEnvironmentVariable('Path', ("$userPath;$bin").TrimStart(';'), 'User')
   $pathNote = '(neues Terminal oeffnen, damit qccheck gefunden wird)'
 }
-Remove-Item -Recurse -Force $tmp
+Remove-Item -Recurse -Force -LiteralPath $tmp
 Write-Host ''
 Write-Host "Fertig: QCCheck $version."
 Write-Host '  App: Desktop und Startmenue > QCCheck. Dateien oder Ordner ins Fenster ziehen.'
