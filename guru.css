@@ -138,3 +138,11 @@ footer a { color: var(--muted); }
 tr.soon td { color: var(--faint); }
 figure { margin: 0; }
 .cell code { color: var(--white); font-size: 13px; }
+
+/* Fragen: aufklappbare Zeilen mit Linien */
+.faq { border-top: 1px solid var(--line); max-width: 52em; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { padding: 14px 0; color: var(--white); font-weight: 600; cursor: pointer; }
+.faq summary:hover { color: #fff; }
+.faq summary:focus-visible { outline: 1px solid var(--go); outline-offset: 2px; }
+.faq details p { margin: 0 0 16px; color: var(--muted); }

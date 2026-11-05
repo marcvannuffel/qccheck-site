@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://swissqcguru.com/img/app-player.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%231b1c1f'/%3E%3Cg fill='none' stroke='%23c9ccd2' stroke-width='3'%3E%3Cpath d='M7 14V7h7M26 7h7v7M33 26v7h-7M14 33H7v-7'/%3E%3C/g%3E%3Cpath d='M12.5 20 18 25.5 27.5 15' fill='none' stroke='%234cd964' stroke-width='4'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/IBMPlexSans-Var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="guru.css?v=1">
+<link rel="stylesheet" href="guru.css?v=2">
 </head>
 <body>
 
@@ -26,6 +26,7 @@
       <a class="hide-s" href="#checks"><span lang="en">Checks</span><span lang="de">Prüfungen</span></a>
       <a class="hide-s" href="#profiles"><span lang="en">Broadcasters</span><span lang="de">Sender</span></a>
       <a href="#price"><span lang="en">Price</span><span lang="de">Preis</span></a>
+      <a class="hide-s" href="#faq">FAQ</a>
       <a href="install.html"><span lang="en">Install</span><span lang="de">Installieren</span></a>
       <button class="lang-switch" type="button" data-lang-switch>Deutsch</button>
     </nav>
@@ -47,7 +48,7 @@
         <a class="btn go" href="install.html"><span lang="en">Download the free trial</span><span lang="de">Kostenlose Demo laden</span></a>
         <a class="btn" href="#price"><span lang="en">$199 once · licence</span><span lang="de">$199 einmalig · Lizenz</span></a>
       </div>
-      <p class="trial-note"><span lang="en">The trial installs with one line on Windows 10/11 or macOS 11+, needs no account and no key, and checks half of every file – real findings on your own material.</span><span lang="de">Die Demo installiert sich mit einer Zeile unter Windows 10/11 oder macOS 11+, braucht kein Konto und keinen Schlüssel und prüft die Hälfte jeder Datei – echte Befunde an Ihrem eigenen Material.</span></p>
+      <p class="trial-note"><span lang="en">The trial installs with one line on Windows 10/11 or macOS 12+, needs no account and no key, and checks half of every file – real findings on your own material.</span><span lang="de">Die Demo installiert sich mit einer Zeile unter Windows 10/11 oder macOS 12+, braucht kein Konto und keinen Schlüssel und prüft die Hälfte jeder Datei – echte Befunde an Ihrem eigenen Material.</span></p>
     </div>
     <div class="readout" role="img" aria-label="Example of a check result: loudness and true peak pass, luma fails, freeze frame and start timecode are warnings">
       <div class="readout-head"><span class="file">Folge_07_Sendemaster.mxf</span><span>ARD/ZDF/ORF · TPR 2025</span></div>
@@ -148,9 +149,12 @@
       <div class="cell"><h3><span lang="en">Accept with a note</span><span lang="de">Akzeptieren mit Notiz</span></h3><p><span lang="en">An intentional black frame or a creative look: accept it, write why – it stays visible in the report.</span><span lang="de">Ein gewolltes Schwarzbild oder ein Look: akzeptieren, Grund notieren – es bleibt im Bericht sichtbar.</span></p></div>
       <div class="cell"><h3><span lang="en">Markers for your edit</span><span lang="de">Marker für den Schnitt</span></h3><p><span lang="en">Every finding as a marker for DaVinci Resolve, Premiere Pro and Final Cut Pro, or as CSV.</span><span lang="de">Jeder Befund als Marker für DaVinci Resolve, Premiere Pro und Final Cut Pro oder als CSV.</span></p></div>
       <div class="cell"><h3><span lang="en">Repair with a plan</span><span lang="de">Reparieren mit Plan</span></h3><p><span lang="en">Loudness, start timecode, levels, rewrap, or XDCAM HD422 – as a new file; the plan says what changes and what can't.</span><span lang="de">Lautheit, Start-Timecode, Pegel, Rewrap oder XDCAM HD422 – als neue Datei; der Plan sagt, was sich ändert und was nicht geht.</span></p></div>
-      <div class="cell"><h3><span lang="en">Delivery package</span><span lang="de">Lieferpaket</span></h3><p><span lang="en">Report and PDF, checksums, summary and a client view with your choice of look – one folder, ready to send.</span><span lang="de">Bericht und PDF, Prüfsummen, Zusammenfassung und eine Kundenansicht mit wählbarem Look – ein Ordner, fertig zum Versand.</span></p></div>
+      <div class="cell"><h3><span lang="en">Timecode in the picture</span><span lang="de">Timecode im Bild</span></h3><p><span lang="en">The burnt-in timecode is read and compared with the container's, frame by frame – any offset or jump is a finding.</span><span lang="de">Der eingebrannte Timecode wird gelesen und Bild für Bild mit dem des Containers verglichen – jeder Versatz und jeder Sprung ist ein Befund.</span></p></div>
+      <div class="cell"><h3><span lang="en">Scrub the batch</span><span lang="de">Im Stapel scrubben</span></h3><p><span lang="en">Hover over a file to scrub through its thumbnails; a click opens the player at that frame.</span><span lang="de">Mit der Maus über eine Datei fahren und durch die Vorschaubilder scrubben; ein Klick öffnet den Player an der Stelle.</span></p></div>
+      <div class="cell"><h3><span lang="en">Reference and export</span><span lang="de">Referenz und Export</span></h3><p><span lang="en">All 23 checks with their limits and spec sources in one reference. Export all templates and settings for a new computer or your team.</span><span lang="de">Alle 23 Prüfungen mit Grenzen und Quellen in einer Referenz. Alle Vorlagen und Einstellungen exportieren – für einen neuen Rechner oder das Team.</span></p></div>
       <div class="cell"><h3><span lang="en">Watch folder</span><span lang="de">Watch Folder</span></h3><p><span lang="en">Checks every file that arrives in a folder, picks the template by rule and delivers the package if you want.</span><span lang="de">Prüft jede Datei, die in einem Ordner ankommt, wählt die Vorlage nach Regel und liefert auf Wunsch das Paket.</span></p></div>
       <div class="cell"><h3><span lang="en">Command line</span><span lang="de">Kommandozeile</span></h3><p><span lang="en"><code class="mono">qccheck film.mxf --profile zdf</code> – for scripts and render farms, same checks as the app.</span><span lang="de"><code class="mono">qccheck film.mxf --profile zdf</code> – für Skripte und Renderfarmen, dieselben Prüfungen wie die App.</span></p></div>
+      <div class="cell"><h3><span lang="en">Your master formats</span><span lang="de">Ihre Master-Formate</span></h3><p><span lang="en">XDCAM HD422, AVC-Intra, ProRes, DNxHD/HR, JPEG 2000, H.264/HEVC, uncompressed – in MXF, MOV, MP4 or MKV, HD and UHD; audio as PCM, AAC or AC-3, Dolby E is recognised.</span><span lang="de">XDCAM HD422, AVC-Intra, ProRes, DNxHD/HR, JPEG 2000, H.264/HEVC, unkomprimiert – in MXF, MOV, MP4 oder MKV, HD und UHD; Ton als PCM, AAC oder AC-3, Dolby E wird erkannt.</span></p></div>
       <div class="cell"><h3><span lang="en">Local and signed</span><span lang="de">Lokal und signiert</span></h3><p><span lang="en">Your files never leave the computer. Updates are signed and checked before they install.</span><span lang="de">Ihre Dateien verlassen den Rechner nie. Updates sind signiert und werden vor dem Installieren geprüft.</span></p></div>
     </div>
   </div>
@@ -162,14 +166,13 @@
       <img class="shot" src="img/app-report.jpg" width="1600" height="1012" loading="lazy" alt="QC report inside the app: verdict, counts, loudness and true peak, the timeline of findings">
     </figure>
     <div>
-      <p class="eyebrow"><span lang="en">Report, repair, deliver</span><span lang="de">Bericht, Reparatur, Abgabe</span></p>
+      <p class="eyebrow"><span lang="en">Report and delivery</span><span lang="de">Bericht und Abgabe</span></p>
       <h2><span lang="en">From finding to delivery package</span><span lang="de">Vom Befund zum Lieferpaket</span></h2>
       <ul class="list">
         <li><b><span lang="en">Report</span><span lang="de">Bericht</span></b><span><span lang="en">HTML and PDF, every finding with frame, timecode and the quote from the spec</span><span lang="de">HTML und PDF, jeder Befund mit Bild, Timecode und Zitat aus dem Pflichtenheft</span></span></li>
-        <li><b><span lang="en">Repair</span><span lang="de">Reparatur</span></b><span><span lang="en">Loudness, start timecode, levels, rewrap and XDCAM HD422 – as a new file, with a plan of what changes and what can't</span><span lang="de">Lautheit, Start-Timecode, Pegel, Rewrap und XDCAM HD422 – als neue Datei, mit Plan, was sich ändert und was nicht geht</span></span></li>
-        <li><b><span lang="en">Markers</span><span lang="de">Marker</span></b><span><span lang="en">For DaVinci Resolve, Premiere Pro and Final Cut Pro – fix it right in your timeline</span><span lang="de">Für DaVinci Resolve, Premiere Pro und Final Cut Pro – direkt in der eigenen Timeline korrigieren</span></span></li>
-        <li><b><span lang="en">Package</span><span lang="de">Paket</span></b><span><span lang="en">Report, PDF, checksums, summary and a client view for approval</span><span lang="de">Bericht, PDF, Prüfsummen, Zusammenfassung und eine Kundenansicht zur Abnahme</span></span></li>
-        <li><b><span lang="en">Watch folder</span><span lang="de">Watch Folder</span></b><span><span lang="en">Checks every file that lands in a folder, delivers the package if you want</span><span lang="de">Prüft jede Datei, die in einem Ordner landet, und liefert auf Wunsch das Paket</span></span></li>
+        <li><b><span lang="en">Package</span><span lang="de">Paket</span></b><span><span lang="en">Report, PDF, checksums and a summary in one folder, ready to send – a failing file says so on every page</span><span lang="de">Bericht, PDF, Prüfsummen und Zusammenfassung in einem Ordner, fertig zum Versand – eine durchgefallene Datei sagt das auf jeder Seite</span></span></li>
+        <li><b><span lang="en">Client view</span><span lang="de">Kundenansicht</span></b><span><span lang="en">An MP4 for approval that looks on a desktop screen like it will on air (Rec.709 → desktop, gamma 2.4 → 2.2); more looks as add-ons</span><span lang="de">Ein MP4 zur Abnahme, das auf einem Bildschirm so aussieht wie später auf Sendung (Rec.709 → Bildschirm, Gamma 2.4 → 2.2); weitere Looks als Add-ons</span></span></li>
+        <li><b><span lang="en">Accepted</span><span lang="de">Akzeptiert</span></b><span><span lang="en">Intentional findings stay in the report with your note – the broadcaster sees why</span><span lang="de">Gewollte Befunde bleiben mit Ihrer Notiz im Bericht – der Sender sieht, warum</span></span></li>
       </ul>
     </div>
   </div>
@@ -207,11 +210,32 @@
         <ul>
           <li><span lang="en">Every frame of every file</span><span lang="de">Jedes Bild jeder Datei</span></li>
           <li><span lang="en">Report, PDF, markers, delivery package</span><span lang="de">Bericht, PDF, Marker, Lieferpaket</span></li>
-          <li><span lang="en">Repair, watch folder, own templates</span><span lang="de">Reparatur, Watch Folder, eigene Vorlagen</span></li>
+          <li><span lang="en">Repair, watch folder, client view</span><span lang="de">Reparatur, Watch Folder, Kundenansicht</span></li>
           <li><span lang="en">One computer at a time, move it any time</span><span lang="de">Ein Rechner gleichzeitig, jederzeit umziehbar</span></li>
         </ul>
         <a class="btn go" href="https://buy.polar.sh/polar_cl_XA8YTzTnj9Zp6nyFRM60pPS3jcnzJm0ZEHHl921ZFtC" rel="noopener"><span lang="en">Buy licence</span><span lang="de">Lizenz kaufen</span></a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2><span lang="en">Questions before you buy</span><span lang="de">Fragen vor dem Kauf</span></h2>
+    <div class="faq">
+      <details><summary><span lang="en">Does it replace the broadcaster's acceptance?</span><span lang="de">Ersetzt das die Abnahme des Senders?</span></summary>
+        <p><span lang="en">No. Swiss QC Guru is a technical pre-check: it finds what the broadcaster's QC would reject, before you deliver. The acceptance stays with the broadcaster.</span><span lang="de">Nein. Swiss QC Guru ist eine technische Vorprüfung: Sie findet, was die Prüfung des Senders zurückweisen würde, bevor Sie liefern. Die Abnahme bleibt beim Sender.</span></p></details>
+      <details><summary><span lang="en">Do my files leave my computer?</span><span lang="de">Verlassen meine Dateien den Rechner?</span></summary>
+        <p><span lang="en">Never. Every check runs locally. The internet is only used for updates and to confirm the licence now and then.</span><span lang="de">Nie. Jede Prüfung läuft lokal. Internet braucht es nur für Updates und ab und zu für die Bestätigung der Lizenz.</span></p></details>
+      <details><summary><span lang="en">Does it work offline?</span><span lang="de">Geht es ohne Internet?</span></summary>
+        <p><span lang="en">Yes. A licence keeps working for up to 30 days without a connection; then it needs to confirm once.</span><span lang="de">Ja. Eine Lizenz läuft bis zu 30 Tage ohne Verbindung weiter; danach muss sie sich einmal bestätigen.</span></p></details>
+      <details><summary><span lang="en">How do I move the licence to another computer?</span><span lang="de">Wie ziehe ich die Lizenz auf einen anderen Rechner um?</span></summary>
+        <p><span lang="en">In the app under Settings › Licence, release this computer, then enter the same key on the new one – Windows or Mac.</span><span lang="de">In der App unter Einstellungen › Lizenz diesen Rechner freigeben und denselben Schlüssel auf dem neuen eintragen – Windows oder Mac.</span></p></details>
+      <details><summary><span lang="en">Is the flash check a Harding test?</span><span lang="de">Ist die Blitz-Prüfung ein Harding-Test?</span></summary>
+        <p><span lang="en">No. It gives a hint on possible flashes. Where a broadcaster requires a certified Harding test, that test is still needed.</span><span lang="de">Nein. Sie gibt einen Hinweis auf mögliche Blitze. Wo ein Sender einen zertifizierten Harding-Test verlangt, braucht es diesen weiterhin.</span></p></details>
+      <details><summary><span lang="en">What does the trial do exactly?</span><span lang="de">Was kann die Demo genau?</span></summary>
+        <p><span lang="en">It checks a fixed half of every file with all checks and shows the findings in the player and report; the unchecked half is clearly marked. Delivery package, PDF, markers, repair and watch folder need the licence.</span><span lang="de">Sie prüft eine feste Hälfte jeder Datei mit allen Prüfungen und zeigt die Befunde im Player und im Bericht; die ungeprüfte Hälfte ist deutlich markiert. Lieferpaket, PDF, Marker, Reparatur und Watch Folder brauchen die Lizenz.</span></p></details>
     </div>
   </div>
 </section>
