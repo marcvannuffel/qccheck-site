@@ -3,129 +3,241 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow">
-<title>Install QCCheck</title>
-<meta name="description" content="Install QCCheck – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a83e4'/%3E%3Cstop offset='1' stop-color='%237a5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M24.5 10 13.5 21l-5-5' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=3">
+<title>Swiss QC Guru – QC before delivery to ARD, ZDF, ORF and SRF</title>
+<meta name="description" content="Swiss QC Guru checks your transmission master against the delivery specs of ARD, ZDF, ORF and SRF (EBU R 103, R 128) before you deliver: every finding with timecode, frame and the line of the spec. Windows and Mac, $199 once.">
+<link rel="canonical" href="https://swissqcguru.com/">
+<meta property="og:site_name" content="Swiss QC Guru">
+<meta property="og:title" content="Swiss QC Guru – QC before delivery">
+<meta property="og:description" content="Pass the broadcaster's QC the first time: loudness, true peak, levels, gamut, timecode, container – checked against the spec, with timecode and frame.">
+<meta property="og:image" content="https://swissqcguru.com/img/app-player.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%231b1c1f'/%3E%3Cg fill='none' stroke='%23c9ccd2' stroke-width='3'%3E%3Cpath d='M7 14V7h7M26 7h7v7M33 26v7h-7M14 33H7v-7'/%3E%3C/g%3E%3Cpath d='M12.5 20 18 25.5 27.5 15' fill='none' stroke='%234cd964' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/IBMPlexSans-Var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="guru.css?v=1">
 </head>
 <body>
 
-<!-- Zugang: nur damit nicht jeder auf der Seite landet (kein Schutz der Pakete – die liegen öffentlich und sind signiert) -->
-<section class="gate" id="gate">
-  <div class="gate-box">
-    <div class="logo"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>QCCheck</div>
-    <p><span lang="en">This page is for invited testers. Please enter the access code you received.</span><span lang="de">Diese Seite ist für eingeladene Tester. Bitte den Zugangscode eingeben, den du bekommen hast.</span></p>
-    <form id="gate-form" autocomplete="off">
-      <input id="gate-code" type="password" aria-label="Access code" placeholder="Access code" autofocus>
-      <button type="submit"><span lang="en">Open</span><span lang="de">Öffnen</span></button>
-    </form>
-    <p class="gate-err" id="gate-err" hidden><span lang="en">That code is not right.</span><span lang="de">Der Code stimmt nicht.</span></p>
-    <button class="lang-switch" type="button" data-lang-switch>Deutsch</button>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#1b1c1f"/><g fill="none" stroke="#c9ccd2" stroke-width="3" stroke-linecap="square"><path d="M7 14V7h7"/><path d="M26 7h7v7"/><path d="M33 26v7h-7"/><path d="M14 33H7v-7"/></g><path d="M12.5 20 18 25.5 27.5 15" fill="none" stroke="#4cd964" stroke-width="4" stroke-linecap="square"/></svg>
+      Swiss QC Guru
+    </a>
+    <nav aria-label="On this page">
+      <a class="hide-s" href="#checks"><span lang="en">Checks</span><span lang="de">Prüfungen</span></a>
+      <a class="hide-s" href="#profiles"><span lang="en">Broadcasters</span><span lang="de">Sender</span></a>
+      <a href="#price"><span lang="en">Price</span><span lang="de">Preis</span></a>
+      <a href="install.html"><span lang="en">Install</span><span lang="de">Installieren</span></a>
+      <button class="lang-switch" type="button" data-lang-switch>Deutsch</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">ARD · ZDF · ORF · SRF · EBU R 103 · R 128</p>
+      <h1><span lang="en">Pass the broadcaster's QC the first time.</span><span lang="de">Durch die Sender-QC beim ersten Mal.</span></h1>
+      <p class="lead">
+        <span lang="en">Swiss QC Guru checks your finished master against the delivery spec before it leaves the house: container, codec, timecode, levels, gamut, loudness and true peak. Every finding comes with timecode, frame and the line of the spec it breaks – so you fix it in the edit, not after a rejection.</span>
+        <span lang="de">Swiss QC Guru prüft den fertigen Sendemaster gegen das Pflichtenheft, bevor er das Haus verlässt: Container, Codec, Timecode, Pegel, Gamut, Lautheit und True Peak. Jeder Befund kommt mit Timecode, Bild und der Stelle im Pflichtenheft – Sie korrigieren im Schnitt, nicht nach einer Rückweisung.</span>
+      </p>
+      <div class="actions">
+        <a class="btn go" href="install.html"><span lang="en">Download the free trial</span><span lang="de">Kostenlose Demo laden</span></a>
+        <a class="btn" href="#price"><span lang="en">$199 once · licence</span><span lang="de">$199 einmalig · Lizenz</span></a>
+      </div>
+      <p class="trial-note"><span lang="en">The trial installs with one line on Windows 10/11 or macOS 11+, needs no account and no key, and checks half of every file – real findings on your own material.</span><span lang="de">Die Demo installiert sich mit einer Zeile unter Windows 10/11 oder macOS 11+, braucht kein Konto und keinen Schlüssel und prüft die Hälfte jeder Datei – echte Befunde an Ihrem eigenen Material.</span></p>
+    </div>
+    <div class="readout" role="img" aria-label="Example of a check result: loudness and true peak pass, luma fails, freeze frame and start timecode are warnings">
+      <div class="readout-head"><span class="file">Folge_07_Sendemaster.mxf</span><span>ARD/ZDF/ORF · TPR 2025</span></div>
+      <div class="rrow"><span class="k"><span lang="en">Loudness, programme</span><span lang="de">Lautheit, Programm</span><small>EBU R 128</small></span><span class="v">−23.2 LUFS<span class="lim">−23 ±0.5</span></span><span class="tag pass">PASS</span></div>
+      <div class="rrow"><span class="k">True peak<small>EBU R 128</small></span><span class="v">−1.8 dBTP<span class="lim">≤ −1.0</span></span><span class="tag pass">PASS</span></div>
+      <div class="rrow"><span class="k"><span lang="en">Luma, maximum</span><span lang="de">Luma, Maximum</span><small>EBU R 103 · 10:00:12:03</small></span><span class="v">104.6 %<span class="lim">≤ 103 %</span></span><span class="tag fail">FAIL</span></div>
+      <div class="rrow"><span class="k"><span lang="en">Freeze frame</span><span lang="de">Standbild</span><small>10:21:40:11</small></span><span class="v">2.0 s<span class="lim">≥ 2 s</span></span><span class="tag warn">WARN</span></div>
+      <div class="rrow"><span class="k"><span lang="en">Start timecode</span><span lang="de">Start-Timecode</span><small>TPR 4.3.1.3</small></span><span class="v">01:00:00:00<span class="lim">10:00:00:00</span></span><span class="tag warn">WARN</span></div>
+      <div class="readout-foot"><span>1 error · 2 warnings</span><span>analysis 9.4 s</span></div>
+    </div>
   </div>
 </section>
 
-<div class="page" id="page" hidden>
-<header class="top">
-  <div class="logo"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>QCCheck</div>
-  <nav>
-    <a href="#install"><span lang="en">Install</span><span lang="de">Installieren</span></a>
-    <a href="#new"><span lang="en">What's new</span><span lang="de">Neu</span></a>
-    <a href="#requirements"><span lang="en">Requirements</span><span lang="de">Voraussetzungen</span></a>
-    <button class="lang-switch" type="button" data-lang-switch>Deutsch</button>
-  </nav>
-</header>
-
-<main>
-  <section class="hero">
-    <h1><span lang="en">QC before delivery – in one window</span><span lang="de">QC vor der Abgabe – in einem Fenster</span></h1>
-    <p class="lead"><span lang="en">QCCheck checks transmission masters against the delivery specs of ARD, ZDF, ORF and SRF (TPR 2025, EBU R 103 / R 128): container, codec, start timecode, levels and gamut, loudness and True Peak, interlace, black and freeze frames, flashes, pixel faults. Every finding has a timecode, a frame and its source in the spec.</span><span lang="de">QCCheck prüft Sendemaster gegen die Pflichtenhefte von ARD, ZDF, ORF und SRF (TPR 2025, EBU R 103 / R 128): Container, Codec, Start-Timecode, Pegel und Gamut, Lautheit und True Peak, Halbbilder, Schwarz- und Standbilder, Blitze, Pixelfehler. Jeder Befund hat Timecode, Bild und seine Quelle im Pflichtenheft.</span></p>
-    <img class="shot" src="img/player.jpg" srcset="img/player.jpg 1008w, img/player@2x.jpg 2016w" sizes="(max-width: 1040px) calc(100vw - 32px), 1008px" width="1008" height="630" alt="QCCheck player with frame-accurate timeline, findings list, safe areas, zebra and waveform scope">
-  </section>
-
-  <section id="install" class="card install">
-    <h2><span lang="en">Install</span><span lang="de">Installieren</span></h2>
-    <p><span lang="en">One line installs the app and the command line <code>qccheck</code> – no administrator rights. The package comes from GitHub and is only unpacked if its Ed25519 signature is valid.</span><span lang="de">Eine Zeile installiert die App und die Kommandozeile <code>qccheck</code> – ohne Administratorrechte. Das Paket kommt von GitHub und wird nur entpackt, wenn seine Ed25519-Signatur stimmt.</span></p>
-
-    <div class="os-tabs" role="tablist" aria-label="Operating system">
-      <button type="button" role="tab" id="tab-win" data-os="win" aria-controls="pane-win" aria-selected="true">
-        <svg class="os-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2.5l5.6-.8v5.6H1zM7.4 1.6L15 .5v6.8H7.4zM1 8.1h5.6v5.6L1 12.9zM7.4 8.1H15v6.8l-7.6-1.1z"/></svg>
-        <span>Windows 10 / 11</span>
-      </button>
-      <button type="button" role="tab" id="tab-mac" data-os="mac" aria-controls="pane-mac" aria-selected="false">
-        <svg class="os-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.2 8.5c0-1.6 1.3-2.4 1.4-2.4-.8-1.1-2-1.3-2.4-1.3-1-.1-2 .6-2.5.6s-1.3-.6-2.2-.6C4.4 4.8 3.2 5.5 2.6 6.6c-1.2 2.1-.3 5.3.9 7 .6.8 1.3 1.8 2.2 1.7.9 0 1.2-.6 2.3-.6s1.4.6 2.3.6c1 0 1.6-.9 2.1-1.7.7-1 1-1.9 1-2-.1 0-1.9-.7-2.2-3.1zM9.5 3.6c.5-.6.8-1.4.7-2.2-.7 0-1.6.5-2.1 1.1-.5.5-.9 1.4-.8 2.2.8.1 1.7-.4 2.2-1.1z"/></svg>
-        <span><span lang="en">macOS 11 or later</span><span lang="de">macOS 11 oder neuer</span></span>
-      </button>
+<section id="checks">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">What it checks</span><span lang="de">Was geprüft wird</span></p>
+    <h2><span lang="en">The checks the broadcaster runs – before you deliver</span><span lang="de">Die Prüfungen des Senders – vor der Abgabe</span></h2>
+    <p class="sub"><span lang="en">Every frame is analysed, every threshold carries its source. What the spec does not state is marked “unconfirmed” – no invented limits.</span><span lang="de">Jedes Bild wird analysiert, jede Schwelle trägt ihre Quelle. Was das Pflichtenheft nicht nennt, ist als „unbestätigt“ markiert – keine erfundenen Grenzwerte.</span></p>
+    <div class="grid">
+      <div class="cell"><h3><span lang="en">Container and metadata</span><span lang="de">Container und Metadaten</span></h3><p><span lang="en">MXF OP1a, header “Closed and Complete”, codec and bit rate, colour tag 1-1-1, track layout, start timecode.</span><span lang="de">MXF OP1a, Header „Closed and Complete“, Codec und Bitrate, Farbtag 1-1-1, Spurbelegung, Start-Timecode.</span></p><span class="std">SMPTE 377M · TPR 2025</span></div>
+      <div class="cell"><h3><span lang="en">Levels and gamut</span><span lang="de">Pegel und Gamut</span></h3><p><span lang="en">Luma, RGB and chroma per frame, small areas reported separately; illegal codes and TRS.</span><span lang="de">Luma, RGB und Chroma je Bild, kleine Flächen getrennt gemeldet; verbotene Codes und TRS.</span></p><span class="std">EBU R 103 v3.0</span></div>
+      <div class="cell"><h3><span lang="en">Loudness and audio</span><span lang="de">Lautheit und Ton</span></h3><p><span lang="en">Integrated loudness, true peak and LRA per track pair, clipping, phase, silence, missing audio, Dolby E.</span><span lang="de">Integrierte Lautheit, True Peak und LRA je Spurpaar, Clipping, Phase, Stille, fehlender Ton, Dolby E.</span></p><span class="std">EBU R 128</span></div>
+      <div class="cell"><h3><span lang="en">Black, freeze, cadence</span><span lang="de">Schwarz, Standbild, Kadenz</span></h3><p><span lang="en">Black inside the programme, freeze frames, repeated frames and stutter, single-frame hits.</span><span lang="de">Schwarz im Programm, Standbilder, doppelte Bilder und Ruckeln, Einzelbild-Treffer.</span></p><span class="std">TPR 2025</span></div>
+      <div class="cell"><h3><span lang="en">Picture</span><span lang="de">Bild</span></h3><p><span lang="en">Interlace against flag and format, bars and borders, pixel defects, banding, a hint on possible flashes (not a certified Harding test).</span><span lang="de">Halbbilder gegen Markierung und Format, Balken und Ränder, Pixelfehler, Banding, ein Hinweis auf mögliche Blitze (kein zertifizierter Harding-Test).</span></p><span class="std">ITU-R BT.709</span></div>
+      <div class="cell"><h3><span lang="en">Timecode and line-up</span><span lang="de">Timecode und Vorspann</span></h3><p><span lang="en">Continuity and jumps, drop frame, colour bars and line-up tone at the head.</span><span lang="de">Kontinuität und Sprünge, Drop-Frame, Farbbalken und Messton am Anfang.</span></p><span class="std">SMPTE 12M</span></div>
     </div>
+  </div>
+</section>
 
-    <div class="os-pane" id="pane-win" role="tabpanel" aria-labelledby="tab-win" data-os="win">
-      <ol class="how">
-        <li><span lang="en">Open <b>PowerShell</b>: Start menu, type “PowerShell”, press Enter.</span><span lang="de"><b>PowerShell</b> öffnen: Startmenü, „PowerShell“ tippen, Enter.</span></li>
-        <li><span lang="en">Paste the line and press Enter. It takes about a minute.</span><span lang="de">Zeile einfügen und Enter drücken. Das dauert etwa eine Minute.</span></li>
-        <li><span lang="en">Start <b>QCCheck</b> from the desktop or the Start menu.</span><span lang="de"><b>QCCheck</b> über Desktop oder Startmenü starten.</span></li>
-      </ol>
-      <div class="term term-win">
-        <div class="term-bar"><span class="term-title">Windows PowerShell</span><span class="term-ctl" aria-hidden="true"><i></i><i></i><i></i></span></div>
-        <div class="term-body copyable"><span class="prompt" aria-hidden="true">PS C:\&gt;</span><code>irm https://marcvannuffel.github.io/qccheck-site/install.ps1 | iex</code><button class="copy" type="button">Copy</button></div>
+<section id="player">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow"><span lang="en">Player and timeline</span><span lang="de">Player und Zeitleiste</span></p>
+      <h2><span lang="en">See the frame, not just the error code</span><span lang="de">Das Bild sehen, nicht nur die Fehlermeldung</span></h2>
+      <p class="sub"><span lang="en">Click a marker and the player jumps to the exact frame. Overlays show what the check saw.</span><span lang="de">Klick auf eine Marke, und der Player springt aufs genaue Bild. Einblendungen zeigen, was die Prüfung gesehen hat.</span></p>
+      <ul class="list">
+        <li><b><span lang="en">Scopes</span><span lang="de">Scopes</span></b><span><span lang="en">Waveform, vectorscope, RGB parade on the exact frame</span><span lang="de">Waveform, Vektorskop, RGB-Parade am genauen Bild</span></span></li>
+        <li><b><span lang="en">Overlays</span><span lang="de">Overlays</span></b><span><span lang="en">Safe areas, zebra and false colour at the template's limits, pixel defects, fields</span><span lang="de">Safe Areas, Zebra und Falschfarben an den Grenzen der Vorlage, Pixelfehler, Halbbilder</span></span></li>
+        <li><b>J K L</b><span><span lang="en">Shuttle as in Resolve, frame by frame, finding to finding</span><span lang="de">Shuttle wie in Resolve, Bild für Bild, von Befund zu Befund</span></span></li>
+        <li><b><span lang="en">Accept</span><span lang="de">Akzeptieren</span></b><span><span lang="en">Accept an intentional finding with a note – it is listed in the report</span><span lang="de">Einen gewollten Befund mit Notiz akzeptieren – er steht im Bericht</span></span></li>
+      </ul>
+    </div>
+    <figure>
+      <img class="shot" src="img/app-scopes.jpg" width="1600" height="1000" loading="lazy" alt="Player with a colour bar test pattern, waveform scope on the picture, findings list on the right and the timeline with markers below">
+      <figcaption class="shot-cap"><span lang="en">Test pattern with an out-of-gamut patch: waveform on the exact frame, findings on the right, markers per lane below.</span><span lang="de">Testbild mit Gamut-Fehler: Waveform am genauen Bild, Befunde rechts, Marken je Spur darunter.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="findings">
+  <div class="wrap split flip">
+    <figure>
+      <img class="shot" src="img/app-findings.jpg" width="1600" height="1013" loading="lazy" alt="Findings in the QC report: each with severity, check, timecode range, the measured value and the quote from the delivery spec">
+    </figure>
+    <div>
+      <p class="eyebrow"><span lang="en">Findings and report</span><span lang="de">Befunde und Bericht</span></p>
+      <h2><span lang="en">Every finding says why – with the line from the spec</span><span lang="de">Jeder Befund sagt warum – mit der Stelle im Pflichtenheft</span></h2>
+      <p class="sub"><span lang="en">Measured value, limit, timecode range and frame, and the quote from the delivery spec in its original wording. Filter by error, warning and info; the report prints as a PDF for the client or the broadcaster.</span><span lang="de">Messwert, Grenze, Timecode-Bereich und Bild, dazu das Zitat aus dem Pflichtenheft im Wortlaut. Nach Fehler, Warnung und Info filtern; der Bericht druckt als PDF für Kunde oder Sender.</span></p>
+      <ul class="list">
+        <li><b><span lang="en">Verdict</span><span lang="de">Urteil</span></b><span><span lang="en">Passed, passed with warnings or failed – at a glance, per file and per batch</span><span lang="de">Bestanden, mit Warnungen oder durchgefallen – auf einen Blick, je Datei und je Stapel</span></span></li>
+        <li><b><span lang="en">Sources</span><span lang="de">Quellen</span></b><span><span lang="en">What a spec does not state is marked “unconfirmed” – no invented limits</span><span lang="de">Was ein Pflichtenheft nicht nennt, steht als „unbestätigt“ – keine erfundenen Grenzwerte</span></span></li>
+        <li><b><span lang="en">Languages</span><span lang="de">Sprachen</span></b><span><span lang="en">App, report and package in English or German</span><span lang="de">App, Bericht und Paket auf Englisch oder Deutsch</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="profiles">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Broadcaster templates</span><span lang="de">Sender-Vorlagen</span></p>
+    <h2><span lang="en">The delivery specs, built in</span><span lang="de">Die Pflichtenhefte, eingebaut</span></h2>
+    <p class="sub"><span lang="en">Pick the broadcaster, or let auto-select choose by folder or file name. Duplicate a template to build your house standard – it inherits and stores only what you change.</span><span lang="de">Sender wählen oder die Auto-Auswahl nach Ordner oder Dateiname entscheiden lassen. Eine Vorlage duplizieren ergibt den Hausstandard – sie erbt und speichert nur, was Sie ändern.</span></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th><span lang="en">Template</span><span lang="de">Vorlage</span></th><th><span lang="en">Source</span><span lang="de">Quelle</span></th><th class="mono"><span lang="en">Format</span><span lang="de">Format</span></th><th class="mono"><span lang="en">Loudness</span><span lang="de">Lautheit</span></th></tr></thead>
+        <tbody>
+          <tr><td>ARD / ZDF / ORF</td><td><span lang="en">Joint technical production guidelines (TPR 2025)</span><span lang="de">Gemeinsame Technische Produktionsrichtlinien (TPR 2025)</span></td><td class="mono">XDCAM HD422 · MXF</td><td class="mono">−23 LUFS · ≤ −1 dBTP</td></tr>
+          <tr><td>ZDF</td><td><span lang="en">ZDF delivery spec 3.0</span><span lang="de">ZDF-Pflichtenheft 3.0</span></td><td class="mono">AVC-Intra 100 · MXF</td><td class="mono">−23 LUFS · ≤ −1 dBTP</td></tr>
+          <tr><td>ZDF ProRes</td><td><span lang="en">Alternative format for acquired programmes</span><span lang="de">Alternativformat für Kaufproduktionen</span></td><td class="mono">ProRes 422 HQ · MOV</td><td class="mono">−23 LUFS · ≤ −1 dBTP</td></tr>
+          <tr><td>ORF</td><td><span lang="en">ORF technical spec 05.005a</span><span lang="de">ORF Technische Richtlinie 05.005a</span></td><td class="mono">XDCAM HD422 · MXF</td><td class="mono">−23 LUFS · ≤ −1 dBTP</td></tr>
+          <tr><td>SRF</td><td><span lang="en">SRF technical guidelines 2026</span><span lang="de">SRF Technische Richtlinien 2026</span></td><td class="mono">XDCAM HD422 · MXF</td><td class="mono">−23 LUFS · ≤ −1 dBTP</td></tr>
+          <tr><td>EBU generic</td><td><span lang="en">EBU R 103 / R 128 – for pre-checks without a broadcaster</span><span lang="de">EBU R 103 / R 128 – Vorprüfung ohne Sender</span></td><td class="mono">HD · UHD</td><td class="mono">−23 LUFS · ≤ −1 dBTP</td></tr>
+          <tr class="soon"><td><span lang="en">Add-ons</span><span lang="de">Zusätze</span></td><td><span lang="en">In preparation: UK DPP / AS-11, German private broadcasters, ARTE and France Télévisions, SRG SSR (RTS, RSI, RTR), online and podcast platforms</span><span lang="de">In Vorbereitung: UK DPP / AS-11, Deutschland privat, ARTE und France Télévisions, SRG SSR (RTS, RSI, RTR), Online- und Podcast-Plattformen</span></td><td class="mono">–</td><td class="mono">–</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note"><span lang="en">Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference.</span><span lang="de">Eigene Vorlagen: einen Sender duplizieren, Schwellen und Stufen ändern, exportieren und im Team teilen. Jeder Wert zeigt seine Quelle in der Referenz.</span></p>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Features</span><span lang="de">Funktionen</span></p>
+    <h2><span lang="en">Built for the last step before delivery</span><span lang="de">Gebaut für den letzten Schritt vor der Abgabe</span></h2>
+    <div class="grid">
+      <div class="cell"><h3><span lang="en">Shuttle like Resolve</span><span lang="de">Shuttle wie in Resolve</span></h3><p><span lang="en">J K L up to 8×, slow motion, frame by frame, ↑ ↓ from finding to finding.</span><span lang="de">J K L bis 8×, Zeitlupe, Bild für Bild, mit ↑ ↓ von Befund zu Befund.</span></p></div>
+      <div class="cell"><h3><span lang="en">Scopes and overlays</span><span lang="de">Scopes und Overlays</span></h3><p><span lang="en">Waveform, vectorscope, RGB parade; safe areas 4:3 · 16:9 · 9:16, zebra and false colour at the template's limits, fields.</span><span lang="de">Waveform, Vektorskop, RGB-Parade; Safe Areas 4:3 · 16:9 · 9:16, Zebra und Falschfarben an den Grenzen der Vorlage, Halbbilder.</span></p></div>
+      <div class="cell"><h3><span lang="en">Accept with a note</span><span lang="de">Akzeptieren mit Notiz</span></h3><p><span lang="en">An intentional black frame or a creative look: accept it, write why – it stays visible in the report.</span><span lang="de">Ein gewolltes Schwarzbild oder ein Look: akzeptieren, Grund notieren – es bleibt im Bericht sichtbar.</span></p></div>
+      <div class="cell"><h3><span lang="en">Markers for your edit</span><span lang="de">Marker für den Schnitt</span></h3><p><span lang="en">Every finding as a marker for DaVinci Resolve, Premiere Pro and Final Cut Pro, or as CSV.</span><span lang="de">Jeder Befund als Marker für DaVinci Resolve, Premiere Pro und Final Cut Pro oder als CSV.</span></p></div>
+      <div class="cell"><h3><span lang="en">Repair with a plan</span><span lang="de">Reparieren mit Plan</span></h3><p><span lang="en">Loudness, start timecode, levels, rewrap, or XDCAM HD422 – as a new file; the plan says what changes and what can't.</span><span lang="de">Lautheit, Start-Timecode, Pegel, Rewrap oder XDCAM HD422 – als neue Datei; der Plan sagt, was sich ändert und was nicht geht.</span></p></div>
+      <div class="cell"><h3><span lang="en">Delivery package</span><span lang="de">Lieferpaket</span></h3><p><span lang="en">Report and PDF, checksums, summary and a client view with your choice of look – one folder, ready to send.</span><span lang="de">Bericht und PDF, Prüfsummen, Zusammenfassung und eine Kundenansicht mit wählbarem Look – ein Ordner, fertig zum Versand.</span></p></div>
+      <div class="cell"><h3><span lang="en">Watch folder</span><span lang="de">Watch Folder</span></h3><p><span lang="en">Checks every file that arrives in a folder, picks the template by rule and delivers the package if you want.</span><span lang="de">Prüft jede Datei, die in einem Ordner ankommt, wählt die Vorlage nach Regel und liefert auf Wunsch das Paket.</span></p></div>
+      <div class="cell"><h3><span lang="en">Command line</span><span lang="de">Kommandozeile</span></h3><p><span lang="en"><code class="mono">qccheck film.mxf --profile zdf</code> – for scripts and render farms, same checks as the app.</span><span lang="de"><code class="mono">qccheck film.mxf --profile zdf</code> – für Skripte und Renderfarmen, dieselben Prüfungen wie die App.</span></p></div>
+      <div class="cell"><h3><span lang="en">Local and signed</span><span lang="de">Lokal und signiert</span></h3><p><span lang="en">Your files never leave the computer. Updates are signed and checked before they install.</span><span lang="de">Ihre Dateien verlassen den Rechner nie. Updates sind signiert und werden vor dem Installieren geprüft.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="deliver">
+  <div class="wrap split flip">
+    <figure>
+      <img class="shot" src="img/app-report.jpg" width="1600" height="1012" loading="lazy" alt="QC report inside the app: verdict, counts, loudness and true peak, the timeline of findings">
+    </figure>
+    <div>
+      <p class="eyebrow"><span lang="en">Report, repair, deliver</span><span lang="de">Bericht, Reparatur, Abgabe</span></p>
+      <h2><span lang="en">From finding to delivery package</span><span lang="de">Vom Befund zum Lieferpaket</span></h2>
+      <ul class="list">
+        <li><b><span lang="en">Report</span><span lang="de">Bericht</span></b><span><span lang="en">HTML and PDF, every finding with frame, timecode and the quote from the spec</span><span lang="de">HTML und PDF, jeder Befund mit Bild, Timecode und Zitat aus dem Pflichtenheft</span></span></li>
+        <li><b><span lang="en">Repair</span><span lang="de">Reparatur</span></b><span><span lang="en">Loudness, start timecode, levels, rewrap and XDCAM HD422 – as a new file, with a plan of what changes and what can't</span><span lang="de">Lautheit, Start-Timecode, Pegel, Rewrap und XDCAM HD422 – als neue Datei, mit Plan, was sich ändert und was nicht geht</span></span></li>
+        <li><b><span lang="en">Markers</span><span lang="de">Marker</span></b><span><span lang="en">For DaVinci Resolve, Premiere Pro and Final Cut Pro – fix it right in your timeline</span><span lang="de">Für DaVinci Resolve, Premiere Pro und Final Cut Pro – direkt in der eigenen Timeline korrigieren</span></span></li>
+        <li><b><span lang="en">Package</span><span lang="de">Paket</span></b><span><span lang="en">Report, PDF, checksums, summary and a client view for approval</span><span lang="de">Bericht, PDF, Prüfsummen, Zusammenfassung und eine Kundenansicht zur Abnahme</span></span></li>
+        <li><b><span lang="en">Watch folder</span><span lang="de">Watch Folder</span></b><span><span lang="en">Checks every file that lands in a folder, delivers the package if you want</span><span lang="de">Prüft jede Datei, die in einem Ordner landet, und liefert auf Wunsch das Paket</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="batch">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Batch</span><span lang="de">Stapel</span></p>
+    <h2><span lang="en">A whole delivery in one go</span><span lang="de">Eine ganze Lieferung in einem Durchgang</span></h2>
+    <p class="sub"><span lang="en">Drop files or folders, choose a template per batch or per file, see the verdict and the key findings at a glance. Ten minutes of XDCAM take about 76 seconds on a 20-core PC.</span><span lang="de">Dateien oder Ordner hineinziehen, Vorlage je Stapel oder je Datei wählen, Urteil und wichtigste Befunde auf einen Blick. Zehn Minuten XDCAM brauchen auf einem PC mit 20 Kernen rund 76 Sekunden.</span></p>
+    <img class="shot" src="img/app-batch.jpg" width="1600" height="439" loading="lazy" alt="Batch with four files: one passed, three failed, with the key findings per file">
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Price</span><span lang="de">Preis</span></p>
+    <h2><span lang="en">Try it on your own files. Buy once.</span><span lang="de">Mit eigenen Dateien testen. Einmal kaufen.</span></h2>
+    <p class="sub"><span lang="en">The trial checks half of every file – real findings, clearly marked as half. The licence covers every 1.x version on one computer; you can move it to another one any time.</span><span lang="de">Die Demo prüft die Hälfte jeder Datei – echte Befunde, klar als Hälfte gekennzeichnet. Die Lizenz gilt für alle 1.x-Versionen auf einem Rechner; Sie können sie jederzeit auf einen anderen umziehen.</span></p>
+    <div class="plans">
+      <div class="plan trial">
+        <h3><span lang="en">Trial</span><span lang="de">Demo</span></h3>
+        <p class="price">$0 <small><span lang="en">no key needed</span><span lang="de">ohne Schlüssel</span></small></p>
+        <ul>
+          <li><span lang="en">Half of every file, fixed stretches</span><span lang="de">Die Hälfte jeder Datei, feste Abschnitte</span></li>
+          <li><span lang="en">Player, overlays, scopes in the checked half</span><span lang="de">Player, Overlays, Scopes in der geprüften Hälfte</span></li>
+          <li class="no"><span lang="en">Delivery package, PDF, markers, client view</span><span lang="de">Lieferpaket, PDF, Marker, Kundenansicht</span></li>
+          <li class="no"><span lang="en">Repair and watch folder</span><span lang="de">Reparatur und Watch Folder</span></li>
+        </ul>
+        <a class="btn" href="install.html"><span lang="en">Install the trial</span><span lang="de">Demo installieren</span></a>
+      </div>
+      <div class="plan">
+        <h3><span lang="en">Licence, version 1</span><span lang="de">Lizenz, Version 1</span></h3>
+        <p class="price">$199 <small><span lang="en">once · all 1.x updates</span><span lang="de">einmalig · alle 1.x-Updates</span></small></p>
+        <ul>
+          <li><span lang="en">Every frame of every file</span><span lang="de">Jedes Bild jeder Datei</span></li>
+          <li><span lang="en">Report, PDF, markers, delivery package</span><span lang="de">Bericht, PDF, Marker, Lieferpaket</span></li>
+          <li><span lang="en">Repair, watch folder, own templates</span><span lang="de">Reparatur, Watch Folder, eigene Vorlagen</span></li>
+          <li><span lang="en">One computer at a time, move it any time</span><span lang="de">Ein Rechner gleichzeitig, jederzeit umziehbar</span></li>
+        </ul>
+        <a class="btn go" href="https://buy.polar.sh/polar_cl_XA8YTzTnj9Zp6nyFRM60pPS3jcnzJm0ZEHHl921ZFtC" rel="noopener"><span lang="en">Buy licence</span><span lang="de">Lizenz kaufen</span></a>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="os-pane" id="pane-mac" role="tabpanel" aria-labelledby="tab-mac" data-os="mac" hidden>
-      <ol class="how">
-        <li><span lang="en">Open <b>Terminal</b>: press ⌘ Space, type “Terminal”, press Return.</span><span lang="de"><b>Terminal</b> öffnen: ⌘ Leertaste, „Terminal“ tippen, Return.</span></li>
-        <li><span lang="en">Paste the line and press Return. It takes about a minute.</span><span lang="de">Zeile einfügen und Return drücken. Das dauert etwa eine Minute.</span></li>
-        <li><span lang="en">Start <b>QCCheck</b> from Applications in your home folder, or with Spotlight.</span><span lang="de"><b>QCCheck</b> aus „Programme“ im Benutzerordner starten oder über Spotlight.</span></li>
-      </ol>
-      <div class="term term-mac">
-        <div class="term-bar"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><span class="term-title">Terminal — zsh</span></div>
-        <div class="term-body copyable"><span class="prompt" aria-hidden="true">~ %</span><code>curl -fsSL https://marcvannuffel.github.io/qccheck-site/install.sh | bash</code><button class="copy" type="button">Copy</button></div>
+<section id="also">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Also from NuNu Soft</span><span lang="de">Auch von NuNu Soft</span></p>
+    <div class="also">
+      <img src="img/pm360.jpg" width="520" height="292" loading="lazy" alt="PodcastMagic 360: a video podcast cut from one 360° camera">
+      <div>
+        <h3>PodcastMagic 360</h3>
+        <p><span lang="en">Multicam video podcast from one 360° camera: finds who is speaking and directs the cut automatically – as an app, or as a plugin for DaVinci Resolve Studio.</span><span lang="de">Multicam-Videopodcast aus einer 360°-Kamera: erkennt, wer spricht, und schneidet automatisch – als App oder als Plugin für DaVinci Resolve Studio.</span></p>
+        <a class="btn small" href="https://podcastmagic360.com/" rel="noopener">podcastmagic360.com</a>
       </div>
-      <p class="hint"><span lang="en">Apple Silicon and Intel – one package for both.</span><span lang="de">Apple Silicon und Intel – ein Paket für beide.</span></p>
     </div>
+  </div>
+</section>
 
-    <p class="after"><span lang="en">Updates arrive by themselves: the app shows them at the top right and installs them after checking the signature again.</span><span lang="de">Updates kommen von selbst: Die App zeigt sie oben rechts und installiert sie, nachdem sie die Signatur wieder geprüft hat.</span></p>
-
-    <details>
-      <summary><span lang="en">Beta channel and uninstalling</span><span lang="de">Beta-Kanal und Deinstallieren</span></summary>
-      <p><span lang="en">Beta (pre-releases, may be unfinished):</span><span lang="de">Beta (Vorabversionen, können unfertig sein):</span></p>
-      <div class="copyable small"><code>irm https://marcvannuffel.github.io/qccheck-site/beta/install.ps1 | iex</code><button class="copy" type="button">Copy</button></div>
-      <div class="copyable small"><code>curl -fsSL https://marcvannuffel.github.io/qccheck-site/beta/install.sh | bash</code><button class="copy" type="button">Copy</button></div>
-      <p><span lang="en">The normal line switches back to the stable channel. To uninstall, delete the QCCheck shortcuts and the folder <code>%LOCALAPPDATA%\QCCheck</code> (Mac: <code>~/Library/Application Support/QCCheck</code> and <code>~/Applications/QCCheck.app</code>).</span><span lang="de">Die normale Zeile stellt zurück auf stabil. Entfernen: Verknüpfungen QCCheck löschen und den Ordner <code>%LOCALAPPDATA%\QCCheck</code> (Mac: <code>~/Library/Application Support/QCCheck</code> und <code>~/Applications/QCCheck.app</code>).</span></p>
-    </details>
-  </section>
-
-  <section id="new" class="card">
-    <h2><span lang="en">What's new in 0.1.4</span><span lang="de">Neu in 0.1.4</span></h2>
-    <ul class="news">
-      <li><span lang="en"><b>Repair with a plan</b> – before anything is written you see what will be fixed (before → after) and what cannot be fixed here, and why. Optional re-encode to XDCAM HD422 when the template allows it; the original stays untouched.</span><span lang="de"><b>Reparieren mit Plan</b> – bevor etwas geschrieben wird, siehst du, was behoben wird (vorher → nachher) und was hier nicht geht, mit Grund. Auf Wunsch neu kodieren nach XDCAM HD422, wenn die Vorlage es erlaubt; das Original bleibt.</span></li>
-      <li><span lang="en"><b>Player tools</b> – safe areas, zebra and false colour by the template's limits, pixel faults circled, blanking, single fields, waveform, vectorscope and RGB parade; J/K/L shuttle up to 8× and slow motion; findings list linked to the timeline; optional thumbnail lane.</span><span lang="de"><b>Werkzeuge im Player</b> – Safe Areas, Zebra und Falschfarben nach den Grenzen der Vorlage, Pixelfehler eingekreist, schwarze Ränder, einzelne Halbbilder, Waveform, Vectorscope und RGB-Parade; J/K/L bis 8× und Zeitlupe; Befundliste mit der Zeitleiste verknüpft; zuschaltbare Bildleiste.</span></li>
-      <li><span lang="en"><b>Batch with thumbnails</b> – hover over a file to scrub through it, click to open the player at that frame. Drop files or folders, or click to choose several at once.</span><span lang="de"><b>Stapel mit Vorschaubildern</b> – mit der Maus über eine Datei fahren und durchscrubben, Klick öffnet den Player an der Stelle. Dateien oder Ordner hineinziehen oder per Klick mehrere auf einmal wählen.</span></li>
-      <li><span lang="en"><b>Templates</b> – new templates from scratch or inherited, a reference of all 23 checks with their limits and spec sources, export and import of all settings when you move to another computer.</span><span lang="de"><b>Prüfvorlagen</b> – neue Vorlagen leer oder geerbt, eine Übersicht aller 23 Prüfungen mit Grenzen und Quellen im Pflichtenheft, alle Einstellungen exportieren und auf einem anderen Rechner importieren.</span></li>
-      <li><span lang="en"><b>Exact timecode</b> – picture timecode against container timecode, frame-accurate; any offset or jump is a finding.</span><span lang="de"><b>Timecode bildgenau</b> – Timecode im Bild gegen den des Containers; jeder Versatz und jeder Sprung ist ein Befund.</span></li>
-      <li><span lang="en"><b>Clear verdicts</b> – Passed, Passed with warnings, Failed, Incomplete; a delivery package of a failing file says so on every page.</span><span lang="de"><b>Klare Urteile</b> – Passed, Passed with warnings, Failed, Incomplete; ein Lieferpaket einer durchgefallenen Datei sagt das auf jeder Seite.</span></li>
-      <li><span lang="en">Also in QCCheck: delivery package with PDF report, client view (gamma 2.4 → 2.2, tagged 1-1-1) and markers for Resolve, Premiere and Final Cut; watch folder; accept findings with a note; English and German.</span><span lang="de">Ausserdem: Lieferpaket mit PDF-Bericht, Kundenansicht (Gamma 2.4 → 2.2, Tag 1-1-1) und Markern für Resolve, Premiere und Final Cut; Überwachungsordner; Befunde mit Notiz akzeptieren; Englisch und Deutsch.</span></li>
-    </ul>
-    <img class="shot" src="img/batch.jpg" srcset="img/batch.jpg 1008w, img/batch@2x.jpg 2016w" sizes="(max-width: 1040px) calc(100vw - 32px), 1008px" width="1008" height="630" alt="QCCheck batch with thumbnails, verdicts, key findings and the result tab">
-  </section>
-
-  <section id="requirements" class="card">
-    <h2><span lang="en">Requirements</span><span lang="de">Voraussetzungen</span></h2>
-    <ul class="req">
-      <li><span lang="en">Windows 10 or 11 (64-bit), or macOS 11 or later on Apple Silicon or Intel</span><span lang="de">Windows 10 oder 11 (64 bit) oder macOS 11 oder neuer auf Apple Silicon oder Intel</span></li>
-      <li><span lang="en">About 500 MB disk space; more cores check faster (UHD ProRes: roughly half real time on 20 cores)</span><span lang="de">Etwa 500 MB Platz; mehr Kerne prüfen schneller (UHD-ProRes: etwa halbe Echtzeit auf 20 Kernen)</span></li>
-      <li><span lang="en">Internet only for installing and updates – files are checked locally and never uploaded</span><span lang="de">Internet nur für Installation und Updates – geprüft wird lokal, nichts wird hochgeladen</span></li>
-      <li><span lang="en">Nothing else: QCCheck brings its own ffmpeg (LGPL, source offer in the package)</span><span lang="de">Sonst nichts: QCCheck bringt sein eigenes ffmpeg mit (LGPL, Quellangebot im Paket)</span></li>
-    </ul>
-    <p class="hint"><span lang="en">QCCheck is a technical pre-check. It does not replace the broadcaster's acceptance, and the flash check is not a Harding test.</span><span lang="de">QCCheck ist eine technische Vorprüfung. Sie ersetzt nicht die Abnahme des Senders, und die Blitz-Prüfung ist kein Harding-Test.</span></p>
-  </section>
 </main>
 
 <footer>
-  <span>QCCheck · Marc van Nuffel</span>
-  <a href="https://github.com/marcvannuffel/qccheck-releases/releases/latest"><span lang="en">Release files and checksums</span><span lang="de">Release-Dateien und Prüfsummen</span></a>
+  <div class="wrap">
+    <span>Swiss QC Guru by NuNu Soft · <a href="install.html"><span lang="en">Install</span><span lang="de">Installieren</span></a> · <a href="https://podcastmagic360.com/" rel="noopener">PodcastMagic 360</a></span>
+    <span><span lang="en">ARD, ZDF, ORF and SRF are trademarks of their owners. Swiss QC Guru is not affiliated with any broadcaster; the templates follow their published delivery specs.</span><span lang="de">ARD, ZDF, ORF und SRF sind Marken ihrer Inhaber. Swiss QC Guru ist mit keinem Sender verbunden; die Vorlagen folgen den veröffentlichten Pflichtenheften.</span></span>
+  </div>
 </footer>
-</div>
-
-<script src="site.js?v=3"></script>
+<script src="guru.js?v=1" defer></script>
 </body>
 </html>

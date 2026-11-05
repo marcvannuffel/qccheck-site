@@ -1,6 +1,6 @@
 # QCCheck – Windows-Installer (App + Kommandozeile), nach dem Muster von PodcastMagic 360.
 # Zeile für Kunden (von der Installationsseite, GitHub Pages von qccheck-site):
-#   irm https://marcvannuffel.github.io/qccheck-site/install.ps1 | iex
+#   irm https://swissqcguru.com/install.ps1 | iex
 # Die Pakete kommen öffentlich aus den GitHub-Releases von marcvannuffel/qccheck-releases (ohne Anmeldung); sicher
 # macht es die Ed25519-Signatur unten, nicht der Ort.
 # Installiert nach %LOCALAPPDATA%\QCCheck (aktualisiert sich von dort):
@@ -108,23 +108,23 @@ function Test-Ed25519Signature([string]$File, [string]$SigBase64, [string]$SpkiB
 function Confirm-Package([string]$Dir, [string]$Version) {
   $vf = Join-Path $Dir 'VERSION'
   $inside = if (Test-Path -LiteralPath $vf -PathType Leaf) { ([IO.File]::ReadAllText($vf)).Trim() } else { '' }
-  if ($inside -cne $Version) { throw "Paket ist Version '$inside', nicht $Version - nichts installiert." }
+  if ($inside -cne $Version) { throw "Paket ist Version '$inside', nicht $Version - nichts installiert. / Package is version '$inside', not $Version - nothing installed." }
   $list = Join-Path $Dir 'FILES.sha256'
-  if (-not (Test-Path -LiteralPath $list -PathType Leaf)) { throw 'Paket ohne Dateiliste (FILES.sha256) - nichts installiert.' }
+  if (-not (Test-Path -LiteralPath $list -PathType Leaf)) { throw 'Paket ohne Dateiliste (FILES.sha256) - nichts installiert. / Package without file list (FILES.sha256) - nothing installed.' }
   $n = 0
   $lines = @([IO.File]::ReadAllLines($list) | Where-Object { $_.Trim() })
   foreach ($line in $lines) {
-    if ($line -cnotmatch '^([0-9a-f]{64}) [ *](.+)$') { throw 'Dateiliste unlesbar - nichts installiert.' }
+    if ($line -cnotmatch '^([0-9a-f]{64}) [ *](.+)$') { throw 'Dateiliste unlesbar - nichts installiert. / File list unreadable - nothing installed.' }
     $want = $Matches[1]
     $rel = $Matches[2] -replace '^\./', ''
-    if ($rel -match '(^|[\\/])\.\.([\\/]|$)' -or $rel -match '^([a-zA-Z]:|[\\/])') { throw "Dateiliste: unerwarteter Pfad $rel - nichts installiert." }
+    if ($rel -match '(^|[\\/])\.\.([\\/]|$)' -or $rel -match '^([a-zA-Z]:|[\\/])') { throw "Dateiliste: unerwarteter Pfad $rel - nichts installiert. / File list: unexpected path $rel - nothing installed." }
     $f = Join-Path $Dir $rel
     if (-not (Test-Path -LiteralPath $f -PathType Leaf) -or (Get-FileHash -LiteralPath $f -Algorithm SHA256).Hash.ToLowerInvariant() -ne $want) {
-      throw "$rel passt nicht zur Dateiliste - nichts installiert."
+      throw "$rel passt nicht zur Dateiliste - nichts installiert. / $rel does not match the file list - nothing installed."
     }
     $n++
   }
-  if ($n -eq 0) { throw 'Dateiliste leer - nichts installiert.' }
+  if ($n -eq 0) { throw 'Dateiliste leer - nichts installiert. / File list empty - nothing installed.' }
   # wie app/update.mjs und starter/verify.cjs: SHA-256 der Zeilen, mit \n verbunden
   $sha = [Security.Cryptography.SHA256]::Create()
   $listHash = ([BitConverter]::ToString($sha.ComputeHash([Text.Encoding]::UTF8.GetBytes(($lines -join "`n")))) -replace '-', '').ToLowerInvariant()
@@ -138,9 +138,9 @@ $Base = $null
 if ($env:QC_INSTALL_TEST_BASE) {
   $Base = $env:QC_INSTALL_TEST_BASE
   if ($env:QC_INSTALL_TEST_KEY) { $releaseKey = $env:QC_INSTALL_TEST_KEY }
-  Write-Warning "TESTMODUS: Quelle $Base$(if ($env:QC_INSTALL_TEST_KEY) { ', Test-Schluessel' }). Nicht fuer Tester."
+  Write-Warning "TESTMODUS / TEST MODE: $Base$(if ($env:QC_INSTALL_TEST_KEY) { ', test key' }). Nicht fuer Tester / not for testers."
 }
-if ($releaseKey -like '__*') { throw 'Dieser Installer hat noch keinen Release-Schluessel (tools/release-key) - nichts installiert.' }
+if ($releaseKey -like '__*') { throw 'Dieser Installer hat noch keinen Release-Schluessel - nichts installiert. / This installer has no release key yet - nothing installed.' }
 $H = @{ 'User-Agent' = 'qccheck-install' }
 # latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über das
 # Höhere von stabil und neuester Vorabversion (Höchstes aller Releases ausser Entwürfen – tools/release löscht ältere
@@ -166,9 +166,9 @@ Invoke-WebRequest $feedUrl -Headers $H -OutFile $feedFile -UseBasicParsing
 $latest = Get-Content -LiteralPath $feedFile -Raw | ConvertFrom-Json
 Remove-Item -Force -LiteralPath $feedFile
 $version = "$($latest.version)"
-if ($version -notmatch '^\d+\.\d+\.\d+$') { throw "Unerwartete Version '$version'." }
+if ($version -notmatch '^\d+\.\d+\.\d+$') { throw "Unerwartete Version / unexpected version '$version'." }
 $name = "$($latest.packages.win64)"
-if ($name -ne "qccheck-$version-win64.tar.gz") { throw "Unerwarteter Paketname '$name'." }
+if ($name -ne "qccheck-$version-win64.tar.gz") { throw "Unerwarteter Paketname / unexpected package name '$name'." }
 
 $testRoot = $env:QC_INSTALL_TEST_BASE -and $env:QC_INSTALL_TEST_ROOT
 $app = if ($testRoot) { $env:QC_INSTALL_TEST_ROOT } else { Join-Path $env:LOCALAPPDATA 'QCCheck' }
@@ -177,9 +177,9 @@ New-Item -ItemType Directory -Force $app | Out-Null
 $installed = $null
 try { $installed = (Get-Content -LiteralPath (Join-Path $app 'current.json') -Raw | ConvertFrom-Json).version } catch { }
 if ("$installed" -match '^\d+\.\d+\.\d+$' -and ([version]"$installed" -gt [version]$version) -and $env:QC_INSTALL_DOWNGRADE -ne '1') {
-  throw "Installiert ist $installed, neuer als $version - Version bleibt. Aeltere nur mit `$env:QC_INSTALL_DOWNGRADE='1'."
+  throw "Installiert ist $installed, neuer als $version - Version bleibt. / Installed $installed is newer than $version - kept. Aeltere nur mit / older only with `$env:QC_INSTALL_DOWNGRADE='1'."
 }
-Write-Host "QCCheck $version wird installiert ..."
+Write-Host "Swiss QC Guru $version wird installiert / is being installed ..."
 # zufälliger Temp-Ordner (Review B16), nicht vorhersagbar
 $tmp = Join-Path ([IO.Path]::GetTempPath()) ("qccheck-" + [guid]::NewGuid().ToString("N"))
 New-Item -ItemType Directory -Force $tmp | Out-Null
@@ -188,17 +188,17 @@ $dl = if ($Base) { "$Base/download" } else { "https://github.com/$Repo/releases/
 Invoke-WebRequest "$dl/$name" -Headers $H -OutFile $pkg -UseBasicParsing
 $sigFile = Join-Path $tmp "$name.sig"
 Invoke-WebRequest "$dl/$name.sig" -Headers $H -OutFile $sigFile -UseBasicParsing
-Write-Host 'Signatur wird geprueft ...'
+Write-Host 'Signatur wird geprueft / checking signature ...'
 if (-not (Test-Ed25519Signature $pkg (Get-Content -LiteralPath $sigFile -Raw) $releaseKey)) {
   Remove-Item -Recurse -Force -LiteralPath $tmp
-  throw 'Signatur ungueltig - Paket nicht von QCCheck signiert oder beschaedigt. Nichts installiert.'
+  throw 'Signatur ungueltig - Paket nicht von Swiss QC Guru signiert oder beschaedigt. Nichts installiert. / Invalid signature - package not signed by Swiss QC Guru or damaged. Nothing installed.'
 }
 $dir = Join-Path $app "versions\$version"
 if (Test-Path -LiteralPath $dir) { Remove-Item -Recurse -Force -LiteralPath $dir }
 New-Item -ItemType Directory -Force $dir | Out-Null
 $tarExe = Join-Path $env:SystemRoot 'System32\tar.exe'
 & $tarExe -xzf $pkg -C $dir
-if ($LASTEXITCODE -ne 0) { throw "Entpacken fehlgeschlagen (tar Code $LASTEXITCODE)." }
+if ($LASTEXITCODE -ne 0) { throw "Entpacken fehlgeschlagen / unpacking failed (tar code $LASTEXITCODE)." }
 try { Confirm-Package $dir $version } catch { Remove-Item -Recurse -Force -LiteralPath $dir; Remove-Item -Recurse -Force -LiteralPath $tmp; throw }
 Set-Content -LiteralPath (Join-Path $app 'current.json') -Value "{`"version`":`"$version`"}" -Encoding ascii
 # Für die Update-Prüfung der App: woher (GitHub-Repo; im Testmodus die Testquelle)
@@ -209,29 +209,37 @@ $src = if ($Base) { @{ base = $Base } } else { @{ repo = $Repo } }
 $electronDir = Join-Path $app 'electron'
 $exe = Join-Path $electronDir 'QCCheck.exe'
 if (-not ((Test-Path -LiteralPath (Join-Path $electronDir ".ok-$electronVersion")) -and (Test-Path -LiteralPath $exe))) {
-  Write-Host "Laufzeit der App wird geladen (Electron $electronVersion, ca. 110 MB) ..."
+  Write-Host "Laufzeit der App wird geladen / downloading the app runtime (Electron $electronVersion, approx. 110 MB) ..."
   $zip = Join-Path $tmp 'electron.zip'
   Invoke-WebRequest "https://github.com/electron/electron/releases/download/v$electronVersion/electron-v$electronVersion-win32-x64.zip" -OutFile $zip -UseBasicParsing
   $got = (Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash.ToLowerInvariant()
-  if ($got -ne $electronSha256) { Remove-Item -Recurse -Force -LiteralPath $tmp; throw "Electron: falsche Pruefsumme ($got) - App nicht installiert." }
+  if ($got -ne $electronSha256) { Remove-Item -Recurse -Force -LiteralPath $tmp; throw "Electron: falsche Pruefsumme ($got) - App nicht installiert. / wrong checksum - app not installed." }
   if (Test-Path -LiteralPath $electronDir) {
-    try { Remove-Item -Recurse -Force -LiteralPath $electronDir } catch { throw 'QCCheck laeuft noch - bitte schliessen und die Zeile noch einmal ausfuehren.' }
+    try { Remove-Item -Recurse -Force -LiteralPath $electronDir } catch { throw 'Swiss QC Guru laeuft noch - bitte schliessen und die Zeile noch einmal ausfuehren. / Swiss QC Guru is still running - close it and run the line again.' }
   }
   New-Item -ItemType Directory -Force $electronDir | Out-Null
   & $tarExe -xf $zip -C $electronDir
-  if ($LASTEXITCODE -ne 0) { throw "Electron entpacken fehlgeschlagen (tar Code $LASTEXITCODE)." }
+  if ($LASTEXITCODE -ne 0) { throw "Electron entpacken fehlgeschlagen / unpacking Electron failed (tar code $LASTEXITCODE)." }
   Rename-Item -LiteralPath (Join-Path $electronDir 'electron.exe') -NewName 'QCCheck.exe'
   Set-Content -LiteralPath (Join-Path $electronDir ".ok-$electronVersion") -Value $electronVersion -Encoding ascii
 }
 $starter = Join-Path $electronDir 'resources\app'
 New-Item -ItemType Directory -Force $starter | Out-Null
 Get-ChildItem -LiteralPath (Join-Path $dir 'starter') -File | Copy-Item -Destination $starter -Force
+# App-Icon an festem Ort (die Versionsordner wechseln mit Updates); fehlt es im Paket, bleibt das Electron-Icon
+$icon = Join-Path $app 'QCCheck.ico'
+$pkgIcon = Join-Path $dir 'app\ui\icon\qccheck.ico'
+if (Test-Path -LiteralPath $pkgIcon) { Copy-Item -LiteralPath $pkgIcon -Destination $icon -Force }
 $shell = New-Object -ComObject WScript.Shell
-foreach ($l in $(if ($testRoot) { @() } else { @((Join-Path ([Environment]::GetFolderPath('Desktop')) 'QCCheck.lnk'), (Join-Path ([Environment]::GetFolderPath('Programs')) 'QCCheck.lnk')) })) {
+$desk = [Environment]::GetFolderPath('Desktop'); $progs = [Environment]::GetFolderPath('Programs')
+# Name gegen aussen Swiss QC Guru (5. Nov.): alte Verknuepfungen "QCCheck" entfernen, Ordner und exe bleiben
+if (-not $testRoot) { foreach ($old in @((Join-Path $desk 'QCCheck.lnk'), (Join-Path $progs 'QCCheck.lnk'))) { Remove-Item -LiteralPath $old -Force -ErrorAction SilentlyContinue } }
+foreach ($l in $(if ($testRoot) { @() } else { @((Join-Path $desk 'Swiss QC Guru.lnk'), (Join-Path $progs 'Swiss QC Guru.lnk')) })) {
   $s = $shell.CreateShortcut($l)
   $s.TargetPath = $exe
   $s.WorkingDirectory = $electronDir
-  $s.Description = 'QCCheck - Pruefung vor der Abgabe an den Sender'
+  $s.Description = 'Swiss QC Guru - Pruefung vor der Abgabe an den Sender'
+  if (Test-Path -LiteralPath $icon) { $s.IconLocation = "$icon,0" }
   $s.Save()
 }
 # --- die Kommandozeile: qccheck.cmd ruft das Electron als Node mit dem CLI-Starter auf
@@ -247,11 +255,11 @@ if (-not $testRoot -and -not ("$userPath" -split ';' | Where-Object { $_ -eq $bi
 }
 Remove-Item -Recurse -Force -LiteralPath $tmp
 Write-Host ''
-Write-Host "Fertig: QCCheck $version."
-Write-Host '  App: Desktop und Startmenue > QCCheck. Dateien oder Ordner ins Fenster ziehen.'
-Write-Host "  Kommandozeile: qccheck film.mxf --profile zdf $pathNote"
-Write-Host '  Updates: die App meldet sie oben rechts.'
+Write-Host "Fertig / done: Swiss QC Guru $version."
+Write-Host '  App: Desktop / Startmenue (Start menu) > Swiss QC Guru. Dateien oder Ordner ins Fenster ziehen / drag files or folders into the window.'
+Write-Host "  Kommandozeile / command line: qccheck film.mxf --profile zdf $pathNote"
+Write-Host '  Updates: die App meldet sie oben rechts / the app shows them top right.'
 Write-Host ''
-Write-Host 'Entfernen: Verknuepfungen QCCheck loeschen, dazu die Ordner'
+Write-Host 'Entfernen / uninstall: Verknuepfungen Swiss QC Guru loeschen, dazu die Ordner / delete the shortcuts and the folders'
 Write-Host "  $app"
 Write-Host "  $(Join-Path $env:APPDATA 'QCCheck')"

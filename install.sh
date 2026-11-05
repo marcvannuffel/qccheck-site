@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # QCCheck – macOS-Installer (App + Kommandozeile), nach dem Muster von PodcastMagic 360. Apple Silicon und Intel.
 # Zeile für Kunden (von der Installationsseite, GitHub Pages von qccheck-site):
-#   curl -fsSL https://marcvannuffel.github.io/qccheck-site/install.sh | bash
+#   curl -fsSL https://swissqcguru.com/install.sh | bash
 # Die Pakete kommen öffentlich aus den GitHub-Releases von marcvannuffel/qccheck-releases (ohne Anmeldung); sicher
 # macht es die Ed25519-Signatur, nicht der Ort.
 # Installiert nach ~/Library/Application Support/QCCheck (aktualisiert sich von dort):
@@ -103,18 +103,18 @@ PERL
 check_package() {
   local dir="$1" version="$2" inside line want rel n=0
   inside="$(tr -d ' \r\n' < "$dir/VERSION" 2>/dev/null || true)"
-  [[ "$inside" == "$version" ]] || { echo "Paket ist Version '$inside', nicht $version - nichts installiert." >&2; return 1; }
-  [[ -f "$dir/FILES.sha256" ]] || { echo "Paket ohne Dateiliste (FILES.sha256) - nichts installiert." >&2; return 1; }
+  [[ "$inside" == "$version" ]] || { echo "Paket ist Version '$inside', nicht $version - nichts installiert. / Package is version '$inside', not $version - nothing installed." >&2; return 1; }
+  [[ -f "$dir/FILES.sha256" ]] || { echo "Paket ohne Dateiliste (FILES.sha256) - nichts installiert. / Package without file list (FILES.sha256) - nothing installed." >&2; return 1; }
   while IFS= read -r line || [[ -n "$line" ]]; do
     [[ -z "${line//[[:space:]]/}" ]] && continue
-    [[ "$line" =~ ^([0-9a-f]{64})\ [\ *](.+)$ ]] || { echo "Dateiliste unlesbar - nichts installiert." >&2; return 1; }
+    [[ "$line" =~ ^([0-9a-f]{64})\ [\ *](.+)$ ]] || { echo "Dateiliste unlesbar - nichts installiert. / File list unreadable - nothing installed." >&2; return 1; }
     want="${BASH_REMATCH[1]}"; rel="${BASH_REMATCH[2]#./}"
-    if [[ "$rel" == /* || "$rel" =~ (^|/)\.\.(/|$) ]]; then echo "Dateiliste: unerwarteter Pfad $rel - nichts installiert." >&2; return 1; fi
+    if [[ "$rel" == /* || "$rel" =~ (^|/)\.\.(/|$) ]]; then echo "Dateiliste: unerwarteter Pfad $rel - nichts installiert. / File list: unexpected path $rel - nothing installed." >&2; return 1; fi
     [[ -f "$dir/$rel" && "$(shasum -a 256 "$dir/$rel" | cut -d' ' -f1)" == "$want" ]] ||
-      { echo "$rel passt nicht zur Dateiliste - nichts installiert." >&2; return 1; }
+      { echo "$rel passt nicht zur Dateiliste - nichts installiert. / $rel does not match the file list - nothing installed." >&2; return 1; }
     n=$((n + 1))
   done < "$dir/FILES.sha256"
-  [[ $n -gt 0 ]] || { echo "Dateiliste leer - nichts installiert." >&2; return 1; }
+  [[ $n -gt 0 ]] || { echo "Dateiliste leer - nichts installiert. / File list empty - nothing installed." >&2; return 1; }
   # wie app/update.mjs und starter/verify.cjs: SHA-256 der nicht leeren Zeilen, mit \n verbunden (ohne letztes \n)
   printf '{"version":"%s","list":"%s"}' "$version" "$(grep -v '^[[:space:]]*$' "$dir/FILES.sha256" | perl -pe 'chomp if eof' | shasum -a 256 | cut -d' ' -f1)" > "$dir/.qc-verified"
 }
@@ -131,7 +131,7 @@ version_newer() {
 # Alles Weitere erst in main(), aufgerufen in der letzten Zeile: bricht der Download von
 # "curl … | bash" mittendrin ab, steht main nie vollständig da und es passiert nichts (Review 5. November B16).
 main() {
-  [[ "$release_key" != __* ]] || { echo "Dieser Installer hat noch keinen Release-Schluessel (tools/release-key) - nichts installiert." >&2; exit 1; }
+  [[ "$release_key" != __* ]] || { echo "Dieser Installer hat noch keinen Release-Schluessel - nichts installiert. / This installer has no release key yet - nothing installed." >&2; exit 1; }
   get() { curl -fsSL -H "User-Agent: qccheck-install" "$@"; }
   # latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über das
   # Höhere von stabil und neuester Vorabversion der Release-Liste. Nur zum Testen: QC_INSTALL_TEST_BASE (<Quelle>/latest.json und
@@ -139,7 +139,7 @@ main() {
   BASE="${QC_INSTALL_TEST_BASE:-}"
   if [[ -n "$BASE" ]]; then
     [[ -n "${QC_INSTALL_TEST_KEY:-}" ]] && release_key="$QC_INSTALL_TEST_KEY"
-    echo "TESTMODUS: Quelle $BASE. Nicht fuer Kunden." >&2
+    echo "TESTMODUS / TEST MODE: $BASE. Nicht fuer Kunden / not for customers." >&2
     feed_url="$BASE/latest.json"
   elif [[ "$CHANNEL" == beta ]]; then
     # das Höhere von stabil und neuester Vorabversion: Höchstes aller Releases ausser Entwürfen; nur eine Vorabversion
@@ -163,24 +163,24 @@ main() {
   json="$(get "$feed_url")"
   version="$(printf '%s' "$json" | perl -MJSON::PP -e 'local $/; my $j = decode_json(<STDIN>); print $j->{version} // ""')"
   name="$(printf '%s' "$json" | perl -MJSON::PP -e 'local $/; my $j = decode_json(<STDIN>); print $j->{packages}{macos} // ""')"
-  [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "Unerwartete Version '$version'." >&2; exit 1; }
-  [[ "$name" == "qccheck-$version-macos.tar.gz" ]] || { echo "Unerwarteter Paketname '$name'." >&2; exit 1; }
+  [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "Unerwartete Version / unexpected version '$version'." >&2; exit 1; }
+  [[ "$name" == "qccheck-$version-macos.tar.gz" ]] || { echo "Unerwarteter Paketname / unexpected package name '$name'." >&2; exit 1; }
 
   app="$HOME/Library/Application Support/QCCheck"
   mkdir -p "$app"
   printf '{"channel":"%s"}' "$CHANNEL" > "$app/channel.json"
   installed="$(perl -MJSON::PP -e 'local $/; open my $f, "<", $ARGV[0] or exit; my $j = eval { decode_json(<$f>) }; print $j->{version} // ""' "$app/current.json" 2>/dev/null || true)"
   if [[ "$installed" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] && version_newer "$installed" "$version" && [[ "${QC_INSTALL_DOWNGRADE:-}" != 1 ]]; then
-    echo "Installiert ist $installed, neuer als $version - Version bleibt. Aeltere nur mit QC_INSTALL_DOWNGRADE=1." >&2; exit 1
+    echo "Installiert ist $installed, neuer als $version - Version bleibt. / Installed $installed is newer than $version - kept. Aeltere nur mit / older only with QC_INSTALL_DOWNGRADE=1." >&2; exit 1
   fi
-  echo "QCCheck $version wird installiert ..."
+  echo "Swiss QC Guru $version wird installiert / is being installed ..."
   tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT
   dl="https://github.com/$REPO/releases/download/v$version"; [[ -n "$BASE" ]] && dl="$BASE/download"
   get -o "$tmp/$name" "$dl/$name"
   get -o "$tmp/$name.sig" "$dl/$name.sig"
-  echo "Signatur wird geprueft ..."
+  echo "Signatur wird geprueft / checking signature ..."
   verify_sig "$tmp/$name" "$tmp/$name.sig" "$release_key" ||
-    { echo "Signatur ungueltig - Paket nicht von QCCheck signiert oder beschaedigt. Nichts installiert." >&2; exit 1; }
+    { echo "Signatur ungueltig - Paket nicht von Swiss QC Guru signiert oder beschaedigt. Nichts installiert. / Invalid signature - package not signed by Swiss QC Guru or damaged. Nothing installed." >&2; exit 1; }
   dir="$app/versions/$version"
   rm -rf "$dir"; mkdir -p "$dir"
   tar -xzf "$tmp/$name" -C "$dir"
@@ -202,10 +202,10 @@ main() {
   bundle_id="com.dudagroup.qccheck"
   marker="$bundle/Contents/Resources/qc-electron"
   if [[ "$(cat "$marker" 2>/dev/null || true)" != "$electron_version-$electron_platform" || ! -x "$bundle/Contents/MacOS/Electron" ]]; then
-    echo "Laufzeit der App wird geladen (Electron $electron_version, ca. 100 MB) ..."
+    echo "Laufzeit der App wird geladen / downloading the app runtime (Electron $electron_version, approx. 100 MB) ..."
     curl -fsSL -o "$tmp/electron.zip" "https://github.com/electron/electron/releases/download/v$electron_version/electron-v$electron_version-$electron_platform.zip"
     got="$(shasum -a 256 "$tmp/electron.zip" | cut -d' ' -f1)"
-    [[ "$got" == "$electron_sha" ]] || { echo "Electron: falsche Pruefsumme ($got) - App nicht installiert." >&2; exit 1; }
+    [[ "$got" == "$electron_sha" ]] || { echo "Electron: falsche Pruefsumme ($got) - App nicht installiert. / wrong checksum - app not installed." >&2; exit 1; }
     ditto -x -k "$tmp/electron.zip" "$tmp/electron"
     mkdir -p "$HOME/Applications"
     rm -rf "$bundle"
@@ -216,15 +216,17 @@ main() {
   res="$bundle/Contents/Resources"
   rm -rf "$res/app"; mkdir -p "$res/app"
   cp "$dir"/starter/* "$res/app/"
-  plutil -replace CFBundleName -string "QCCheck" "$bundle/Contents/Info.plist"
-  plutil -replace CFBundleDisplayName -string "QCCheck" "$bundle/Contents/Info.plist"
+  # App-Icon: Info.plist von Electron zeigt auf electron.icns – durch das eigene ersetzen (vor dem Neusignieren)
+  [[ -f "$dir/app/ui/icon/qccheck.icns" ]] && cp "$dir/app/ui/icon/qccheck.icns" "$res/electron.icns"
+  plutil -replace CFBundleName -string "Swiss QC Guru" "$bundle/Contents/Info.plist"
+  plutil -replace CFBundleDisplayName -string "Swiss QC Guru" "$bundle/Contents/Info.plist"
   plutil -replace CFBundleIdentifier -string "$bundle_id" "$bundle/Contents/Info.plist"
   for helper in "$bundle"/Contents/Frameworks/*.app; do
     id="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$helper/Contents/Info.plist" 2>/dev/null || true)"
     [[ "$id" == com.github.Electron* ]] && plutil -replace CFBundleIdentifier -string "${id/com.github.Electron/$bundle_id}" "$helper/Contents/Info.plist"
   done
   codesign --force --deep --sign - "$bundle" >/dev/null 2>&1 ||
-    echo "Hinweis: die App liess sich nicht neu signieren (codesign) - startet sie nicht, bitte melden." >&2
+    echo "Hinweis: die App liess sich nicht neu signieren (codesign) - startet sie nicht, bitte melden. / Note: could not re-sign the app (codesign) - if it does not start, please report." >&2
   xattr -dr com.apple.quarantine "$bundle" 2>/dev/null || true
   touch "$bundle"
   /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "$bundle" 2>/dev/null || true
@@ -241,14 +243,14 @@ WRAP
   chmod +x "$HOME/.local/bin/qccheck"
 
   echo ""
-  echo "Fertig: QCCheck $version."
-  echo "  App: ~/Applications/QCCheck.app (Link auf dem Schreibtisch). Dateien oder Ordner ins Fenster ziehen."
-  echo "  Kommandozeile: ~/.local/bin/qccheck film.mxf --profile zdf"
-  case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) echo "  (~/.local/bin ist nicht im PATH – z. B. in ~/.zprofile: export PATH=\"\$HOME/.local/bin:\$PATH\")" ;; esac
-  echo "  Updates: die App meldet sie oben rechts."
+  echo "Fertig / done: Swiss QC Guru $version."
+  echo "  App: ~/Applications/QCCheck.app (Link auf dem Schreibtisch). Dateien oder Ordner ins Fenster ziehen / drag files or folders into the window."
+  echo "  Kommandozeile / command line: ~/.local/bin/qccheck film.mxf --profile zdf"
+  case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) echo "  (~/.local/bin ist nicht im PATH / not in PATH – z. B. / e.g. in ~/.zprofile: export PATH=\"\$HOME/.local/bin:\$PATH\")" ;; esac
+  echo "  Updates: die App meldet sie oben rechts / the app shows them top right."
   echo ""
-  echo "Entfernen: ~/Applications/QCCheck.app, den Link auf dem Schreibtisch, ~/.local/bin/qccheck und"
+  echo "Entfernen / uninstall: ~/Applications/QCCheck.app, den Link auf dem Schreibtisch (desktop link), ~/.local/bin/qccheck und / and"
   echo "  $app"
-  echo "  $HOME/Library/Application Support/QCCheck (Einstellungen der App)"
+  echo "  $HOME/Library/Application Support/QCCheck (Einstellungen der App / app settings)"
 }
 main "$@"
