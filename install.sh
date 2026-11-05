@@ -130,8 +130,8 @@ version_newer() {
 
 [[ "$release_key" != __* ]] || { echo "Dieser Installer hat noch keinen Release-Schluessel (tools/release-key) - nichts installiert." >&2; exit 1; }
 get() { curl -fsSL -H "User-Agent: qccheck-install" "$@"; }
-# latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über die
-# neueste Vorabversion der Release-Liste. Nur zum Testen: QC_INSTALL_TEST_BASE (<Quelle>/latest.json und
+# latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über das
+# Höhere von stabil und neuester Vorabversion der Release-Liste. Nur zum Testen: QC_INSTALL_TEST_BASE (<Quelle>/latest.json und
 # <Quelle>/download/<datei>) und QC_INSTALL_TEST_KEY – beide melden sich laut.
 BASE="${QC_INSTALL_TEST_BASE:-}"
 if [[ -n "$BASE" ]]; then
@@ -139,15 +139,21 @@ if [[ -n "$BASE" ]]; then
   echo "TESTMODUS: Quelle $BASE. Nicht fuer Kunden." >&2
   feed_url="$BASE/latest.json"
 elif [[ "$CHANNEL" == beta ]]; then
+  # das Höhere von stabil und neuester Vorabversion: Höchstes aller Releases ausser Entwürfen; nur eine Vorabversion
+  # ganz vorne zählt (tools/release löscht ältere, sobald eine stabile erscheint), sonst stabil – wie app/update.mjs
   tag="$(get "https://api.github.com/repos/$REPO/releases?per_page=50" | perl -MJSON::PP -e '
     local $/; my $list = eval { JSON::PP::decode_json(<STDIN>) } || [];
-    my @v = sort { my @a = split /\./, $a; my @b = split /\./, $b; $a[0] <=> $b[0] || $a[1] <=> $b[1] || $a[2] <=> $b[2] }
-      map { $_->{tag_name} =~ /^v(\d+\.\d+\.\d+)$/ ? $1 : () }
-      grep { ref $_ eq "HASH" && $_->{prerelease} && !$_->{draft} } (ref $list eq "ARRAY" ? @$list : ());
-    print $v[-1] // "";')"
-  [[ "$tag" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "Keine Beta-Version gefunden. / No beta release found." >&2; exit 1; }
-  echo "BETA: $tag ist eine Vorabversion. / $tag is a pre-release." >&2
-  feed_url="https://github.com/$REPO/releases/download/v$tag/latest.json"
+    my @r = sort { my @a = split /\./, $a->[0]; my @b = split /\./, $b->[0]; $a[0] <=> $b[0] || $a[1] <=> $b[1] || $a[2] <=> $b[2] }
+      map { (defined $_->{tag_name} && $_->{tag_name} =~ /^v(\d+\.\d+\.\d+)$/) ? [$1, $_->{prerelease}] : () }
+      grep { ref $_ eq "HASH" && !$_->{draft} } (ref $list eq "ARRAY" ? @$list : ());
+    print $r[-1][0] if @r && $r[-1][1];')"
+  if [[ "$tag" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    echo "BETA: $tag ist eine Vorabversion. / $tag is a pre-release." >&2
+    feed_url="https://github.com/$REPO/releases/download/v$tag/latest.json"
+  else
+    echo "Beta: keine neuere Vorabversion - die stabile Version wird installiert. / No newer pre-release - installing the stable version." >&2
+    feed_url="https://github.com/$REPO/releases/latest/download/latest.json"
+  fi
 else
   feed_url="https://github.com/$REPO/releases/latest/download/latest.json"
 fi

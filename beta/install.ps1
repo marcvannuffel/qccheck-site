@@ -142,19 +142,24 @@ if ($env:QC_INSTALL_TEST_BASE) {
 }
 if ($releaseKey -like '__*') { throw 'Dieser Installer hat noch keinen Release-Schluessel (tools/release-key) - nichts installiert.' }
 $H = @{ 'User-Agent' = 'qccheck-install' }
-# latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über die
-# neueste Vorabversion der Release-Liste; im Testmodus <Quelle>/latest.json und <Quelle>/download/<datei>
+# latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über das
+# Höhere von stabil und neuester Vorabversion (Höchstes aller Releases ausser Entwürfen – tools/release löscht ältere
+# Vorabversionen, sobald eine stabile erscheint; ohne Vorabversion also stabil, wie app/update.mjs); im Testmodus
+# <Quelle>/latest.json und <Quelle>/download/<datei>
+$feedUrl = "https://github.com/$Repo/releases/latest/download/latest.json"
 if ($env:QC_INSTALL_TEST_BASE) { $feedUrl = "$Base/latest.json" }
 elseif ($Channel -eq 'beta') {
-  $tag = $null
+  $best = $null
   foreach ($r in (Invoke-RestMethod "https://api.github.com/repos/$Repo/releases?per_page=50" -Headers $H)) {
-    if (-not $r.prerelease -or $r.draft -or $r.tag_name -notmatch '^v\d+\.\d+\.\d+$') { continue }
-    if (-not $tag -or [version]$r.tag_name.TrimStart('v') -gt [version]$tag.TrimStart('v')) { $tag = $r.tag_name }
+    if ($r.draft -or "$($r.tag_name)" -notmatch '^v\d+\.\d+\.\d+$') { continue }
+    if (-not $best -or [version]$r.tag_name.TrimStart('v') -gt [version]$best.tag_name.TrimStart('v')) { $best = $r }
   }
-  if (-not $tag) { throw 'Keine Beta-Version gefunden. / No beta release found.' }
-  Write-Warning "BETA: $tag ist eine Vorabversion. / $tag is a pre-release."
-  $feedUrl = "https://github.com/$Repo/releases/download/$tag/latest.json"
-} else { $feedUrl = "https://github.com/$Repo/releases/latest/download/latest.json" }
+  if ($best -and $best.prerelease) {
+    $tag = $best.tag_name
+    Write-Warning "BETA: $tag ist eine Vorabversion. / $tag is a pre-release."
+    $feedUrl = "https://github.com/$Repo/releases/download/$tag/latest.json"
+  } else { Write-Host 'Beta: keine neuere Vorabversion - die stabile Version wird installiert. / No newer pre-release - installing the stable version.' }
+}
 # als Datei laden: GitHub liefert Assets als application/octet-stream (PowerShell 5.1 gäbe sonst Bytes zurück)
 $feedFile = [IO.Path]::GetTempFileName()
 Invoke-WebRequest $feedUrl -Headers $H -OutFile $feedFile -UseBasicParsing
