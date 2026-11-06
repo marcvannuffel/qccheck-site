@@ -12,19 +12,9 @@ Swiss QC Guru checks your finished master against the delivery spec before it le
 
 The trial installs with one line on Windows 10/11 or macOS 12+, needs no account and no key, and checks the whole file – you see half of the findings, the most serious one always.
 
-Folge_07_Sendemaster.mxf ARD/ZDF/ORF · TPR 2025
+![The player with all findings of a file: the open finding with its timecode range on the right, every finding listed by time below it, and the timeline with markers per lane for picture, audio and timecode, loudness and waveform](https://swissqcguru.com/img/app-player.jpg)
 
-Loudness, programme EBU R 128 −23.2 LUFS −23 ±0.5 PASS
-
-True peak EBU R 128 −1.8 dBTP ≤ −1.0 PASS
-
-Luma, maximum EBU R 103 · 10:00:12:03 104.6 % ≤ 103 % FAIL
-
-Freeze frame 10:21:40:11 2.0 s ≥ 2 s WARN
-
-Start timecode TPR 4.3.1.3 01:00:00:00 10:00:00:00 WARN
-
-1 error · 2 warnings analysis 9.4 s
+Every finding on the timeline, one lane per area – a click jumps to the exact frame. Picture content blurred for legal reasons.
 
 What it checks
 

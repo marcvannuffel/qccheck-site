@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://swissqcguru.com/img/app-player.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%231b1c1f'/%3E%3Cg fill='none' stroke='%23c9ccd2' stroke-width='3'%3E%3Cpath d='M7 14V7h7M26 7h7v7M33 26v7h-7M14 33H7v-7'/%3E%3C/g%3E%3Cpath d='M12.5 20 18 25.5 27.5 15' fill='none' stroke='%234cd964' stroke-width='4'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/IBMPlexSans-Var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="guru.css?v=4">
+<link rel="stylesheet" href="guru.css?v=5">
 </head>
 <body>
 
@@ -55,8 +55,8 @@
 <main id="top">
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
+  <div class="wrap hero-grid hero-player">
+    <div class="hero-text">
       <p class="eyebrow">ARD · ZDF · ORF · SRF · EBU R 103 · R 128</p>
       <h1><span lang="en">Pass the broadcaster's QC the first time.</span><span lang="de">Durch die Sender-QC beim ersten Mal.</span></h1>
       <p class="lead">
@@ -69,15 +69,10 @@
       </div>
       <p class="trial-note"><span lang="en">The trial installs with one line on Windows 10/11 or macOS 12+, needs no account and no key, and checks the whole file – you see half of the findings, the most serious one always.</span><span lang="de">Die Demo installiert sich mit einer Zeile unter Windows 10/11 oder macOS 12+, braucht kein Konto und keinen Schlüssel und prüft die ganze Datei – Sie sehen die Hälfte der Befunde, den schwersten immer.</span></p>
     </div>
-    <div class="readout" role="img" aria-label="Example of a check result: loudness and true peak pass, luma fails, freeze frame and start timecode are warnings">
-      <div class="readout-head"><span class="file">Folge_07_Sendemaster.mxf</span><span>ARD/ZDF/ORF · TPR 2025</span></div>
-      <div class="rrow"><span class="k"><span lang="en">Loudness, programme</span><span lang="de">Lautheit, Programm</span><small>EBU R 128</small></span><span class="v">−23.2 LUFS<span class="lim">−23 ±0.5</span></span><span class="tag pass">PASS</span></div>
-      <div class="rrow"><span class="k">True peak<small>EBU R 128</small></span><span class="v">−1.8 dBTP<span class="lim">≤ −1.0</span></span><span class="tag pass">PASS</span></div>
-      <div class="rrow"><span class="k"><span lang="en">Luma, maximum</span><span lang="de">Luma, Maximum</span><small>EBU R 103 · 10:00:12:03</small></span><span class="v">104.6 %<span class="lim">≤ 103 %</span></span><span class="tag fail">FAIL</span></div>
-      <div class="rrow"><span class="k"><span lang="en">Freeze frame</span><span lang="de">Standbild</span><small>10:21:40:11</small></span><span class="v">2.0 s<span class="lim">≥ 2 s</span></span><span class="tag warn">WARN</span></div>
-      <div class="rrow"><span class="k"><span lang="en">Start timecode</span><span lang="de">Start-Timecode</span><small>TPR 4.3.1.3</small></span><span class="v">01:00:00:00<span class="lim">10:00:00:00</span></span><span class="tag warn">WARN</span></div>
-      <div class="readout-foot"><span>1 error · 2 warnings</span><span>analysis 9.4 s</span></div>
-    </div>
+    <figure class="hero-shot">
+      <img class="shot" src="img/app-player.jpg" width="1600" height="1012" fetchpriority="high" alt="The player with all findings of a file: the open finding with its timecode range on the right, every finding listed by time below it, and the timeline with markers per lane for picture, audio and timecode, loudness and waveform">
+      <figcaption class="shot-cap"><span lang="en">Every finding on the timeline, one lane per area – a click jumps to the exact frame. Picture content blurred for legal reasons.</span><span lang="de">Jeder Befund auf der Zeitleiste, eine Spur je Bereich – ein Klick springt aufs genaue Bild. Bildinhalt aus rechtlichen Gründen unkenntlich gemacht.</span></figcaption>
+    </figure>
   </div>
 </section>
 

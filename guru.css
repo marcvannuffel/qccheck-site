@@ -191,3 +191,9 @@ figure { margin: 0; }
   .table-wrap td:nth-child(2) { margin-bottom: 8px; color: var(--muted); font-size: 14px; }
   .table-wrap td.mono { white-space: normal; color: var(--text); font-size: 13px; line-height: 1.6; }
 }
+
+/* Startseite: Text links, rechts der Player mit allen Befunden auf der Zeitleiste (Marc, 6. Nov.); auf dem Handy darunter */
+.hero-text { max-width: 52em; }
+.hero-player { grid-template-columns: minmax(0, .9fr) minmax(0, 1.25fr); align-items: start; }
+.hero-player .hero-shot { margin-top: 6px; }
+@media (max-width: 860px) { .hero-player { grid-template-columns: minmax(0, 1fr); } .hero-player .hero-shot { margin-top: 0; } }
