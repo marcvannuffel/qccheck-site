@@ -14,7 +14,7 @@ The trial installs with one line on Windows 10/11 or macOS 12+, needs no account
 
 ![The player with all findings of a file: the open finding with its timecode range on the right, every finding listed by time below it, and the timeline with markers per lane for picture, audio and timecode, loudness and waveform](https://swissqcguru.com/img/app-player.jpg)
 
-Every finding on the timeline, one lane per area – a click jumps to the exact frame. Picture content blurred for legal reasons.
+Every checked file opens in the player: all findings on the timeline, one lane per area – a click jumps to the exact frame. Picture content blurred for legal reasons.
 
 What it checks
 
@@ -62,7 +62,7 @@ Player and timeline
 
 ## See the frame, not just the error code
 
-Click a marker and the player jumps to the exact frame. Overlays show what the check saw.
+Every checked file opens in the built-in player – the whole master with picture and programme sound, frame by frame, without opening the edit. MXF and ProRes play too: the app makes a playback copy in the background. Click a marker and the player jumps to the exact frame; overlays and scopes show what the check saw, on the full-resolution frame.
 
 - ** Scopes** Waveform, vectorscope, RGB parade on the exact frame
 - ** Overlays** Safe areas, zebra and false colour at the template's limits, pixel defects, fields
