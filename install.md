@@ -71,7 +71,7 @@ System
 - Windows 10 or 11 (64-bit), or macOS 12 or later on Apple Silicon or Intel
 - About 500 MB disk space; more cores check faster (UHD ProRes: roughly half real time on 20 cores)
 - Internet for installing, updates and – only if you agree – an anonymous usage count; files are checked locally and never uploaded
-- Nothing else: Swiss QC Guru brings its own ffmpeg (LGPL, source offer in the package)
+- Nothing else: Swiss QC Guru brings its own ffmpeg (GPL, source offer in the package)
 
 Swiss QC Guru is a technical pre-check. It does not replace the broadcaster's acceptance, and the flash check is not a Harding test.
 

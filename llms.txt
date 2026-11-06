@@ -6,7 +6,7 @@
 
 - Product: Swiss QC Guru – file-based technical QC before delivery to a broadcaster; app with player and report, plus a command line `qccheck`
 - Maker: NuNu Soft, Zürich, Switzerland – support@vannuffel.ch
-- Requires: Windows 10 / 11 (64-bit) or macOS 12 or later on Apple Silicon or Intel; about 500 MB disk; brings its own ffmpeg (LGPL)
+- Requires: Windows 10 / 11 (64-bit) or macOS 12 or later on Apple Silicon or Intel; about 500 MB disk; brings its own ffmpeg (GPL, with x264; source offer in the package)
 - Install: one line in PowerShell or Terminal, no administrator rights; packages are Ed25519-signed and checked before they are unpacked; updates install themselves
 - Broadcaster templates built in: ARD / ZDF / ORF (TPR 2025, XDCAM HD422 MXF), ZDF (AVC-Intra 100 MXF), ZDF ProRes 422 HQ, ORF, SRF, EBU generic (R 103 / R 128, HD and UHD); own templates by duplicating one and changing thresholds and severities
 - Add-on Online & Podcast (needs the app licence): templates for YouTube, Spotify video, Apple Podcasts (−16 LKFS ±1, true peak −1 dBFS) and Instagram / TikTok (portrait 1080×1920); checks faststart, edit lists, variable frame rate, start offset, keyframe interval, portrait vs landscape; repair keeps AAC and rewraps with faststart
@@ -17,7 +17,7 @@
 - Thresholds carry their source in the spec; where a spec does not state a value it is marked "unconfirmed"
 - Verdicts: Passed, Passed with warnings, Failed, Incomplete
 - Player: frame-accurate timeline with markers per lane, waveform, vectorscope, RGB parade, safe areas, zebra and false colour at the template's limits, single fields, J K L shuttle up to 8×; accept an intentional finding with a note
-- Output: HTML and PDF report, delivery package (report, PDF, checksums, summary, client view MP4 with Rec.709 → desktop look), markers for DaVinci Resolve, Premiere Pro and Final Cut Pro or CSV, repair as a new file (loudness, start timecode, levels, rewrap, XDCAM HD422), watch folder
+- Output: HTML and PDF report, delivery package (report, PDF, checksums, summary, client view MP4 with Rec.709 → desktop look), markers for DaVinci Resolve, Premiere Pro and Final Cut Pro or CSV, repair as a new file (loudness, start timecode, levels, rewrap, or a re-encode to AVC-Intra 100, XAVC, XDCAM HD422 or H.264, 50p to real 50i), template editor, rules that pick the template by file name, folder or format, watch folders
 - Price: USD 199 once, licence for one computer at a time (movable), all 1.x updates; sold through Polar (merchant of record)
 - Free trial: no key; all checks on the whole file, half of the findings shown (the most serious one always), the others listed as locked with their severity only; delivery package, PDF, markers, repair and watch folder need the licence
 - Privacy: all checks run locally; files are never uploaded; the internet is used for updates, to confirm the licence (works up to 30 days offline) and, only with consent, an anonymous once-a-day usage count

@@ -83,7 +83,9 @@ Click a marker and the player jumps to the exact frame. Overlays show what the c
 
 Safe areas, zebra at the template's limits and the waveform on the exact frame; findings on the right, markers per lane below. Picture content blurred for legal reasons.
 
-![Findings in the QC report: each with severity, check, timecode range, the measured value and the quote from the delivery spec](https://swissqcguru.com/img/app-findings.jpg)
+![Findings in the QC report, each with severity, timecode range, check, frame number, the measured value and the frame it happened on; one flash accepted with the director's note](https://swissqcguru.com/img/app-findings.jpg)
+
+Each finding with the frame it happened on; an accepted one keeps its note. Picture content blurred for legal reasons.
 
 Findings and report
 
@@ -196,6 +198,28 @@ Report and delivery
 - ** Package** Report, PDF, checksums and a summary in one folder, ready to send – a failing file says so on every page
 - ** Client view** An MP4 for approval that looks on a desktop screen like it will on air (Rec.709 → desktop, gamma 2.4 → 2.2); more looks as add-ons
 - ** Accepted** Intentional findings stay in the report with your note – the broadcaster sees why
+
+Your workflow
+
+## Your templates, your rules, your folders
+
+The built-in specs are the start. Adapt them to a client, let the app pick the right one, and let files check themselves when they land.
+
+![Template editor: a copy of a broadcaster template with formats, loudness, levels and spot lengths, each value with its source](https://swissqcguru.com/img/app-editor.jpg)
+
+** Template editor** – copy a built-in spec and change formats, loudness, limits or spot lengths; every value keeps its source.
+
+![Rules that pick the template by file name, folder or format, with a test against a real file](https://swissqcguru.com/img/app-rules.jpg)
+
+** Rules** – the template is chosen by file name, folder or format; test a rule against a real file before you rely on it.
+
+![Watch folder: a spot that arrived in the folder was checked automatically](https://swissqcguru.com/img/app-watch.jpg)
+
+** Watch folders** – every file that lands in a folder is checked by rule, and the delivery package is written if you want.
+
+![Delivery package dialog: client, project, editor and broadcaster, with report, PDF, checksums, markers and the client view](https://swissqcguru.com/img/app-package.jpg)
+
+** Delivery package** – report, PDF, checksums, markers and the client view in one folder; a re-encode for another broadcaster comes from the repair plan.
 
 Batch
 
