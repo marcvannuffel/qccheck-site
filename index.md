@@ -1,6 +1,6 @@
-# Swiss QC Guru – QC before delivery to ARD, ZDF, ORF and SRF
+# Swiss QC Guru – broadcast QC before delivery to the broadcaster
 
-> Swiss QC Guru checks your transmission master against the delivery specs of ARD, ZDF, ORF and SRF (EBU R 103, R 128) before you deliver: every finding with timecode, frame and the line of the spec. Windows and Mac, $199 once.
+> Swiss QC Guru checks your transmission master or commercial against the broadcaster's delivery spec before you deliver – ARD, ZDF, ORF, SRF built in; packs for the UK (AS-11 DPP), France, the Nordics, private broadcasters in Germany, Austria and Switzerland, and the United States. Every finding with timecode, frame and the line of the spec. Windows and Mac, $199 once.
 
 ARD · ZDF · ORF · SRF · EBU R 103 · R 128
 
@@ -119,7 +119,7 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | Online & Podcast add-on | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok – faststart, variable frame rate, portrait, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
 | United States add-on | ATSC A/85 base, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark, Hulu – with checks for closed captions (608/708, SCC), drop-frame timecode, black between acts and AFD; commercials for ABC, FOX, FX, NBCUniversal and Extreme Reach | XDCAM · ProRes · DNxHD · MXF/MOV | −24 LKFS ±2 · ≤ −2 dBTP |
 
-Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference.
+Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference. [All broadcasters, checks and repairs →](https://swissqcguru.com/broadcasters.html)
 
 ![Add-ons in the app: base templates included, country packs for the United Kingdom, France, Nordics, Germany, Austria and Switzerland, the United States and the online and podcast pack, each with its broadcasters](https://swissqcguru.com/img/app-addons.jpg)
 
@@ -170,7 +170,7 @@ Hover over a file to scrub through its thumbnails; a click opens the player at t
 
 ### Reference and export
 
-All 23 checks with their limits and spec sources in one reference. Export all templates and settings for a new computer or your team.
+All 35 checks with their limits and spec sources in one reference. Export all templates and settings for a new computer or your team.
 
 ### Watch folder
 
@@ -297,4 +297,4 @@ Multicam video podcast from one 360° camera: finds who is speaking and directs 
 
 [podcastmagic360.com](https://podcastmagic360.com/)
 
-Swiss QC Guru by NuNu Soft · [Install](https://swissqcguru.com/install.html) · [PodcastMagic 360](https://podcastmagic360.com/) ARD, ZDF, ORF, SRF and all other broadcaster and platform names are trademarks of their owners. Swiss QC Guru is not affiliated with any broadcaster; the templates follow their published delivery specs.
+Swiss QC Guru by NuNu Soft · [Broadcasters, checks, repairs](https://swissqcguru.com/broadcasters.html) · [Install](https://swissqcguru.com/install.html) · [PodcastMagic 360](https://podcastmagic360.com/) ARD, ZDF, ORF, SRF and all other broadcaster and platform names are trademarks of their owners. Swiss QC Guru is not affiliated with any broadcaster; the templates follow their published delivery specs.

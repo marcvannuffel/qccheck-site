@@ -75,4 +75,4 @@ System
 
 Swiss QC Guru is a technical pre-check. It does not replace the broadcaster's acceptance, and the flash check is not a Harding test.
 
-Swiss QC Guru by NuNu Soft · [Product](https://swissqcguru.com/index.html) · [PodcastMagic 360](https://podcastmagic360.com/) ARD, ZDF, ORF and SRF are trademarks of their owners. Swiss QC Guru is not affiliated with any broadcaster; the templates follow their published delivery specs.
+Swiss QC Guru by NuNu Soft · [Product](https://swissqcguru.com/index.html) · [Broadcasters, checks, repairs](https://swissqcguru.com/broadcasters.html) · [PodcastMagic 360](https://podcastmagic360.com/) ARD, ZDF, ORF and SRF are trademarks of their owners. Swiss QC Guru is not affiliated with any broadcaster; the templates follow their published delivery specs.
