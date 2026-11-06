@@ -2,7 +2,7 @@
 
 > Swiss QC Guru checks your transmission master or commercial against the broadcaster's delivery spec before you deliver – ARD, ZDF, ORF, SRF built in; packs for the UK (AS-11 DPP), France, the Nordics, private broadcasters in Germany, Austria and Switzerland, and the United States. Every finding with timecode, frame and the line of the spec. Windows and Mac, $199 once.
 
-ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS · [all broadcasters →](https://swissqcguru.com/broadcasters.html)
+ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS
 
 # Pass the broadcaster's QC the first time.
 
@@ -12,7 +12,7 @@ Swiss QC Guru checks your finished master against the delivery spec before it le
 
 The trial installs with one line on Windows 10/11 or macOS 12+, needs no account and no key, and checks the whole file – you see half of the findings, the most serious one always.
 
-![The player with all findings of a file: the open finding with its timecode range on the right, every finding listed by time below it, and the timeline with markers per lane for picture, audio and timecode, loudness and waveform](https://swissqcguru.com/img/app-player.jpg)
+![The player with all findings of a file: the open finding with its timecode range on the right, every finding listed by time below it, and the timeline with markers per lane for picture, audio and timecode, loudness and waveform](https://swissqcguru.com/img/app-player.jpg?v=2)
 
 Every checked file opens in the player: all findings on the timeline, one lane per area – a click jumps to the exact frame. Picture content blurred for legal reasons.
 
@@ -69,11 +69,11 @@ Every checked file opens in the built-in player – the whole master with pictur
 - **J K L** Shuttle as in Resolve, frame by frame, finding to finding
 - ** Accept** Accept an intentional finding with a note – it is listed in the report
 
-![Player with safe areas, zebra and waveform scope over the picture, the freeze-frame finding on the right and the timeline below with single markers for the black frame, the freeze, gamut and luma](https://swissqcguru.com/img/app-scopes.jpg)
+![Player with safe areas, zebra and waveform scope over the picture, the freeze-frame finding on the right and the timeline below with single markers for the black frame, the freeze, gamut and luma](https://swissqcguru.com/img/app-scopes.jpg?v=2)
 
 Safe areas, zebra at the template's limits and the waveform on the exact frame; findings on the right, markers per lane below. Picture content blurred for legal reasons.
 
-![Findings in the QC report, each with severity, timecode range, check, frame numbers, the measured value and the frame it happened on](https://swissqcguru.com/img/app-findings.jpg)
+![Findings in the QC report, each with severity, timecode range, check, frame numbers, the measured value and the frame it happened on](https://swissqcguru.com/img/app-findings.jpg?v=2)
 
 Each finding with its timecode range, the measured value and the frame it happened on. Picture content blurred for legal reasons.
 
@@ -113,7 +113,7 @@ Your own templates: duplicate a broadcaster, change thresholds and severities, e
 
 [** All broadcasters, checks and repairs** Every template by country pack, the 35 checks and what the repair plan fixes](https://swissqcguru.com/broadcasters.html)
 
-![Add-ons in the app: base templates included, country packs for the United Kingdom, France, Nordics, Germany, Austria and Switzerland, the United States and the online and podcast pack, each with its broadcasters](https://swissqcguru.com/img/app-addons.jpg)
+![Add-ons in the app: base templates included, country packs for the United Kingdom, France, Nordics, Germany, Austria and Switzerland, the United States and the online and podcast pack, each with its broadcasters](https://swissqcguru.com/img/app-addons.jpg?v=2)
 
 Add-ons in the app: what every licence includes and the country packs with their broadcasters and commercials – unlocked with a key, delivered with the updates.
 
@@ -126,7 +126,7 @@ Repair
 - ** Sound and timecode** Loudness to the target, mono tracks as required, start timecode, MXF rewrap
 - ** Checked again** A new file, checked again right away – the original stays untouched
 
-![Repair plan: audio, timecode and loudness are fixed; options to re-encode to XDCAM HD422 or AVC-Intra 100; what cannot be fixed, with the reason](https://swissqcguru.com/img/app-repair.jpg)
+![Repair plan: audio, timecode and loudness are fixed; options to re-encode to XDCAM HD422 or AVC-Intra 100; what cannot be fixed, with the reason](https://swissqcguru.com/img/app-repair.jpg?v=2)
 
 Features
 
@@ -180,7 +180,7 @@ XDCAM HD422, AVC-Intra, ProRes, DNxHD/HR, JPEG 2000, H.264/HEVC, uncompressed �
 
 Your files never leave the computer. Updates are signed and checked before they install.
 
-![QC report inside the app: verdict, counts, loudness and true peak, the timeline of findings](https://swissqcguru.com/img/app-report.jpg)
+![QC report inside the app: verdict, counts, loudness and true peak, the timeline of findings](https://swissqcguru.com/img/app-report.jpg?v=2)
 
 Report and delivery
 
@@ -197,19 +197,19 @@ Your workflow
 
 The built-in specs are the start. Adapt them to a client, let the app pick the right one, and let files check themselves when they land.
 
-![Template editor: a copy of a broadcaster template with formats, loudness, levels and spot lengths, each value with its source](https://swissqcguru.com/img/app-editor.jpg)
+![Template editor: a copy of a broadcaster template with formats, loudness, levels and spot lengths, each value with its source](https://swissqcguru.com/img/app-editor.jpg?v=2)
 
 ** Template editor** – copy a built-in spec and change formats, loudness, limits or spot lengths; every value keeps its source.
 
-![Rules that pick the template by file name, folder or format, with a test against a real file](https://swissqcguru.com/img/app-rules.jpg)
+![Rules that pick the template by file name, folder or format, with a test against a real file](https://swissqcguru.com/img/app-rules.jpg?v=2)
 
 ** Rules** – the template is chosen by file name, folder or format; test a rule against a real file before you rely on it.
 
-![Watch folder: a spot that arrived in the folder was checked automatically](https://swissqcguru.com/img/app-watch.jpg)
+![Watch folder: a spot that arrived in the folder was checked automatically](https://swissqcguru.com/img/app-watch.jpg?v=2)
 
 ** Watch folders** – every file that lands in a folder is checked by rule, and the delivery package is written if you want.
 
-![Delivery package dialog: client, project, editor and broadcaster, with report, PDF, checksums, markers and the client view](https://swissqcguru.com/img/app-package.jpg)
+![Delivery package dialog: client, project, editor and broadcaster, with report, PDF, checksums, markers and the client view](https://swissqcguru.com/img/app-package.jpg?v=2)
 
 ** Delivery package** – report, PDF, checksums, markers and the client view in one folder; a re-encode for another broadcaster comes from the repair plan.
 
@@ -219,7 +219,7 @@ Batch
 
 Drop files or folders, choose a template per batch or per file, see the verdict and the key findings at a glance. Ten minutes of XDCAM take about 76 seconds on a 20-core PC.
 
-![Batch with six files: one passed, five failed, with the key findings, repair and delivery per file](https://swissqcguru.com/img/app-batch.jpg)
+![Batch with six files: one passed, five failed, with the key findings, repair and delivery per file](https://swissqcguru.com/img/app-batch.jpg?v=2)
 
 Picture content blurred for legal reasons.
 
