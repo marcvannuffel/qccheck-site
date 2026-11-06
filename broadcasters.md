@@ -1,6 +1,6 @@
 # Broadcasters, checks and repairs – Swiss QC Guru
 
-> Every broadcaster template in Swiss QC Guru (59 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 35 checks and what the repair plan can fix.
+> Every broadcaster template in Swiss QC Guru (73 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 35 checks and what the repair plan can fix.
 
 Coverage
 
@@ -12,7 +12,7 @@ Broadcasters and platforms
 
 ## The delivery specs, by country
 
-The base templates come with every licence; country packs are add-ons to the licence. Every pack also covers commercials: frame-accurate spot length, black frames at start and end, short-form loudness.
+The base templates come with every licence; country packs are add-ons to the licence. Every pack also covers commercials: frame-accurate spot length, black frames at start and end, short-form loudness. Every template is checked regularly against its published source and updated with the app updates – a missing broadcaster or platform? [Send us its delivery spec](mailto:support@vannuffel.ch?subject=Delivery%20spec).
 
 ### Base templates Included
 
@@ -107,6 +107,35 @@ The public delivery specs of US networks and platforms: ATSC A/85 (−24 LKFS ±
 - FX (commercials)
 - NBCUniversal (commercials)
 - Extreme Reach North America (commercials)
+
+### Amazon MGM Studios Add-on
+
+The production masters for Amazon MGM Studios per the Asset Technical Specifications – HD and UHD in SDR, UHD in HDR (PQ, Rec.2020): ProRes 4444 XQ or 422 HQ in MOV, progressive, start TC 00:00:00:00, no bars, no slate, no tone, 24-bit PCM with 8 channels (5.1 + Lo/Ro) or 2 (Lo/Ro), −27 LKFS ±2 LU, true peak −2 dBTP. Swiss QC Guru measures loudness as programme loudness of the Lo/Ro mix, not dialogue-gated as Amazon does. Amazon changes the spec every few weeks; the pack is kept current. Not covered, as Amazon does not put them through QC: screeners, locked cuts, split track masters, DCPs, textless element reels, dailies – nor the Dolby Vision master (JPEG 2000 in MXF).
+
+- HD SDR production master
+- UHD SDR production master
+- UHD HDR production master (PQ, Rec.2020)
+
+### Netflix Add-on
+
+The Netflix deliveries that can be checked as a file: ProRes masters HD and UHD for licensed content (Non-Branded Delivery Specifications, iTunes ProRes 422 HQ / 4444 / 4444 XQ in MOV) and for creator/podcast titles, plus their MP4 route (H.264/HEVC with minimum bitrate, IDR ≤ 10 s, AAC, faststart) – progressive, Rec.709, −27 LKFS ±2 LU, true peak −2 dBTP. Swiss QC Guru measures loudness as programme loudness, not dialogue-gated as Netflix does. Plus Netflix Ads: pre-roll 10/15/20/30 s and mid-roll up to 75 s, ProRes or H.264, 16:9, SDR only, stereo, −24 LKFS ±2, true peak −2 dBTP. Not covered: Netflix originals delivered as IMF (JPEG 2000 in MXF, CPL/PKL, Dolby Vision metadata, Atmos/IAB) – these cannot be checked as a single file. The pack is kept current when Netflix changes its specs.
+
+- ProRes master HD (licensed, creator/podcast)
+- ProRes master UHD (licensed, creator/podcast)
+- Creator/podcast MP4 (H.264/HEVC)
+- Netflix Ads pre-roll (commercials)
+- Netflix Ads mid-roll (commercials)
+
+### Apple TV Add-on
+
+The film and TV masters for the Apple TV store (buy, rent, channels) per the Apple Video and Audio Asset Guide: ProRes 422 HQ, 4444 or 4444 XQ in MOV, HD (1080 and 720, also 1080i from video sources) and 4K (UHD 3840×2160 and DCI 4096×2160, progressive), tagged BT.709, at least one black frame at start and end, for TV episodes commercial black of at most 5 s, 16- or 24-bit LPCM from 48 kHz with stereo and 5.1/7.1. Plus the HDR source file: ProRes 4444 12-bit, PQ, BT.2020 or P3 D65. Apple states loudness only in a channel table (−24 LKFS, peaks −6 dB) – Swiss QC Guru therefore reports it as a warning only. Not checkable: Dolby Vision and HDR10 metadata (CM sidecar, ST 2086, MaxCLL/MaxFALL), channel labels, crop values and the metadata package, matching the HDR file against the SDR main file. Not included: Apple TV+ originals (no public spec) and commercials (Apple TV has no ads). The pack is kept current when Apple changes the guide.
+
+- Film HD
+- TV/episodic HD
+- Film 4K (UHD and DCI)
+- TV/episodic 4K (UHD and DCI)
+- Film HDR source file (PQ, BT.2020)
+- Film HDR source file (PQ, P3 D65)
 
 35 checks
 

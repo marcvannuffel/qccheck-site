@@ -1,8 +1,8 @@
 # Swiss QC Guru – broadcast QC before delivery to the broadcaster
 
-> Swiss QC Guru checks your transmission master or commercial against the broadcaster's delivery spec before you deliver – ARD, ZDF, ORF, SRF built in; packs for the UK (AS-11 DPP), France, the Nordics, private broadcasters in Germany, Austria and Switzerland, and the United States. Every finding with timecode, frame and the line of the spec. Windows and Mac, $199 once.
+> Swiss QC Guru checks your transmission master or commercial against the broadcaster's delivery spec before you deliver – ARD, ZDF, ORF, SRF built in; packs for the UK (AS-11 DPP), France, the Nordics, private broadcasters in Germany, Austria and Switzerland, and the United States, plus Amazon, Netflix and Apple TV. Every finding with timecode, frame and the line of the spec. Windows and Mac, $199 once.
 
-ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS
+ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS · Amazon · Netflix · Apple TV
 
 # Pass the broadcaster's QC the first time.
 
@@ -108,8 +108,13 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | Germany, Austria & Switzerland private add-on | ProSiebenSat.1 / Seven.One, PULS 4 / ATV, RTL Deutschland, ServusTV; commercials for Seven.One Media, RTL AdAlliance, Sky Deutschland, CH Media (national and regional) and the Swiss ad windows via Goldbach | XDCAM HD422 · MXF | −23 LUFS · ≤ −1/−2 dBTP |
 | Online & Podcast add-on | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok – faststart, variable frame rate, portrait, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
 | United States add-on | ATSC A/85 base, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark, Hulu – with checks for closed captions (608/708, SCC), drop-frame timecode, black between acts and AFD; commercials for ABC, FOX, FX, NBCUniversal and Extreme Reach | XDCAM · ProRes · DNxHD · MXF/MOV | −24 LKFS ±2 · ≤ −2 dBTP |
+| Amazon MGM Studios add-on | Production masters per the Asset Technical Specifications – HD and UHD in SDR, UHD in HDR (PQ); the only Amazon deliverable that goes through QC | ProRes 4444 XQ / 422 HQ · MOV | −27 LKFS ±2 · ≤ −2 dBTP |
+| Netflix add-on | ProRes masters HD and UHD for licensed and creator/podcast titles, the MP4 route, and Netflix Ads pre-roll and mid-roll; originals as IMF are not checkable as a file | ProRes · H.264/HEVC · MOV/MP4 | −27 LKFS ±2 · ads −24 |
+| Apple TV add-on | Film and TV masters for the Apple TV store per the Video and Audio Asset Guide – HD, 4K (UHD and DCI) and the HDR source file, black frame at start and end | ProRes 422 HQ / 4444 · MOV | −24 LKFS (Apple table) |
 
 Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference.
+
+Every template is checked regularly against its published source and updated with the app updates. Your broadcaster or platform is missing? [Send us its delivery spec](mailto:support@vannuffel.ch?subject=Delivery%20spec) – we build the template.
 
 [** All broadcasters, checks and repairs** Every template by country pack, the 35 checks and what the repair plan fixes](https://swissqcguru.com/broadcasters.html)
 
