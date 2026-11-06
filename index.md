@@ -112,7 +112,7 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | United Kingdom add-on | AS-11 UK DPP – BBC, ITV, Channel 4, Channel 5, Sky (HD and UHD), STV, TG4; line-up before 10:00:00:00 excluded from loudness | AVC-Intra 100 · MXF | −23 LUFS ±0.5 · ≤ −1 dBTP |
 | France add-on | PAD per CST-RT-040 – France Télévisions, TF1, CANAL+, ARTE (France and Germany) | XDCAM HD422 · XAVC · MXF | −23 LUFS · ≤ −3 dBTP |
 | Nordics add-on | SVT, NRK, DR, Yle, TV 2 Danmark, TV 2 Norway | XDCAM · XAVC · AVC-Intra · ProRes | −23 LUFS · ≤ −1 dBTP |
-| Germany & Austria private add-on | ProSiebenSat.1 / Seven.One, PULS 4 / ATV, RTL Deutschland, ServusTV, Sky Deutschland (commercials) | XDCAM HD422 · MXF | −23 LUFS · ≤ −1/−2 dBTP |
+| Germany, Austria & Switzerland private add-on | ProSiebenSat.1 / Seven.One, PULS 4 / ATV, RTL Deutschland, ServusTV; commercials for Sky Deutschland, CH Media (national and regional) and the Swiss ad windows via Goldbach | XDCAM HD422 · MXF | −23 LUFS · ≤ −1/−2 dBTP |
 | Online & Podcast add-on | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok – faststart, variable frame rate, portrait, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
 | Coming next | USA (ATSC A/85, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark – with caption and drop-frame checks) | – | – |
 
