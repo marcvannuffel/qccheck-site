@@ -197,3 +197,5 @@ figure { margin: 0; }
 .hero-player { grid-template-columns: minmax(0, .9fr) minmax(0, 1.25fr); align-items: start; }
 .hero-player .hero-shot { margin-top: 6px; }
 @media (max-width: 860px) { .hero-player { grid-template-columns: minmax(0, 1fr); } .hero-player .hero-shot { margin-top: 0; } }
+.hero-senders { line-height: 1.8; }
+.hero-senders a { color: var(--text); white-space: nowrap; }

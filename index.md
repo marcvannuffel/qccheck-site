@@ -2,7 +2,7 @@
 
 > Swiss QC Guru checks your transmission master or commercial against the broadcaster's delivery spec before you deliver – ARD, ZDF, ORF, SRF built in; packs for the UK (AS-11 DPP), France, the Nordics, private broadcasters in Germany, Austria and Switzerland, and the United States. Every finding with timecode, frame and the line of the spec. Windows and Mac, $199 once.
 
-ARD · ZDF · ORF · SRF · EBU R 103 · R 128
+ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS · [all broadcasters →](https://swissqcguru.com/broadcasters.html)
 
 # Pass the broadcaster's QC the first time.
 
@@ -69,13 +69,13 @@ Click a marker and the player jumps to the exact frame. Overlays show what the c
 - **J K L** Shuttle as in Resolve, frame by frame, finding to finding
 - ** Accept** Accept an intentional finding with a note – it is listed in the report
 
-![Player with safe areas, zebra and waveform scope over the picture, a photosensitive-flash finding on the right and the timeline with markers per lane below](https://swissqcguru.com/img/app-scopes.jpg)
+![Player with safe areas, zebra and waveform scope over the picture, the freeze-frame finding on the right and the timeline below with single markers for the black frame, the freeze, gamut and luma](https://swissqcguru.com/img/app-scopes.jpg)
 
 Safe areas, zebra at the template's limits and the waveform on the exact frame; findings on the right, markers per lane below. Picture content blurred for legal reasons.
 
-![Findings in the QC report, each with severity, timecode range, check, frame number, the measured value and the frame it happened on; one flash accepted with the director's note](https://swissqcguru.com/img/app-findings.jpg)
+![Findings in the QC report, each with severity, timecode range, check, frame numbers, the measured value and the frame it happened on](https://swissqcguru.com/img/app-findings.jpg)
 
-Each finding with the frame it happened on; an accepted one keeps its note. Picture content blurred for legal reasons.
+Each finding with its timecode range, the measured value and the frame it happened on. Picture content blurred for legal reasons.
 
 Findings and report
 
