@@ -109,6 +109,7 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | ORF | ORF technical spec 05.005a | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | SRF | SRF technical guidelines 2026 | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | EBU generic | EBU R 103 / R 128 – for pre-checks without a broadcaster | HD · UHD | −23 LUFS · ≤ −1 dBTP |
+| Commercials included | ARD Media, ZDF Werbefernsehen, ORF-Enterprise, admeira (SRG) – frame-accurate spot length, black frames at start and end, short-form loudness | XDCAM · AVC-Intra · XAVC · MXF | −23 LUFS · ST ≤ −18 |
 | United Kingdom add-on | AS-11 UK DPP – BBC, ITV, Channel 4, Channel 5, Sky (HD and UHD), STV, TG4; line-up before 10:00:00:00 excluded from loudness; commercials per DPP012 / AS-11 X6 and ITV | AVC-Intra 100 · MXF | −23 LUFS ±0.5 · ≤ −1 dBTP |
 | France add-on | PAD per CST-RT-040 – France Télévisions, TF1, CANAL+, ARTE (France and Germany); commercials for TF1 Pub, France TV Publicité and via Extreme Reach | XDCAM HD422 · XAVC · MXF | −23 LUFS · ≤ −3 dBTP |
 | Nordics add-on | SVT, NRK, DR, Yle, TV 2 Danmark, TV 2 Norway; commercials for TV 2 Danmark, MTV Finland and TV4 / TV 2 Norway / Viaplay via Extreme Reach | XDCAM · XAVC · AVC-Intra · ProRes | −23 LUFS · ≤ −1 dBTP |
