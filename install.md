@@ -2,7 +2,7 @@
 
 > Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.
 
-Install · version 0.2.1
+Install · version 0.2.2
 
 # QC before delivery – in one window
 
@@ -52,6 +52,7 @@ Release notes
 
 ## What's new in 0.2
 
+- **0.2.2: Online & Podcast add-on** (USD 49) – templates for YouTube, Spotify video, Apple Podcasts and Instagram / TikTok with checks for faststart, edit lists, variable frame rate, portrait format and keyframes; repair keeps AAC and moves the index to the front. Loudness repair of MP4 files fixed; only your own templates can be exported.
 - **0.2.1: a better trial** – it now checks the whole file and shows half of the findings, the most serious one always; the others are listed as locked. Optional anonymous usage count (asked once, off under Settings › Privacy).
 - **Swiss QC Guru** – new name, new icon and a stricter, precise interface: every measurement in a fixed-width figure, colour only where it means something.
 - **Free trial and licence** – the trial checks the whole file and shows half of the findings – the most serious one always; the rest are listed as locked. A licence ($199 once) checks everything.

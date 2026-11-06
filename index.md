@@ -109,7 +109,8 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | ORF | ORF technical spec 05.005a | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | SRF | SRF technical guidelines 2026 | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | EBU generic | EBU R 103 / R 128 – for pre-checks without a broadcaster | HD · UHD | −23 LUFS · ≤ −1 dBTP |
-| Add-ons | In preparation: UK DPP / AS-11, German private broadcasters, ARTE and France Télévisions, SRG SSR (RTS, RSI, RTR), online and podcast platforms | – | – |
+| Online & Podcast add-on · USD 49 | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok – faststart, variable frame rate, portrait, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
+| Add-ons | In preparation: UK DPP / AS-11, German private broadcasters, ARTE and France Télévisions, SRG SSR (RTS, RSI, RTR) | – | – |
 
 Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference.
 
