@@ -10,7 +10,7 @@ Swiss QC Guru checks your finished master against the delivery spec before it le
 
 [Download the free trial](https://swissqcguru.com/install.html) $199 once · licence
 
-The trial installs with one line on Windows 10/11 or macOS 12+, needs no account and no key, and checks half of every file – real findings on your own material.
+The trial installs with one line on Windows 10/11 or macOS 12+, needs no account and no key, and checks the whole file – you see half of the findings, the most serious one always.
 
 Folge_07_Sendemaster.mxf ARD/ZDF/ORF · TPR 2025
 
@@ -188,14 +188,14 @@ Price
 
 ## Try it on your own files. Buy once.
 
-The trial checks half of every file – real findings, clearly marked as half. The licence covers every 1.x version on one computer; you can move it to another one any time.
+The trial checks the whole file and shows half of the findings, the most serious one always – the others are listed as locked. The licence covers every 1.x version on one computer; you can move it to another one any time.
 
 ### Trial
 
 $0 no key needed
 
-- Half of every file, fixed stretches
-- Player, overlays, scopes in the checked half
+- Whole file checked, half of the findings shown
+- Player, overlays and scopes on the whole file
 - Delivery package, PDF, markers, client view
 - Repair and watch folder
 
@@ -222,7 +222,7 @@ No. Swiss QC Guru is a technical pre-check: it finds what the broadcaster's QC w
 
 ### Do my files leave my computer?
 
-Never. Every check runs locally. The internet is only used for updates and to confirm the licence now and then.
+Never. Every check runs locally. The internet is used for updates, to confirm the licence now and then and – only if you agree – for an anonymous usage count once a day.
 
 ### Does it work offline?
 
@@ -238,7 +238,7 @@ No. It gives a hint on possible flashes. Where a broadcaster requires a certifie
 
 ### What does the trial do exactly?
 
-It checks a fixed half of every file with all checks and shows the findings in the player and report; the unchecked half is clearly marked. Delivery package, PDF, markers, repair and watch folder need the licence.
+It checks the whole file with all checks and shows half of the findings, the most serious one always; the others appear as locked rows with their severity only. Delivery package, PDF, markers, repair and watch folder need the licence.
 
 Also from NuNu Soft
 

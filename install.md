@@ -2,7 +2,7 @@
 
 > Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.
 
-Install · version 0.2.0
+Install · version 0.2.1
 
 # QC before delivery – in one window
 
@@ -50,10 +50,11 @@ The normal line switches back to the stable channel. To uninstall, delete the Sw
 
 Release notes
 
-## What's new in 0.2.0
+## What's new in 0.2
 
+- **0.2.1: a better trial** – it now checks the whole file and shows half of the findings, the most serious one always; the others are listed as locked. Optional anonymous usage count (asked once, off under Settings › Privacy).
 - **Swiss QC Guru** – new name, new icon and a stricter, precise interface: every measurement in a fixed-width figure, colour only where it means something.
-- **Free trial and licence** – the trial checks a fixed half of every file and marks the unchecked part clearly in the batch, the player and the report. A licence ($199 once) checks everything.
+- **Free trial and licence** – the trial checks the whole file and shows half of the findings – the most serious one always; the rest are listed as locked. A licence ($199 once) checks everything.
 - **Add-ons** – a new tab for extra broadcaster templates and looks. Included: the client view Rec.709 → desktop. More broadcasters are in preparation.
 - **Feedback from the app** – report a bug or a wish with an optional screenshot and an anonymised log; nothing is sent without your click.
 - **Banding** is now a note for ARD/ZDF/ORF and EBU R 103 instead of a warning – the broadcasters accept far more than the measurement flags.
@@ -67,7 +68,7 @@ System
 
 - Windows 10 or 11 (64-bit), or macOS 12 or later on Apple Silicon or Intel
 - About 500 MB disk space; more cores check faster (UHD ProRes: roughly half real time on 20 cores)
-- Internet only for installing and updates – files are checked locally and never uploaded
+- Internet for installing, updates and – only if you agree – an anonymous usage count; files are checked locally and never uploaded
 - Nothing else: Swiss QC Guru brings its own ffmpeg (LGPL, source offer in the package)
 
 Swiss QC Guru is a technical pre-check. It does not replace the broadcaster's acceptance, and the flash check is not a Harding test.
