@@ -1,6 +1,6 @@
 # Swiss QC Guru
 
-> Swiss QC Guru by NuNu Soft is a desktop app for Windows and Mac that checks a finished transmission master against the delivery specs of ARD, ZDF, ORF and SRF (EBU R 103, EBU R 128) before it is delivered. Every finding has a timecode, a frame and the line of the spec it breaks. One-time price: USD 199. Free trial: checks a fixed half of every file. Current version: 0.2.0 (5 November 2026).
+> Swiss QC Guru by NuNu Soft is a desktop app for Windows and Mac that checks a finished transmission master against the delivery specs of ARD, ZDF, ORF and SRF (EBU R 103, EBU R 128) before it is delivered. Every finding has a timecode, a frame and the line of the spec it breaks. One-time price: USD 199. Free trial: checks the whole file and shows half of the findings. Current version: 0.2.0 (5 November 2026).
 
 ## Key facts
 
@@ -17,8 +17,8 @@
 - Player: frame-accurate timeline with markers per lane, waveform, vectorscope, RGB parade, safe areas, zebra and false colour at the template's limits, single fields, J K L shuttle up to 8×; accept an intentional finding with a note
 - Output: HTML and PDF report, delivery package (report, PDF, checksums, summary, client view MP4 with Rec.709 → desktop look), markers for DaVinci Resolve, Premiere Pro and Final Cut Pro or CSV, repair as a new file (loudness, start timecode, levels, rewrap, XDCAM HD422), watch folder
 - Price: USD 199 once, licence for one computer at a time (movable), all 1.x updates; sold through Polar (merchant of record)
-- Free trial: no key; all checks on a fixed half of every file, the unchecked half clearly marked; delivery package, PDF, markers, repair and watch folder need the licence
-- Privacy: all checks run locally; files are never uploaded; the internet is used for updates and to confirm the licence (works up to 30 days offline)
+- Free trial: no key; all checks on the whole file, half of the findings shown (the most serious one always), the others listed as locked with their severity only; delivery package, PDF, markers, repair and watch folder need the licence
+- Privacy: all checks run locally; files are never uploaded; the internet is used for updates, to confirm the licence (works up to 30 days offline) and, only with consent, an anonymous once-a-day usage count
 - Not a replacement for the broadcaster's acceptance – a technical pre-check
 - Languages: English, German
 
