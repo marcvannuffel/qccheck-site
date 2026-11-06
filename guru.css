@@ -128,7 +128,13 @@ footer a { color: var(--muted); }
   .top nav a.hide-s { display: none; }
 }
 @media (max-width: 520px) {
-  .top nav a { display: none; }
+  /* auf dem Handy bleiben Sender und Installieren (Klasse m) neben dem Sprachknopf */
+  .top nav a:not(.m) { display: none; }
+  .top .wrap { gap: 12px; }
+  .top nav { gap: 14px; font-size: 13px; }
+  .brand { gap: 8px; font-size: 15px; }
+  .brand svg { width: 22px; height: 22px; }
+  .lang-switch { padding: 0 8px; font-size: 12px; }
   .list li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
 
@@ -199,3 +205,13 @@ figure { margin: 0; }
 @media (max-width: 860px) { .hero-player { grid-template-columns: minmax(0, 1fr); } .hero-player .hero-shot { margin-top: 0; } }
 .hero-senders { line-height: 1.8; }
 .hero-senders a { color: var(--text); white-space: nowrap; }
+
+/* aktuelle Seite in der Navigation */
+.top nav a[aria-current="page"] { color: var(--white); }
+
+/* Weiter-Knopf unter der Sender-Tabelle: Link zur Seite mit allen Sendern, Prüfungen und Reparaturen */
+.more-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 16px 0 32px; padding: 16px 20px; border: 1px solid var(--line-strong); border-radius: 2px; background: var(--panel); color: var(--white); text-decoration: none; }
+.more-link:hover { border-color: var(--go); background: var(--raised); }
+.more-link b { display: block; font-weight: 600; }
+.more-link small { display: block; margin-top: 2px; color: var(--muted); font-size: 14px; }
+.more-link .arrow { flex: none; color: var(--go-hover); font-size: 22px; line-height: 1; }

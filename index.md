@@ -109,7 +109,9 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | Online & Podcast add-on | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok – faststart, variable frame rate, portrait, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
 | United States add-on | ATSC A/85 base, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark, Hulu – with checks for closed captions (608/708, SCC), drop-frame timecode, black between acts and AFD; commercials for ABC, FOX, FX, NBCUniversal and Extreme Reach | XDCAM · ProRes · DNxHD · MXF/MOV | −24 LKFS ±2 · ≤ −2 dBTP |
 
-Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference. [All broadcasters, checks and repairs →](https://swissqcguru.com/broadcasters.html)
+Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference.
+
+[** All broadcasters, checks and repairs** Every template by country pack, the 35 checks and what the repair plan fixes](https://swissqcguru.com/broadcasters.html)
 
 ![Add-ons in the app: base templates included, country packs for the United Kingdom, France, Nordics, Germany, Austria and Switzerland, the United States and the online and podcast pack, each with its broadcasters](https://swissqcguru.com/img/app-addons.jpg)
 
