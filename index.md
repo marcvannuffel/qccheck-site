@@ -99,7 +99,7 @@ Broadcaster templates
 
 ## The delivery specs, built in
 
-Pick the broadcaster, or let auto-select choose by folder or file name. Duplicate a template to build your house standard – it inherits and stores only what you change.
+Pick the broadcaster, or let auto-select choose by folder or file name. Duplicate a template to build your house standard – it inherits and stores only what you change. Every country pack also covers commercials: frame-accurate spot length, black frames at start and end, short-form loudness.
 
 | Template | Source | Format | Loudness |
 | --- | --- | --- | --- |
@@ -109,12 +109,12 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | ORF | ORF technical spec 05.005a | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | SRF | SRF technical guidelines 2026 | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | EBU generic | EBU R 103 / R 128 – for pre-checks without a broadcaster | HD · UHD | −23 LUFS · ≤ −1 dBTP |
-| United Kingdom add-on | AS-11 UK DPP – BBC, ITV, Channel 4, Channel 5, Sky (HD and UHD), STV, TG4; line-up before 10:00:00:00 excluded from loudness | AVC-Intra 100 · MXF | −23 LUFS ±0.5 · ≤ −1 dBTP |
-| France add-on | PAD per CST-RT-040 – France Télévisions, TF1, CANAL+, ARTE (France and Germany) | XDCAM HD422 · XAVC · MXF | −23 LUFS · ≤ −3 dBTP |
-| Nordics add-on | SVT, NRK, DR, Yle, TV 2 Danmark, TV 2 Norway | XDCAM · XAVC · AVC-Intra · ProRes | −23 LUFS · ≤ −1 dBTP |
-| Germany, Austria & Switzerland private add-on | ProSiebenSat.1 / Seven.One, PULS 4 / ATV, RTL Deutschland, ServusTV; commercials for Sky Deutschland, CH Media (national and regional) and the Swiss ad windows via Goldbach | XDCAM HD422 · MXF | −23 LUFS · ≤ −1/−2 dBTP |
+| United Kingdom add-on | AS-11 UK DPP – BBC, ITV, Channel 4, Channel 5, Sky (HD and UHD), STV, TG4; line-up before 10:00:00:00 excluded from loudness; commercials per DPP012 / AS-11 X6 and ITV | AVC-Intra 100 · MXF | −23 LUFS ±0.5 · ≤ −1 dBTP |
+| France add-on | PAD per CST-RT-040 – France Télévisions, TF1, CANAL+, ARTE (France and Germany); commercials for TF1 Pub, France TV Publicité and via Extreme Reach | XDCAM HD422 · XAVC · MXF | −23 LUFS · ≤ −3 dBTP |
+| Nordics add-on | SVT, NRK, DR, Yle, TV 2 Danmark, TV 2 Norway; commercials for TV 2 Danmark, MTV Finland and TV4 / TV 2 Norway / Viaplay via Extreme Reach | XDCAM · XAVC · AVC-Intra · ProRes | −23 LUFS · ≤ −1 dBTP |
+| Germany, Austria & Switzerland private add-on | ProSiebenSat.1 / Seven.One, PULS 4 / ATV, RTL Deutschland, ServusTV; commercials for Seven.One Media, RTL AdAlliance, Sky Deutschland, CH Media (national and regional) and the Swiss ad windows via Goldbach | XDCAM HD422 · MXF | −23 LUFS · ≤ −1/−2 dBTP |
 | Online & Podcast add-on | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok – faststart, variable frame rate, portrait, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
-| United States add-on | ATSC A/85 base, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark, Hulu – with checks for closed captions (608/708, SCC), drop-frame timecode, black between acts and AFD | XDCAM · ProRes · DNxHD · MXF/MOV | −24 LKFS ±2 · ≤ −2 dBTP |
+| United States add-on | ATSC A/85 base, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark, Hulu – with checks for closed captions (608/708, SCC), drop-frame timecode, black between acts and AFD; commercials for ABC, FOX, FX, NBCUniversal and Extreme Reach | XDCAM · ProRes · DNxHD · MXF/MOV | −24 LKFS ±2 · ≤ −2 dBTP |
 
 Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference.
 

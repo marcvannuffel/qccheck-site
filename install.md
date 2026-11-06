@@ -52,7 +52,7 @@ Release notes
 
 ## What's new in 0.2
 
-- **0.2.3: country packs and new repairs** – add-ons United Kingdom (AS-11 UK DPP), France, Nordics, Germany, Austria & Switzerland private and United States (captions, drop-frame); repair now creates AVC-Intra 100, XAVC and H.264 deliveries and turns 50p into real 1080i25; loudness on UK and Nordic files is measured from programme start
+- **0.2.3: country packs and new repairs** – add-ons United Kingdom (AS-11 UK DPP), France, Nordics, Germany, Austria & Switzerland private and United States (captions, drop-frame), each with commercials (frame-accurate spot length, black frames, short-form loudness); repair now creates AVC-Intra 100, XAVC and H.264 deliveries and turns 50p into real 1080i25; loudness on UK and Nordic files is measured from programme start
 - **0.2.2: Online & Podcast add-on** (USD 49) – templates for YouTube, Spotify video, Apple Podcasts and Instagram / TikTok with checks for faststart, edit lists, variable frame rate, portrait format and keyframes; repair keeps AAC and moves the index to the front. Loudness repair of MP4 files fixed; only your own templates can be exported.
 - **0.2.1: a better trial** – it now checks the whole file and shows half of the findings, the most serious one always; the others are listed as locked. Optional anonymous usage count (asked once, off under Settings › Privacy).
 - **Swiss QC Guru** – new name, new icon and a stricter, precise interface: every measurement in a fixed-width figure, colour only where it means something.
