@@ -79,9 +79,9 @@ Click a marker and the player jumps to the exact frame. Overlays show what the c
 - **J K L** Shuttle as in Resolve, frame by frame, finding to finding
 - ** Accept** Accept an intentional finding with a note – it is listed in the report
 
-![Player with a colour bar test pattern, waveform scope on the picture, findings list on the right and the timeline with markers below](https://swissqcguru.com/img/app-scopes.jpg)
+![Player with safe areas, zebra and waveform scope over the picture, a photosensitive-flash finding on the right and the timeline with markers per lane below](https://swissqcguru.com/img/app-scopes.jpg)
 
-Test pattern with an out-of-gamut patch: waveform on the exact frame, findings on the right, markers per lane below.
+Safe areas, zebra at the template's limits and the waveform on the exact frame; findings on the right, markers per lane below. Picture content blurred for legal reasons.
 
 ![Findings in the QC report: each with severity, check, timecode range, the measured value and the quote from the delivery spec](https://swissqcguru.com/img/app-findings.jpg)
 
@@ -119,6 +119,21 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 
 Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference.
 
+![Add-ons in the app: base templates included, country packs for the United Kingdom, France, Nordics, Germany, Austria and Switzerland, the United States and the online and podcast pack, each with its broadcasters](https://swissqcguru.com/img/app-addons.jpg)
+
+Add-ons in the app: what every licence includes and the country packs with their broadcasters and commercials – unlocked with a key, delivered with the updates.
+
+Repair
+
+## From failed to deliverable – with a plan
+
+- ** Plan first** What gets fixed, before → after, and what can't – with the reason
+- ** Delivery formats** Re-encode to AVC-Intra 100, XAVC, XDCAM HD422 or H.264 – 50p becomes real 1080i25
+- ** Sound and timecode** Loudness to the target, mono tracks as required, start timecode, MXF rewrap
+- ** Checked again** A new file, checked again right away – the original stays untouched
+
+![Repair plan: audio, timecode and loudness are fixed; options to re-encode to XDCAM HD422 or AVC-Intra 100; what cannot be fixed, with the reason](https://swissqcguru.com/img/app-repair.jpg)
+
 Features
 
 ## Built for the last step before delivery
@@ -141,7 +156,7 @@ Every finding as a marker for DaVinci Resolve, Premiere Pro and Final Cut Pro, o
 
 ### Repair with a plan
 
-Loudness, start timecode, levels, rewrap, or XDCAM HD422 – as a new file; the plan says what changes and what can't.
+Loudness, start timecode, levels, rewrap, or a re-encode to AVC-Intra 100, XAVC, XDCAM HD422 or H.264 – as a new file; the plan says what changes and what can't.
 
 ### Timecode in the picture
 
@@ -188,7 +203,9 @@ Batch
 
 Drop files or folders, choose a template per batch or per file, see the verdict and the key findings at a glance. Ten minutes of XDCAM take about 76 seconds on a 20-core PC.
 
-![Batch with four files: one passed, three failed, with the key findings per file](https://swissqcguru.com/img/app-batch.jpg)
+![Batch with six files: one passed, five failed, with the key findings, repair and delivery per file](https://swissqcguru.com/img/app-batch.jpg)
+
+Picture content blurred for legal reasons.
 
 Price
 
