@@ -109,8 +109,12 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | ORF | ORF technical spec 05.005a | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | SRF | SRF technical guidelines 2026 | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | EBU generic | EBU R 103 / R 128 – for pre-checks without a broadcaster | HD · UHD | −23 LUFS · ≤ −1 dBTP |
-| Online & Podcast add-on · USD 49 | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok – faststart, variable frame rate, portrait, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
-| Add-ons | In preparation: UK DPP / AS-11, German private broadcasters, ARTE and France Télévisions, SRG SSR (RTS, RSI, RTR) | – | – |
+| United Kingdom add-on | AS-11 UK DPP – BBC, ITV, Channel 4, Channel 5, Sky (HD and UHD), STV, TG4; line-up before 10:00:00:00 excluded from loudness | AVC-Intra 100 · MXF | −23 LUFS ±0.5 · ≤ −1 dBTP |
+| France add-on | PAD per CST-RT-040 – France Télévisions, TF1, CANAL+, ARTE (France and Germany) | XDCAM HD422 · XAVC · MXF | −23 LUFS · ≤ −3 dBTP |
+| Nordics add-on | SVT, NRK, DR, Yle, TV 2 Danmark, TV 2 Norway | XDCAM · XAVC · AVC-Intra · ProRes | −23 LUFS · ≤ −1 dBTP |
+| Germany & Austria private add-on | ProSiebenSat.1 / Seven.One, PULS 4 / ATV, RTL Deutschland, ServusTV, Sky Deutschland (commercials) | XDCAM HD422 · MXF | −23 LUFS · ≤ −1/−2 dBTP |
+| Online & Podcast add-on | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok – faststart, variable frame rate, portrait, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
+| Coming next | USA (ATSC A/85, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark – with caption and drop-frame checks) | – | – |
 
 Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference.
 
@@ -251,4 +255,4 @@ Multicam video podcast from one 360° camera: finds who is speaking and directs 
 
 [podcastmagic360.com](https://podcastmagic360.com/)
 
-Swiss QC Guru by NuNu Soft · [Install](https://swissqcguru.com/install.html) · [PodcastMagic 360](https://podcastmagic360.com/) ARD, ZDF, ORF and SRF are trademarks of their owners. Swiss QC Guru is not affiliated with any broadcaster; the templates follow their published delivery specs.
+Swiss QC Guru by NuNu Soft · [Install](https://swissqcguru.com/install.html) · [PodcastMagic 360](https://podcastmagic360.com/) ARD, ZDF, ORF, SRF and all other broadcaster and platform names are trademarks of their owners. Swiss QC Guru is not affiliated with any broadcaster; the templates follow their published delivery specs.
