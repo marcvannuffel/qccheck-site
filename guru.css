@@ -176,3 +176,18 @@ figure { margin: 0; }
   .checks dt { padding-bottom: 0; border-bottom: 0; }
   #repairs .list li { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Sender-Tabelle auf dem Handy: jede Zeile eine Karte (Name, Quelle, Format, Lautheit) statt seitlich scrollen */
+@media (max-width: 640px) {
+  .table-wrap { overflow: visible; }
+  .table-wrap table { min-width: 0; }
+  .table-wrap table, .table-wrap tbody, .table-wrap tr, .table-wrap td { display: block; }
+  .table-wrap thead { display: none; }
+  .table-wrap tr { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  .table-wrap tbody tr:last-child { border-bottom: 0; }
+  .table-wrap td { padding: 0; border: 0; }
+  .table-wrap td:first-child { margin-bottom: 4px; color: var(--white); font-size: 16px; font-weight: 600; }
+  .table-wrap td:first-child small { margin-left: 6px; padding: 1px 6px; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--muted); font: 600 11px/1.6 var(--mono); text-transform: uppercase; letter-spacing: .04em; vertical-align: 2px; }
+  .table-wrap td:nth-child(2) { margin-bottom: 8px; color: var(--muted); font-size: 14px; }
+  .table-wrap td.mono { white-space: normal; color: var(--text); font-size: 13px; line-height: 1.6; }
+}
