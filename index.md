@@ -2,7 +2,7 @@
 
 > Swiss QC Guru checks your transmission master or commercial against the broadcaster's delivery spec before you deliver – ARD, ZDF, ORF, SRF built in; packs for the UK and Ireland (AS-11 DPP), France, Spain and Portugal, Italy, Benelux, the Nordics, private broadcasters in Germany, Austria and Switzerland, Central and South-East Europe, Greece, the United States, Canada, Latin America, Australia/NZ, Japan, Asia-Pacific, the Middle East, Turkey and Africa, plus Amazon, Netflix, Apple TV and cinema DCPs (trailers, cinema ads, festivals). Every finding with timecode, frame and the line of the spec. Windows and Mac, EUR 199 once.
 
-ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS · Amazon · Netflix · Apple TV · Netflix IMF · Cinema DCP · ČT · TVP · HRT · Network 10 · TVNZ · Japan · TVB · Doordarshan · EBC · RTVE · RAI · NPO · VRT · RTÉ · CBC · SABC
+ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS · Amazon · Netflix · Apple TV · Netflix IMF · Cinema DCP · ČT · TVP · HRT · Network 10 · TVNZ · Japan · TVB · Doordarshan · EBC · RTVE · RAI · NPO · VRT · RTÉ · CBC · SABC ·
 
 # Pass the broadcaster's QC the first time.
 
