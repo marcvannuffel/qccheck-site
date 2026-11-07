@@ -275,6 +275,18 @@ EUR 199 CHF 179 · USD 239 · once · all 1.x updates
 
 [Buy licence](https://buy.polar.sh/polar_cl_XA8YTzTnj9Zp6nyFRM60pPS3jcnzJm0ZEHHl921ZFtC)
 
+### Complete
+
+EUR 1'299 CHF 1'199 · USD 1'549 · once · instead of EUR 2'777 bought one by one
+
+- The licence, version 1
+- All 22 broadcaster and country packs
+- Every future pack included
+- PodcastMagic 360 as a bonus
+- One key unlocks everything
+
+[Buy Complete](https://buy.polar.sh/polar_cl_TgcRoNQ0Zd8Q3DPgrt2iCGnegaNLjTncRfkiJ4P5UqK)
+
 Country packs from EUR 99 (CHF 89 · USD 119) – prices by pack. Company licences and several workstations on request: [support@vannuffel.ch](mailto:support@vannuffel.ch?subject=Company%20licence)
 
 FAQ
