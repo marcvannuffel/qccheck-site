@@ -2,7 +2,7 @@
 
 > Swiss QC Guru checks your transmission master or commercial against the broadcaster's delivery spec before you deliver – ARD, ZDF, ORF, SRF built in; packs for the UK (AS-11 DPP), France, the Nordics, private broadcasters in Germany, Austria and Switzerland, and the United States, plus Amazon, Netflix, Apple TV and cinema DCPs (trailers, cinema ads, festivals). Every finding with timecode, frame and the line of the spec. Windows and Mac, $199 once.
 
-ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS · Amazon · Netflix · Apple TV · Cinema DCP
+ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS · Amazon · Netflix · Apple TV · Netflix IMF · Cinema DCP
 
 # Pass the broadcaster's QC the first time.
 
@@ -109,7 +109,7 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | Online & Podcast add-on | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok, plus social ads for Meta, TikTok, YouTube (skippable, non-skippable, bumper) and LinkedIn – faststart, variable frame rate, portrait, ad length, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
 | United States add-on | ATSC A/85 base, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark, Hulu – with checks for closed captions (608/708, SCC), drop-frame timecode, black between acts and AFD; commercials for ABC, FOX, FX, NBCUniversal and Extreme Reach | XDCAM · ProRes · DNxHD · MXF/MOV | −24 LKFS ±2 · ≤ −2 dBTP |
 | Amazon MGM Studios add-on | Production masters per the Asset Technical Specifications – HD and UHD in SDR, UHD in HDR (PQ); the only Amazon deliverable that goes through QC | ProRes 4444 XQ / 422 HQ · MOV | −27 LKFS ±2 · ≤ −2 dBTP |
-| Netflix add-on | ProRes masters HD and UHD for licensed and creator/podcast titles, the MP4 route, and Netflix Ads pre-roll and mid-roll; originals as IMF are not checkable as a file | ProRes · H.264/HEVC · MOV/MP4 | −27 LKFS ±2 · ads −24 |
+| Netflix add-on | ProRes masters HD and UHD for licensed and creator/podcast titles, the MP4 route, Netflix Ads pre-roll and mid-roll, originals as IMF App 2E (JPEG 2000 level of every frame, Dolby Vision L1, language versions) and the sound mix as BWAV ADM (5.1 or Atmos) | ProRes · H.264/HEVC · IMF · ADM | −27 LKFS ±2 · ads −24 |
 | Apple TV add-on | Film and TV masters for the Apple TV store per the Video and Audio Asset Guide – HD, 4K (UHD and DCI) and the HDR source file, black frame at start and end | ProRes 422 HQ / 4444 · MOV | −24 LKFS (Apple table) |
 | Cinema (DCP) add-on | Digital Cinema Packages per DCI: SMPTE or Interop, ASSETMAP/PKL/CPL, SHA-1 hashes, ISDCF name, encryption, 2K/4K flat and scope, black and freeze across reels; trailers (TASA), cinema ads UK, Ireland, Germany and Switzerland, festivals Berlinale, Cannes, Venice, Visions du Réel, Sundance | JPEG 2000 · X′Y′Z′ · MXF | Leq(m) 85 trailer · 82 ads |
 

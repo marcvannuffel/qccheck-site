@@ -2,7 +2,7 @@
 
 > Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.
 
-Install · version 0.2.6
+Install · version 0.2.7
 
 # QC before delivery – in one window
 
@@ -52,6 +52,7 @@ Release notes
 
 ## What's new in 0.2
 
+- **0.2.7: Netflix originals, Dolby, language versions** – Netflix IMF packages (App 2E) are checked as one package: JPEG 2000 profile and level of every frame, colour, full range, 5.1 and stereo, Dolby Vision L1 in every frame; tested on Netflix's own Sol Levante package. Dolby Vision sidecar XML for Apple HDR. Sound mixes as BWAV ADM (5.1 or Atmos) with Netflix's group labels; Dolby Digital dialnorm against measured loudness; 5.1 loudness over the whole mix. Language versions: track languages, IMF language CPLs, versions in a batch compared. Cinema: JPEG 2000 of every frame (profile, Bv2.1, size). New repairs: missing colour tag, stereo downmix from 5.1.
 - **0.2.6: cinema** – new add-on Cinema (DCP): drop a Digital Cinema Package folder and it is checked as one package – SMPTE or Interop, hashes, ISDCF name, encryption, picture and sound across all reels, Leq(m) for trailers and cinema ads, festival specs (Berlinale, Cannes, Venice, Visions du Réel, Sundance); the player plays the whole DCP with reel marks.
 - **0.2.5: social ads** – the Online & Podcast pack now checks ads for Meta (Facebook/Instagram feed, Stories, Reels), TikTok, YouTube (skippable, non-skippable 15–60 s, bumper 5–6 s) and LinkedIn. Every pack shows the date its templates were last updated.
 - **0.2.4: streaming packs** – add-ons Amazon MGM Studios (production masters HD/UHD SDR and UHD HDR), Netflix (ProRes masters, MP4, Netflix Ads) and Apple TV (store masters HD, 4K, HDR source file); every template is checked regularly against its published source. A checked file now opens with Details or a click on its row; request a missing template under Feedback.

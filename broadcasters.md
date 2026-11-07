@@ -1,6 +1,6 @@
 # Broadcasters, checks and repairs – Swiss QC Guru
 
-> Every broadcaster template in Swiss QC Guru (89 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 37 checks and what the repair plan can fix.
+> Every broadcaster template in Swiss QC Guru (92 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 41 checks and what the repair plan can fix.
 
 Coverage
 
@@ -138,19 +138,22 @@ Templates updated 6 Nov 2026
 
 ### Netflix Add-on
 
-The Netflix deliveries that can be checked as a file: ProRes masters HD and UHD for licensed content (Non-Branded Delivery Specifications, iTunes ProRes 422 HQ / 4444 / 4444 XQ in MOV) and for creator/podcast titles, plus their MP4 route (H.264/HEVC with minimum bitrate, IDR ≤ 10 s, AAC, faststart) – progressive, Rec.709, −27 LKFS ±2 LU, true peak −2 dBTP. Swiss QC Guru measures loudness as programme loudness, not dialogue-gated as Netflix does. Plus Netflix Ads: pre-roll 10/15/20/30 s and mid-roll up to 75 s, ProRes or H.264, 16:9, SDR only, stereo, −24 LKFS ±2, true peak −2 dBTP. Not covered: Netflix originals delivered as IMF (JPEG 2000 in MXF, CPL/PKL, Dolby Vision metadata, Atmos/IAB) – these cannot be checked as a single file. The pack is kept current when Netflix changes its specs.
+The Netflix deliveries that can be checked as a file: ProRes masters HD and UHD for licensed content (Non-Branded Delivery Specifications, iTunes ProRes 422 HQ / 4444 / 4444 XQ in MOV) and for creator/podcast titles, plus their MP4 route (H.264/HEVC with minimum bitrate, IDR ≤ 10 s, AAC, faststart) – progressive, Rec.709, −27 LKFS ±2 LU, true peak −2 dBTP. Swiss QC Guru measures loudness as programme loudness, not dialogue-gated as Netflix does. Plus Netflix originals as an IMF package (App 2E, HD and UHD): structure and hashes, JPEG 2000 of every frame in the required IMF profile and level, RGB 4:4:4 full range, Dolby Vision (P3 PQ, 12-bit, ST 2086) or SDR (BT.709, 10-bit), 5.1 and stereo at 48 kHz/24-bit, segments at 29.97/59.94, 1 s of black at head and tail. Plus Netflix Ads: pre-roll 10/15/20/30 s and mid-roll up to 75 s, ProRes or H.264, 16:9, SDR only, stereo, −24 LKFS ±2, true peak −2 dBTP. Dolby Vision: L1 in every frame and the XML/CM version (4.0.2/5.1.0 with CMVersion 4 1/4 2, or 2.0.5). Plus the sound mix as BWAV ADM (5.1 or Atmos): 48 kHz/24-bit and the group label of every bed and object per Netflix's list. Not checkable: Dolby Vision trims and target displays, the loudness of an Atmos mix and the content of IAB. The pack is kept current when Netflix changes its specs.
 
 - ProRes master HD (licensed, creator/podcast)
 - ProRes master UHD (licensed, creator/podcast)
 - Creator/podcast MP4 (H.264/HEVC)
 - Netflix Ads pre-roll (commercials)
 - Netflix Ads mid-roll (commercials)
+- IMF App 2E HD (originals)
+- IMF App 2E UHD (originals, Dolby Vision or SDR)
+- Sound mix BWAV ADM (5.1 or Atmos)
 
-Templates updated 6 Nov 2026
+Templates updated 7 Nov 2026
 
 ### Apple TV Add-on
 
-The film and TV masters for the Apple TV store (buy, rent, channels) per the Apple Video and Audio Asset Guide: ProRes 422 HQ, 4444 or 4444 XQ in MOV, HD (1080 and 720, also 1080i from video sources) and 4K (UHD 3840×2160 and DCI 4096×2160, progressive), tagged BT.709, at least one black frame at start and end, for TV episodes commercial black of at most 5 s, 16- or 24-bit LPCM from 48 kHz with stereo and 5.1/7.1. Plus the HDR source file: ProRes 4444 12-bit, PQ, BT.2020 or P3 D65. Apple states loudness only in a channel table (−24 LKFS, peaks −6 dB) – Swiss QC Guru therefore reports it as a warning only. Not checkable: Dolby Vision and HDR10 metadata (CM sidecar, ST 2086, MaxCLL/MaxFALL), channel labels, crop values and the metadata package, matching the HDR file against the SDR main file. Not included: Apple TV+ originals (no public spec) and commercials (Apple TV has no ads). The pack is kept current when Apple changes the guide.
+The film and TV masters for the Apple TV store (buy, rent, channels) per the Apple Video and Audio Asset Guide: ProRes 422 HQ, 4444 or 4444 XQ in MOV, HD (1080 and 720, also 1080i from video sources) and 4K (UHD 3840×2160 and DCI 4096×2160, progressive), tagged BT.709, at least one black frame at start and end, for TV episodes commercial black of at most 5 s, 16- or 24-bit LPCM from 48 kHz with stereo and 5.1/7.1. Plus the HDR source file: ProRes 4444 12-bit, PQ, BT.2020 or P3 D65. Apple states loudness only in a channel table (−24 LKFS, peaks −6 dB) – Swiss QC Guru therefore reports it as a warning only. If the Dolby Vision sidecar XML (CM 2.9 or 4) sits next to the HDR file, Swiss QC Guru checks version, frame rate, level 1 in every shot and whether the shots cover every frame. Not checkable: HDR10 metadata (ST 2086, MaxCLL/MaxFALL), channel labels, crop values and the metadata package, matching the HDR file against the SDR main file. Not included: Apple TV+ originals (no public spec) and commercials (Apple TV has no ads). The pack is kept current when Apple changes the guide.
 
 - Film HD
 - TV/episodic HD
@@ -159,7 +162,7 @@ The film and TV masters for the Apple TV store (buy, rent, channels) per the App
 - Film HDR source file (PQ, BT.2020)
 - Film HDR source file (PQ, P3 D65)
 
-Templates updated 6 Nov 2026
+Templates updated 7 Nov 2026
 
 ### Cinema (DCP) Add-on
 
@@ -180,7 +183,7 @@ Check Digital Cinema Packages per DCI: SMPTE or Interop structure (ASSETMAP, PKL
 
 Templates updated 7 Nov 2026
 
-37 checks
+41 checks
 
 ## What every file is checked for
 
@@ -302,6 +305,12 @@ Detects Dolby E / SMPTE 337 data streams in PCM tracks; broadcasters require PCM
 
 Reports programme audio whose left and right channels are identical (mono packed as stereo).
 
+** Language versions
+
+**
+
+Reads the language tag of every audio track (MOV track language, MXF MCA label) or, in an IMF, the language of every CPL and compares them with the required languages. In an IMF every language version (CPL) is checked for equal length, language tag and the loudness of its 5.1 mix. In the app, language versions in the batch (Film_DE, Film_FR …) are compared for frame count, frame rate, size, start timecode and track count.
+
 ** Leq(m) (cinema)
 
 **
@@ -314,7 +323,31 @@ Measures the loudness of cinema sound per ISO 21727 (M weighting per ITU-R BS.46
 
 **
 
-Reads ASSETMAP, PKL and CPL of a DCP folder (SMPTE or Interop): missing files and assets, sizes and SHA-1 checksums, reels (edit rate, duration, EntryPoint), picture format (2K/4K Flat, Scope, Full), frame rate, sound (PCM 24 bit, channel count), encryption and the ISDCF name. Picture and sound of all reels then run as one program through black, freeze frame, audio and Leq(m).
+Reads the ASSETMAP, PKL and CPL of a DCP folder (SMPTE or Interop): missing files and assets, sizes and SHA-1 hashes, reels (edit rate, length, entry point), picture format (2K/4K flat, scope, full), frame rate, sound (24-bit PCM, channel count), encryption and the ISDCF name. The JPEG 2000 of every frame is read without decoding: digital cinema profile, SMPTE Bv2.1 and size per frame. Picture and sound of all reels then run as one programme through black, freeze, sound and Leq(m).
+
+### IMF package
+
+** IMF package
+
+**
+
+Reads the ASSETMAP, PKL and CPL of an IMF package (ST 2067): application (App 2E), missing track files (supplemental package), hashes, picture format, frame rate, colour and bit depth from the essence descriptor, full range, ST 2086 for HDR, sound sequences (channels, 48 kHz, 24-bit, length), segments at 29.97/59.94 and the JPEG 2000 of every frame in the required IMF profile, mainlevel and sublevel. Picture and sound then run as one programme through black, freeze and loudness. It does not check Dolby Vision metadata or IAB.
+
+### Dolby Vision
+
+**Dolby Vision
+
+**
+
+Reads the Dolby Vision metadata: the sidecar XML (CM 2.9 or 4) next to the file, or in an IMF the per-frame records in the image track file. Checks XML and CM version, whether level 1 is present and plausible for every frame or shot, whether the shots cover the whole duration without gaps and whether the frame rate matches; reports mastering display, target displays and MaxCLL/MaxFALL. It does not check trims or the picture result.
+
+### ADM BWF (Atmos/5.1 mix)
+
+** Dolby sound (ADM, dialnorm)
+
+**
+
+Reads an Atmos or 5.1 mix delivered as ADM BWF (WAV with axml/chna): sample rate, bit depth, channels, beds and objects and – per Netflix's list – whether every bed and object carries a recognised group label (dialogue, music, effects, narration). For Dolby Digital (Plus) it reads the dialnorm from the bitstream and compares it with the measured loudness. It does not measure the loudness of an Atmos mix (that needs Dolby's renderer).
 
 ### Pixel defects and banding
 
@@ -442,6 +475,8 @@ The plan says what changes, before and after, and what cannot be fixed with the 
 - **MXF** Rewritten as OP1a with a closed and complete header; MOV rewrapped into MXF without re-encoding
 - ** Re-encode** AVC-Intra 100, XAVC, XDCAM HD422 or H.264 – for the template's format or another broadcaster's; 50p becomes real 1080i25
 - **Online** MP4 rewrapped losslessly with faststart; AAC kept
+- ** Colour tag** A missing colour tag set to the template's (e.g. BT.709 1-1-1) without re-encoding – an existing tag is never rewritten
+- ** Stereo downmix** Stereo Lo/Ro from the 5.1 onto tracks 7/8 (ITU-R BS.775), matched to the loudness target – for Amazon and Apple 8-track layouts
 - ** Client view** An MP4 for approval that looks on a desktop screen like it will on air (Rec.709 → desktop, gamma 2.4 → 2.2)
 
 [Try it on your own files →](https://swissqcguru.com/index.html#price)
