@@ -1,6 +1,6 @@
 # Broadcasters, checks and repairs – Swiss QC Guru
 
-> Every broadcaster template in Swiss QC Guru (92 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 41 checks and what the repair plan can fix.
+> Every broadcaster template in Swiss QC Guru (137 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 41 checks and what the repair plan can fix.
 
 Coverage
 
@@ -180,6 +180,93 @@ Check Digital Cinema Packages per DCI: SMPTE or Interop structure (ASSETMAP, PKL
 - Venice (DCP)
 - Visions du Réel (DCP)
 - Sundance (DCP, 2024 edition)
+
+Templates updated 7 Nov 2026
+
+### Australia and New Zealand Add-on
+
+The public delivery specs in Australia and New Zealand: loudness per Free TV OP-59 (−24 LKFS ±1, true peak −2 dBTP), Network 10 programme delivery (XDCAM HD50 or DNxHD 120, leader from 00:59:00:00, programme at 01:00:00:00) and commercials per Free TV OP-29/OP-52 (MPEG-2 50 Mbit/s 1080i50, 8 tracks: stereo and 5.1) and per TVNZ's specifications (frame-accurate length). ABC, SBS, Seven, Nine and Foxtel publish no programme spec of their own – the OP-59 base serves for them.
+
+- Australia: Free TV OP-59 base
+- Network 10 (Paramount ANZ)
+- Australia: commercials/spots (Free TV OP-29/OP-52)
+- TVNZ (commercials/spots)
+
+Templates updated 7 Nov 2026
+
+### Japan Add-on
+
+The common standards of Japan's commercial broadcasters (JBA and JAAA): commercials per the 2023 CM delivery standard (XDCAM MPEG HD422 50, 1080i59.94, 8 channels, drop-frame timecode, CM start on a whole hour after a 10 s leader, 0.5 s of silence at the start, loudness at most −24.0 LKFS) and programme exchange per T035-2026 (XDCAM or XAVC Long GOP, programme from hh:00:00;00, T032 −24 LKFS ±1). Plus a T032 base for everything else.
+
+- Japan: T032 base
+- Japan: programme exchange of the commercial broadcasters (T035)
+- Japan: commercials/spots (CM standard 2023)
+
+Templates updated 7 Nov 2026
+
+### Czech Republic, Slovakia, Poland Add-on
+
+The public delivery specs in the Czech Republic, Slovakia and Poland: programmes for Česká televize (XDCAM HD422 1080i25 or AVC-Intra 1080p50, start 10:00:00:00, true peak −3 dBTP) and TV Nova (XAVC or XDCAM, SOM 00:00:00:00), commercials for ČT, Prima/Media Club (2 black frames before and after the spot), TV Barrandov (TC from 00:02:00:00, 5 black frames at the end), JOJ Group (LRA ≤ 15, under 30 s short-term ≤ −20 LUFS), TVP (KLIPER 2026, whole seconds), Polsat Media (AdFlow 2026) and TVN Media, plus TVP regional programmes. Bases per the loudness laws CZ 122/2013 (−23 LUFS ±1, true peak −1) and SK 468/2013 (±0.5 LU).
+
+- Czech/Slovak/Polish base (CZ 122/2013)
+- Česká televize: programmes 1080i25
+- Česká televize: programmes 1080p50
+- Česká televize: commercials/sponsorship
+- TV Nova: programmes
+- Prima / Media Club: commercials/spots
+- TV Barrandov: commercials/spots
+- Slovakia: loudness per 468/2013
+- JOJ Group: commercials/spots
+- TVP: commercials/spots (KLIPER)
+- TVP: regional HD programmes
+- Polsat Media: commercials/spots (AdFlow)
+- TVN Media: commercials/sponsorship
+
+Templates updated 7 Nov 2026
+
+### Balkans Add-on
+
+The public delivery specs in the Balkans: HRT Croatia (technical standard v4.0, 2026, start 00:00:00:00, levels per R 103), RTV Slovenija for programmes (XDCAM, AVC-Intra 100, ProRes, DNxHD; −23 LUFS ±1) and commercials (−23 LUFS ±0.5, no clock or slate), TV Pink Serbia (HD spots) and RTCG Montenegro, plus a common R 128 base. Other broadcasters in the region publish no spec – the base serves for them.
+
+- Balkans: R 128 base
+- HRT (Croatia)
+- RTV Slovenija
+- RTV Slovenija (commercials/spots)
+- TV Pink, Serbia (commercials/spots)
+- RTCG (Montenegro)
+
+Templates updated 7 Nov 2026
+
+### Asia-Pacific Add-on
+
+Delivery specs in India, Hong Kong, Singapore, South Korea and China: Doordarshan broadcast masters (XDCAM HD422 50, 4 tracks, leader), HD commercials for Indian private broadcasters (start 10:00:00:00, frame-accurate), TVB and ViuTV Hong Kong (commercials per the Communications Authority code: −23 LUFS ±1, short-term −18), Mediacorp Singapore (−24 LKFS ±1, length in 5 s steps) and the statutory loudness in South Korea and China (−24 LKFS ±2). Japan is a pack of its own.
+
+- Asia: base
+- Doordarshan (India)
+- India: commercials/spots HD
+- TVB, Hong Kong (commercials/spots)
+- ViuTV, Hong Kong (commercials/spots)
+- Mediacorp, Singapore (commercials/spots)
+- South Korea: loudness
+- China: loudness GY/T 379
+
+Templates updated 7 Nov 2026
+
+### Latin America Add-on
+
+The public delivery specs in Latin America – public broadcasters and authorities: Brazil per Portaria 354 (−23 LKFS ±2, LRA ≤ 15) and EBC NOR 704 (XDCAM HD422 1080i59.94 drop-frame, programme from 01:00:00:00 after a leader, peak −10 dBFS), Argentina with Contenidos Públicos (Encuentro, Pakapaka, DeporTV: XDCAM 1080i25, start 00:00:00:00 without bars) and the INCAA mandatory copy (ProRes 422 HQ 1080p25, −24 LUFS, true peak −2), Chile's CNTV election broadcasts (29.97 drop-frame, 1 min bars), Colombia with Teleantioquia (8 tracks, spots in 5 s steps from 10 s) and Señal Colombia (no bars or slate), Mexico per IFT-013 (−24 LKFS ±2) and Teledoce Uruguay (spots from 15 s). Where the specs give levels in dBFS instead of LUFS, the peak is checked. Plus a common base for Globo, Televisa, Telefe & co., which publish no spec.
+
+- Latin America: base
+- Brazil: loudness (Portaria 354)
+- EBC (Brazil)
+- Contenidos Públicos (Argentina)
+- INCAA: Copia A TV/web (Argentina)
+- CNTV: election broadcasts (Chile)
+- Teleantioquia (Colombia)
+- Teleantioquia: commercials/spots (Colombia)
+- Señal Colombia / RTVC (Colombia)
+- Mexico: loudness (IFT-013)
+- Teledoce, Uruguay (commercials/spots)
 
 Templates updated 7 Nov 2026
 

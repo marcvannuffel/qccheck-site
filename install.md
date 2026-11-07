@@ -2,7 +2,7 @@
 
 > Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.
 
-Install · version 0.2.7
+Install · version 0.2.8
 
 # QC before delivery – in one window
 
@@ -52,6 +52,7 @@ Release notes
 
 ## What's new in 0.2
 
+- **0.2.8: six new country packs** – Czech Republic, Slovakia, Poland (ČT, TV Nova, Prima, Barrandov, JOJ, TVP, Polsat, TVN); Balkans (HRT, RTV Slovenija, TV Pink, RTCG); Australia and New Zealand (Free TV OP-59/OP-29/OP-52, Network 10, TVNZ); Japan (JBA CM standard 2023 and T035: 59.94i drop-frame, CM start on a whole hour, loudness at most −24.0 LKFS, silence at the start); Asia-Pacific (Doordarshan, Indian commercials, TVB, ViuTV, Mediacorp, loudness law South Korea and China); Latin America (Brazil, Argentina, Chile, Colombia, Mexico, Uruguay; peak levels in dBFS).
 - **0.2.7: Netflix originals, Dolby, language versions** – Netflix IMF packages (App 2E) are checked as one package: JPEG 2000 profile and level of every frame, colour, full range, 5.1 and stereo, Dolby Vision L1 in every frame; tested on Netflix's own Sol Levante package. Dolby Vision sidecar XML for Apple HDR. Sound mixes as BWAV ADM (5.1 or Atmos) with Netflix's group labels; Dolby Digital dialnorm against measured loudness; 5.1 loudness over the whole mix. Language versions: track languages, IMF language CPLs, versions in a batch compared. Cinema: JPEG 2000 of every frame (profile, Bv2.1, size). New repairs: missing colour tag, stereo downmix from 5.1.
 - **0.2.6: cinema** – new add-on Cinema (DCP): drop a Digital Cinema Package folder and it is checked as one package – SMPTE or Interop, hashes, ISDCF name, encryption, picture and sound across all reels, Leq(m) for trailers and cinema ads, festival specs (Berlinale, Cannes, Venice, Visions du Réel, Sundance); the player plays the whole DCP with reel marks.
 - **0.2.5: social ads** – the Online & Podcast pack now checks ads for Meta (Facebook/Instagram feed, Stories, Reels), TikTok, YouTube (skippable, non-skippable 15–60 s, bumper 5–6 s) and LinkedIn. Every pack shows the date its templates were last updated.
