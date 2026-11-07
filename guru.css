@@ -235,3 +235,9 @@ figure { margin: 0; }
   .ticker { animation: none; display: inline; }
   .ticker-run + .ticker-run { display: none; }
 }
+/* Titel über die volle Breite (Marc, 7. Nov.): Laufband und Titel stehen über Text und Bild; auf dem Desktop eine Zeile,
+   Schrift wächst mit der Fensterbreite, damit sie hineinpasst */
+.hero-head { margin-bottom: 28px; }
+@media (min-width: 861px) {
+  .hero-head h1 { white-space: nowrap; font-size: clamp(30px, 4.4vw, 56px); margin-bottom: 0; }
+}
