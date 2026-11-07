@@ -273,7 +273,7 @@ EUR 199 CHF 179 · USD 239 · once · all 1.x updates
 - Repair, watch folder, client view
 - One computer at a time, move it any time
 
-[Buy licence](https://buy.polar.sh/polar_cl_XA8YTzTnj9Zp6nyFRM60pPS3jcnzJm0ZEHHl921ZFtC)
+[Buy licence](https://buy.polar.sh/polar_cl_z73A6UxmpzHiMYisy7AP1gSUsaMoakmvpTl073L9bPq)
 
 ### Complete
 
