@@ -218,3 +218,20 @@ figure { margin: 0; }
 .more-link b { display: block; font-weight: 600; }
 .more-link small { display: block; margin-top: 2px; color: var(--muted); font-size: 14px; }
 .more-link .arrow { flex: none; color: var(--go-hover); font-size: 22px; line-height: 1; }
+/* Senderliste als Laufband (Marc, 7. Nov.): auf dem Desktop eine Zeile, die langsam durchläuft; Maus darauf hält an;
+   „Bewegung reduzieren“ und schmale Fenster: normale umbrochene Liste ohne Doppel */
+.ticker-run + .ticker-run { display: none; }
+@media (min-width: 861px) {
+  .hero-senders { overflow: hidden; white-space: nowrap; line-height: 1.4;
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .ticker { display: inline-flex; animation: ticker 90s linear infinite; }
+  .ticker-run { padding-right: .6em; }
+  .ticker-run + .ticker-run { display: inline; }
+  .hero-senders:hover .ticker { animation-play-state: paused; }
+}
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (min-width: 861px) and (prefers-reduced-motion: reduce) {
+  .hero-senders { white-space: normal; mask-image: none; line-height: 1.8; }
+  .ticker { animation: none; display: inline; }
+  .ticker-run + .ticker-run { display: none; }
+}
