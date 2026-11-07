@@ -98,7 +98,7 @@ td.mono, th.mono { white-space: nowrap; }
 tbody tr:last-child td { border-bottom: 0; }
 
 /* Preis: Demo und Vollversion */
-.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line-strong); border-radius: 2px; }
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line-strong); border-radius: 2px; }
 .plan { padding: 28px; background: var(--panel); }
 .plan + .plan { border-left: 1px solid var(--line-strong); }
 .plan.trial { background: repeating-linear-gradient(135deg, #1f2022 0 10px, #232426 10px 20px); }
@@ -144,7 +144,12 @@ footer a { color: var(--muted); }
 /* Demo-Hinweis, Tabellen-Notiz, Zusätze in Vorbereitung */
 .trial-note { margin: 14px 0 0; max-width: 40em; color: var(--muted); font-size: 14px; }
 .table-note { margin: 12px 0 0; max-width: 60em; color: var(--muted); font-size: 14px; }
-.complete-note b { color: var(--white); }
+.plan .plan-inc { margin: 14px 0 4px; color: var(--faint); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.plan ul.inc { margin-bottom: 8px; }
+.plan ul.inc li { color: var(--white); }
+.plan .price-note a { color: inherit; }
+tr.group th { padding: 18px 12px 8px; color: var(--faint); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; text-align: left; }
+tr.group.inc th { color: var(--ok); padding-top: 12px; }
 tr.soon td { color: var(--faint); }
 figure { margin: 0; }
 .cell code { color: var(--white); font-size: 13px; }
