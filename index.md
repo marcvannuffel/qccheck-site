@@ -255,7 +255,9 @@ The trial checks the whole file and shows half of the findings, the most serious
 
 ### Trial
 
-EUR 0 no key needed
+EUR 0
+
+no key needed
 
 - Whole file checked, half of the findings shown
 - Player, overlays and scopes on the whole file
@@ -266,7 +268,11 @@ EUR 0 no key needed
 
 ### Licence, version 1
 
-EUR 199 CHF 179 · USD 239 · once · all 1.x updates
+EUR 199
+
+CHF 179 · USD 239
+
+once · all 1.x updates
 
 - Every frame of every file
 - Report, PDF, markers, delivery package
@@ -277,7 +283,11 @@ EUR 199 CHF 179 · USD 239 · once · all 1.x updates
 
 ### Complete
 
-EUR 1'299 CHF 1'199 · USD 1'549 · once · instead of EUR 2'777 bought one by one
+EUR 1'299
+
+CHF 1'199 · USD 1'549
+
+once · instead of EUR 2'777 bought one by one
 
 - The licence, version 1
 - All 22 broadcaster and country packs
