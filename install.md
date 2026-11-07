@@ -2,7 +2,7 @@
 
 > Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.
 
-Install · version 0.2.5
+Install · version 0.2.6
 
 # QC before delivery – in one window
 
@@ -52,6 +52,7 @@ Release notes
 
 ## What's new in 0.2
 
+- **0.2.6: cinema** – new add-on Cinema (DCP): drop a Digital Cinema Package folder and it is checked as one package – SMPTE or Interop, hashes, ISDCF name, encryption, picture and sound across all reels, Leq(m) for trailers and cinema ads, festival specs (Berlinale, Cannes, Venice, Visions du Réel, Sundance); the player plays the whole DCP with reel marks.
 - **0.2.5: social ads** – the Online & Podcast pack now checks ads for Meta (Facebook/Instagram feed, Stories, Reels), TikTok, YouTube (skippable, non-skippable 15–60 s, bumper 5–6 s) and LinkedIn. Every pack shows the date its templates were last updated.
 - **0.2.4: streaming packs** – add-ons Amazon MGM Studios (production masters HD/UHD SDR and UHD HDR), Netflix (ProRes masters, MP4, Netflix Ads) and Apple TV (store masters HD, 4K, HDR source file); every template is checked regularly against its published source. A checked file now opens with Details or a click on its row; request a missing template under Feedback.
 - **0.2.3: country packs and new repairs** – add-ons United Kingdom (AS-11 UK DPP), France, Nordics, Germany, Austria & Switzerland private and United States (captions, drop-frame), each with commercials (frame-accurate spot length, black frames, short-form loudness); repair now creates AVC-Intra 100, XAVC and H.264 deliveries and turns 50p into real 1080i25; loudness on UK and Nordic files is measured from programme start

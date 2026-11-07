@@ -1,6 +1,6 @@
 # Broadcasters, checks and repairs – Swiss QC Guru
 
-> Every broadcaster template in Swiss QC Guru (77 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 35 checks and what the repair plan can fix.
+> Every broadcaster template in Swiss QC Guru (89 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 37 checks and what the repair plan can fix.
 
 Coverage
 
@@ -161,7 +161,26 @@ The film and TV masters for the Apple TV store (buy, rent, channels) per the App
 
 Templates updated 6 Nov 2026
 
-35 checks
+### Cinema (DCP) Add-on
+
+Check Digital Cinema Packages per DCI: SMPTE or Interop structure (ASSETMAP, PKL, CPL, reels), hashes (SHA-1) and sizes from the PKL, ISDCF name against the content, encryption, picture (2K/4K flat, scope, full; JPEG 2000 X′Y′Z′, frame rate, bit rate ≤ 250 Mbit/s), sound (24-bit PCM, 48/96 kHz, channel count, silence, clipping), black and freeze frames across all reels. Plus Leq(m) loudness per ISO 21727 for trailers (TASA, at most 85 dB) and cinema ads (82 dB: DCM United Kingdom, Pearl & Dean Ireland, Weischer.Cinema Germany and Switzerland) and the DCP specs of the festivals Berlinale (also ProRes file), Cannes, Venice, Visions du Réel and Sundance. Limits: encrypted DCPs only structure and hashes (no picture and sound without a KDM); feature films have no loudness norm (no Leq(m) limit); the Leq(m) measurement is not yet matched against a Dolby meter – limits are therefore warnings for now. The templates are kept current against their sources.
+
+- DCP DCI SMPTE (2K/4K flat, scope, full)
+- DCP Interop (legacy)
+- Trailer/teaser (TASA 85 Leq(m))
+- Cinema ads United Kingdom (DCM, 82 Leq(m))
+- Cinema ads Ireland (Pearl & Dean, 82 Leq(m))
+- Cinema ads Germany and Switzerland (Weischer.Cinema, 82 Leq(m))
+- Berlinale (DCP)
+- Berlinale (ProRes file)
+- Cannes (DCP)
+- Venice (DCP)
+- Visions du Réel (DCP)
+- Sundance (DCP, 2024 edition)
+
+Templates updated 7 Nov 2026
+
+37 checks
 
 ## What every file is checked for
 
@@ -282,6 +301,20 @@ Detects Dolby E / SMPTE 337 data streams in PCM tracks; broadcasters require PCM
 **
 
 Reports programme audio whose left and right channels are identical (mono packed as stereo).
+
+** Leq(m) (cinema)
+
+**
+
+Measures the loudness of cinema sound per ISO 21727 (M weighting per ITU-R BS.468, 0 dB at 2 kHz; L, C, R full, surrounds −3 dB, LFE excluded) over the whole duration and compares it with the limit – common for trailers and advertising.
+
+### Cinema (DCP)
+
+**Digital Cinema Package
+
+**
+
+Reads ASSETMAP, PKL and CPL of a DCP folder (SMPTE or Interop): missing files and assets, sizes and SHA-1 checksums, reels (edit rate, duration, EntryPoint), picture format (2K/4K Flat, Scope, Full), frame rate, sound (PCM 24 bit, channel count), encryption and the ISDCF name. Picture and sound of all reels then run as one program through black, freeze frame, audio and Leq(m).
 
 ### Pixel defects and banding
 
