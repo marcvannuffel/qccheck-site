@@ -2,7 +2,7 @@
 
 > Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.
 
-Install · version 0.2.10
+Install · version 0.2.11
 
 # QC before delivery – in one window
 
@@ -52,6 +52,7 @@ Release notes
 
 ## What's new in 0.2
 
+- **0.2.11** – title bar at normal window width: the template picker shrinks instead of slipping under the trial and update buttons.
 - **0.2.10: a version for each broadcaster** – after checking against several broadcasters, build a repaired copy for every broadcaster that failed: the repair plan of that broadcaster, a new file <name>_<broadcaster>, re-checked automatically; what cannot be repaired is named with its reason. One at a time or for all failed broadcasters at once, also on the command line (--fix-for, --fix-failed). The original is never changed.
 - **0.2.9: check against several broadcasters at once** – pick several templates or a saved group (e.g. “My broadcasters”) for a file: Swiss QC Guru measures once and judges per template, about 2.5× faster than checking one by one. The result is a matrix – broadcaster, verdict, main reasons – and every row opens the full report. Also on the command line (--profiles, --group). Part of the licence.
 - **0.2.8: twelve new country packs, new checks, prices in EUR** – Spain & Portugal (RD 250/2025, CNMC commercials, Mediaset España HD/UHD, RTVE, Canal Sur, Televisión Canaria, Aragón TV; Portugal ERC and RTP commercials); Italy (AGCOM, RAI commercials, Mediaset / Publitalia ’80, Extreme Reach and Cape); Benelux (Screenforce commercials for Ster, Ad Alliance and Talpa, DigitalDeli, NPO / AVROTROS, VRT, Slingshot, IP Luxembourg); Czech Republic, Slovakia, Poland (ČT, TV Nova, Prima, Barrandov, JOJ, TVP, Polsat, TVN); Hungary and Lithuania (MTVA, RTL Magyarország, LNK); Balkans & Greece (HRT, RTV Slovenija, TV Pink, RTCG, ERT); Canada (CBC/Radio-Canada, Bell Media, Corus / Global, Télé-Québec, AMI-télé, CRTC); Latin America (Brazil, Argentina, Chile, Colombia, Mexico, Uruguay); Australia and New Zealand (Free TV OP-59/OP-29/OP-52, Network 10, TVNZ); Japan (JBA CM standard 2023 and T035); Asia-Pacific (Doordarshan, Indian commercials, TVB, ViuTV, Mediacorp, loudness law South Korea and China); Middle East, Turkey & Africa (SABC, SBC Seychelles, RTÜK, commercials for MENA and South Africa). The UK pack now covers Ireland too: RTÉ, Virgin Media Television, TG4. New checks: momentary loudness limit, sample peak in dBFS for specs without LUFS, an asymmetric loudness window, programme start on a whole hour, required silence at the programme edges. Prices now in EUR with CHF and USD: licence EUR 199 (CHF 179 · USD 239), packs EUR 99 or 149, Cinema EUR 199, Online & Podcast EUR 49. New: Complete – the licence and all packs including future ones, plus PodcastMagic 360, EUR 1,299 (CHF 1,199 · USD 1,549); company licences on request.
