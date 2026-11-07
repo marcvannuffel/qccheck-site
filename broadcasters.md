@@ -1,6 +1,6 @@
 # Broadcasters, checks and repairs – Swiss QC Guru
 
-> Every broadcaster template in Swiss QC Guru (73 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 35 checks and what the repair plan can fix.
+> Every broadcaster template in Swiss QC Guru (77 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 35 checks and what the repair plan can fix.
 
 Coverage
 
@@ -82,12 +82,16 @@ The delivery specs of the major broadcasters in Sweden, Norway, Denmark and Finl
 
 ### Online and podcast Add-on
 
-Templates for platforms instead of broadcasters: loudness −14/−16 LUFS, H.264/AAC, vertical video – also for video podcasts from PodcastMagic 360.
+Templates for platforms instead of broadcasters: loudness −14/−16 LUFS, H.264/AAC, vertical video – also for video podcasts from PodcastMagic 360. Plus social ads to the specs of Meta, TikTok, YouTube and LinkedIn: 9:16, 4:5, 1:1, 16:9, minimum resolution, length (bumper 5–6 s, non-skippable 15–60 s), safe zone.
 
 - YouTube
 - Spotify video
 - Apple Podcasts
 - Instagram / TikTok
+- Meta ads (Facebook/Instagram)
+- TikTok ads
+- YouTube ads (skippable, non-skippable, bumper)
+- LinkedIn ads
 
 ### United States Add-on
 
