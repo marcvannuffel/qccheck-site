@@ -1,6 +1,6 @@
 # Broadcasters, checks and repairs – Swiss QC Guru
 
-> Every broadcaster template in Swiss QC Guru (137 delivery specs across Germany, Austria, Switzerland, the UK, France, the Nordics and the United States, plus commercials and online platforms), all 41 checks and what the repair plan can fix.
+> Every broadcaster template in Swiss QC Guru (192 delivery specs across Europe, the Americas, Asia-Pacific, the Middle East and Africa, plus commercials, streaming platforms, cinema and online), all 41 checks and what the repair plan can fix.
 
 Coverage
 
@@ -28,19 +28,22 @@ In every licence: the templates for ARD, ZDF, ORF and SRF per their delivery spe
 
 Templates updated 6 Nov 2026
 
-### United Kingdom: DPP / AS-11 Add-on
+### United Kingdom & Ireland (DPP) Add-on
 
-The common delivery spec of the UK broadcasters (AS-11 UK DPP HD): AVC-Intra 100 1080i25, 4 or 16 audio tracks, −23 LUFS ±0.5 LU, true peak −1 dBTP, layout from 09:59:30:00 – plus the deviations of Channel 4, Channel 5 and Sky (HD and UHD). Also commercials per DPP012 / AS-11 X6 and ITV: clock from 09:59:50:00, spot from 10:00:00:00 frame-accurate to the second, −23 LUFS ±0.2 LU, short-term ≤ −18 LUFS.
+The common delivery spec of the UK broadcasters (AS-11 UK DPP HD): AVC-Intra 100 1080i25, 4 or 16 audio tracks, −23 LUFS ±0.5 LU, true peak −1 dBTP, layout from 09:59:30:00 – plus the deviations of Channel 4, Channel 5 and Sky (HD and UHD). Also commercials per DPP012 / AS-11 X6 and ITV: clock from 09:59:50:00, spot from 10:00:00:00 frame-accurate to the second, −23 LUFS ±0.2 LU, short-term ≤ −18 LUFS. New with Ireland: RTÉ (XDCAM HD 422-50 1080i25, bars from 09:58:00:00, programme at 10:00:00:00, EBU R 128), Virgin Media Television (DNxHD 120 1080i25, bars from 09:59:00:00) and TG4 (AS-11 UK DPP HD per DPP v4.3, −23 LUFS ±1 LU).
 
-- BBC, ITV, STV, TG4 (DPP base profile)
+- BBC, ITV, STV (DPP base profile)
 - Channel 4
 - Channel 5
 - Sky HD
 - Sky UHD
 - ITV, Channel 4, Channel 5, Sky (commercials, DPP012 / AS-11 X6)
 - ITV (commercials, DPP 1.3.2)
+- RTÉ (Ireland)
+- Virgin Media Television (Ireland)
+- TG4 (Ireland, DPP v4.3)
 
-Templates updated 6 Nov 2026
+Templates updated 7 Nov 2026
 
 ### France and ARTE Add-on
 
@@ -224,9 +227,9 @@ The public delivery specs in the Czech Republic, Slovakia and Poland: programmes
 
 Templates updated 7 Nov 2026
 
-### Balkans Add-on
+### Balkans & Greece Add-on
 
-The public delivery specs in the Balkans: HRT Croatia (technical standard v4.0, 2026, start 00:00:00:00, levels per R 103), RTV Slovenija for programmes (XDCAM, AVC-Intra 100, ProRes, DNxHD; −23 LUFS ±1) and commercials (−23 LUFS ±0.5, no clock or slate), TV Pink Serbia (HD spots) and RTCG Montenegro, plus a common R 128 base. Other broadcasters in the region publish no spec – the base serves for them.
+The public delivery specs in the Balkans: HRT Croatia (technical standard v4.0, 2026, start 00:00:00:00, levels per R 103), RTV Slovenija for programmes (XDCAM, AVC-Intra 100, ProRes, DNxHD; −23 LUFS ±1) and commercials (−23 LUFS ±0.5, no clock or slate), TV Pink Serbia (HD spots), RTCG Montenegro and ERT Greece (AVC-Intra 100 1080i25, 4 channels, −23 LUFS ±0.5, true peak −2, start 00:00:00:00), plus a common R 128 base. Other broadcasters in the region publish no spec – the base serves for them.
 
 - Balkans: R 128 base
 - HRT (Croatia)
@@ -234,6 +237,7 @@ The public delivery specs in the Balkans: HRT Croatia (technical standard v4.0, 
 - RTV Slovenija (commercials/spots)
 - TV Pink, Serbia (commercials/spots)
 - RTCG (Montenegro)
+- ERT (Greece)
 
 Templates updated 7 Nov 2026
 
@@ -267,6 +271,99 @@ The public delivery specs in Latin America – public broadcasters and authoriti
 - Señal Colombia / RTVC (Colombia)
 - Mexico: loudness (IFT-013)
 - Teledoce, Uruguay (commercials/spots)
+
+Templates updated 7 Nov 2026
+
+### Spain & Portugal Add-on
+
+The public delivery specs in Spain: loudness per Real Decreto 250/2025 (−23 LUFS ±1 per EBU R 128) and commercials per the CNMC criteria of November 2025 (−23 LUFS ±0.5, short-term −18, true peak −1), Mediaset España for HD (XDCAM HD422 1080i25, 8 tracks, 60 s black from 00:00:00:00, content from 00:01:00:00) and UHD SDR/HDR10 (XAVC Intra Class 300 or ProRes 422 HQ), commercials for Canal Sur (6 black frames at the head, peak −9 dBFS) and Televisión Canaria (AVC-Intra, 5 black frames at head and tail), plus RTVE and Aragón TV from search excerpts. Plus Portugal: loudness per the ERC directive 2016/1 (−23 LUFS) and RTP commercials (XDCAM HD422 1080i25, exactly 1 black frame at the head and 2 at the tail). Atresmedia, 3Cat, EITB, TVG, SIC and TVI publish no spec – the bases and the commercials templates serve for them.
+
+- Spain: base (RD 250/2025)
+- Spain: commercials/spots (CNMC, R 128 s1)
+- Mediaset España: HD
+- Mediaset España: UHD SDR
+- Mediaset España: UHD HDR10
+- RTVE: HD (unconfirmed)
+- Canal Sur (commercials/spots)
+- Televisión Canaria (commercials/spots)
+- Aragón TV (commercials/spots, unconfirmed)
+- Portugal: loudness (ERC Diretiva 2016/1)
+- RTP: commercials/spots (Portugal)
+
+Templates updated 7 Nov 2026
+
+### Italy Add-on
+
+The public delivery specs in Italy – mainly for commercials: RAI HD spots (XDCAM HD422 or ProRes 422 HQ 1080i25, −23 LUFS ±0.2, short-term −18, true peak −2, black before and after the spot), institutional spots per the 2026 Guida tecnica of the Dipartimento per l’informazione e l’editoria (at most 30 or 33 s), Mediaset/Publitalia ’80 (−24 LKFS ±0.5) and spot delivery via Extreme Reach and Cape (−24 LKFS ±0.5 per AGCOM 219/09/CSP, true peak −2, no pre-roll). Plus a base for La7, Sky Italia and Warner Bros. Discovery, which publish no spec.
+
+- Italy: base (AGCOM)
+- RAI: HD commercials/spots
+- Dipartimento: institutional spots on RAI
+- Mediaset / Publitalia ’80: commercials/spots
+- Italy: spot delivery (Extreme Reach, Cape)
+
+Templates updated 7 Nov 2026
+
+### Benelux Add-on
+
+The public delivery specs in the Netherlands, Belgium and Luxembourg: Dutch commercials for Ster, Ad Alliance and Talpa per the joint Screenforce spec v7 (XDCAM HD422 1080i25, 8 tracks, −23 LUFS ±0.5, short-term +5 LU, start 00:00:00:00, length in 5 s steps) plus billboards, online video via DigitalDeli (MP4 H.264, CBR 10–25 Mbit/s), Talpa programmes (2024, withdrawn by the broadcaster) and NPO/AVROTROS (2017, programme from 00:02:00:00), VRT (AVC-Intra 100, start 10:00:00:00, true peak −3, LRA ≤ 15), Belgian commercials via Slingshot (at most −23 LUFS, momentary ≤ −15) and IP Luxembourg for RTL Tele Lëtzebuerg and the TF1 window (1 s black at the end). Plus a common base for broadcasters without a public spec.
+
+- Benelux: R 128 base
+- Netherlands: commercials/spots (Screenforce)
+- Netherlands: billboards (Screenforce)
+- Netherlands: online video (DigitalDeli)
+- Talpa: programmes (2024, withdrawn)
+- NPO / AVROTROS: programmes (2017)
+- VRT (Belgium)
+- Belgium: commercials/spots (Slingshot)
+- IP Luxembourg: RTL (commercials/spots)
+- IP Luxembourg: TF1 window (commercials/spots)
+
+Templates updated 7 Nov 2026
+
+### Hungary and Lithuania Add-on
+
+The public delivery specs in Hungary and Lithuania: commercials for the MTVA channels M1–M5 and Duna (XDCAM HD422 1080i25, −23 LUFS ±1, true peak −3), commercials for RTL Magyarország via Adstream (XDCAM, ProRes or uncompressed, −23 LUFS ±0.5, true peak −3) and via Honeycomb (XDCAM, true peak −1, content only), both with spot lengths from 5 s in 5 s steps, and LNK programmes (XDCAM, AVC-Intra 100 or ProRes, 4 tracks, bars from 09:58:00:00, programme from 10:00:00:00, short form short-term −20 and momentary −15). Plus a common base for broadcasters without a public spec.
+
+- Hungary/Lithuania: R 128 base
+- MTVA, Hungary (commercials/spots)
+- RTL Magyarország via Adstream (commercials/spots)
+- RTL Magyarország via Honeycomb (commercials/spots)
+- LNK (Lithuania)
+
+Templates updated 7 Nov 2026
+
+### Middle East, Turkey & Africa Add-on
+
+Delivery specs for the Middle East and Africa: SABC programmes per the Technical Standards v1.5 (derived from the UK DPP: AS-11 AVC-Intra 100 1080i25, 4 or 16 tracks, programme from 10:00:00:00, −23 LUFS ±1, true peak −1) SBC in the Seychelles (1080/25, MXF or MP4) and the Turkish RTÜK directive for programmes and commercials (−23 LUFS ±2, momentary at most −15, short-term at most −20, true peak −1). The Gulf broadcasters – MBC, Rotana, beIN, Al Jazeera, OSN – publish no spec of their own; the commercials templates for the MENA countries (peak −10 dBFS instead of LUFS, OSN without freeze frames) and for South Africa (−23 LUFS ±0.9, true peak −2) therefore follow a delivery service's figures and are marked unconfirmed. Plus a common base for broadcasters without a spec.
+
+- Middle East & Africa: base
+- SABC: HD programmes (South Africa)
+- South Africa: commercials/spots (per delivery service, unconfirmed)
+- MENA: commercials/spots (per delivery service, unconfirmed)
+- SBC (Seychelles)
+- Turkey: loudness (RTÜK directive)
+
+Templates updated 7 Nov 2026
+
+### Canada Add-on
+
+The public delivery specs in Canada, English and French: CBC and Radio-Canada (Spécifications techniques v6.0: XDCAM HD422 50, XAVC-I 100, ProRes or XAVC UHD, house format 1080i29.97, leader from 09:59:30;00, programme at 10:00:00;00, 8 or 10 tracks, −24 LKFS ±2, −2 dBTP; commercials −24 LKFS ±1), Bell Media (Broadcast Ready XDCAM 1080i29.97 or native-cadence ProRes/DNxHD/UHD, TC from 00:00:00;00, peak −2 dBFS, 608/708 in the file) and commercials for the Bell stations in Montréal incl. Noovo and RDS (no leader and no black, stereo −12 dBFS, 5.1 −3 dBTP), Corus incl. Global (1-frame slate, programme at 00:00:02;00, 12 channels, peaks up to −7 dBFS; HD and UHD XAVC 300), Télé-Québec (12 tracks, true peak −3 dBTP; programmes and commercials) and AMI-télé (programme at 01:00:00;00). Plus the statutory loudness for commercials per CRTC SOR/2012-57 (ATSC A/85: −24 LKFS ±2) – also for Rogers/Citytv, TVA, TVO and APTN, which publish no spec.
+
+- Canada: base
+- CBC: HD programmes
+- Radio-Canada: HD programmes
+- CBC/Radio-Canada: UHD programmes
+- CBC/Radio-Canada: commercials/spots
+- Bell Media: Broadcast Ready
+- Bell Media: native cadence
+- Bell Media Montréal (Noovo, RDS …): commercials/spots
+- Corus / Global: HD programmes
+- Corus: UHD programmes
+- Télé-Québec: HD programmes
+- Télé-Québec: commercials/spots
+- AMI-télé
+- CRTC: commercials/spots (A/85)
 
 Templates updated 7 Nov 2026
 

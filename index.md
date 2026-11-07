@@ -1,14 +1,14 @@
 # Swiss QC Guru – broadcast QC before delivery to the broadcaster
 
-> Swiss QC Guru checks your transmission master or commercial against the broadcaster's delivery spec before you deliver – ARD, ZDF, ORF, SRF built in; packs for the UK (AS-11 DPP), France, the Nordics, private broadcasters in Germany, Austria and Switzerland, the United States, Central and South-East Europe, Australia/NZ, Japan, Asia-Pacific and Latin America, plus Amazon, Netflix, Apple TV and cinema DCPs (trailers, cinema ads, festivals). Every finding with timecode, frame and the line of the spec. Windows and Mac, $199 once.
+> Swiss QC Guru checks your transmission master or commercial against the broadcaster's delivery spec before you deliver – ARD, ZDF, ORF, SRF built in; packs for the UK and Ireland (AS-11 DPP), France, Spain and Portugal, Italy, Benelux, the Nordics, private broadcasters in Germany, Austria and Switzerland, Central and South-East Europe, Greece, the United States, Canada, Latin America, Australia/NZ, Japan, Asia-Pacific, the Middle East, Turkey and Africa, plus Amazon, Netflix, Apple TV and cinema DCPs (trailers, cinema ads, festivals). Every finding with timecode, frame and the line of the spec. Windows and Mac, EUR 199 once.
 
-ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS · Amazon · Netflix · Apple TV · Netflix IMF · Cinema DCP · ČT · TVP · HRT · Network 10 · TVNZ · Japan · TVB · Doordarshan · EBC
+ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV · ARTE · SVT · NRK · DR · Yle · ProSieben · RTL · FOX · PBS · Amazon · Netflix · Apple TV · Netflix IMF · Cinema DCP · ČT · TVP · HRT · Network 10 · TVNZ · Japan · TVB · Doordarshan · EBC · RTVE · RAI · NPO · VRT · RTÉ · CBC · SABC
 
 # Pass the broadcaster's QC the first time.
 
 Swiss QC Guru checks your finished master against the delivery spec before it leaves the house: container, codec, timecode, levels, gamut, loudness and true peak. Every finding comes with timecode, frame and the line of the spec it breaks – so you fix it in the edit, not after a rejection.
 
-[Download the free trial](https://swissqcguru.com/install.html) $199 once · licence
+[Download the free trial](https://swissqcguru.com/install.html) EUR 199 once · licence
 
 The trial installs with one line on Windows 10/11 or macOS 12+, needs no account and no key, and checks the whole file – you see half of the findings, the most serious one always.
 
@@ -36,7 +36,7 @@ EBU R 103 v3.0
 
 ### Loudness and audio
 
-Integrated loudness, true peak and LRA per track pair, clipping, phase, silence, missing audio, Dolby E.
+Integrated loudness, true peak and LRA per track pair, short-term and momentary limits, sample peak in dBFS, clipping, phase, silence – also required silence at the programme edges – missing audio, Dolby E.
 
 EBU R 128
 
@@ -54,7 +54,7 @@ ITU-R BT.709
 
 ### Timecode and line-up
 
-Continuity and jumps, drop frame, colour bars and line-up tone at the head.
+Continuity and jumps, drop frame, programme start on a whole hour, colour bars and line-up tone at the head.
 
 SMPTE 12M
 
@@ -102,28 +102,40 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | SRF | SRF technical guidelines 2026 | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | EBU generic | EBU R 103 / R 128 – for pre-checks without a broadcaster | HD · UHD | −23 LUFS · ≤ −1 dBTP |
 | Commercials included | ARD Media, ZDF Werbefernsehen, ORF-Enterprise, admeira (SRG) – frame-accurate spot length, black frames at start and end, short-form loudness | XDCAM · AVC-Intra · XAVC · MXF | −23 LUFS · ST ≤ −18 |
-| United Kingdom add-on | AS-11 UK DPP – BBC, ITV, Channel 4, Channel 5, Sky (HD and UHD), STV, TG4; line-up before 10:00:00:00 excluded from loudness; commercials per DPP012 / AS-11 X6 and ITV | AVC-Intra 100 · MXF | −23 LUFS ±0.5 · ≤ −1 dBTP |
+| United Kingdom & Ireland (DPP) add-on | AS-11 UK DPP – BBC, ITV, Channel 4, Channel 5, Sky (HD and UHD), STV; Ireland: RTÉ, Virgin Media Television, TG4; line-up before 10:00:00:00 excluded from loudness; commercials per DPP012 / AS-11 X6 and ITV | AVC-Intra 100 · XDCAM · DNxHD | −23 LUFS ±0.5 · ≤ −1 dBTP |
 | France add-on | PAD per CST-RT-040 – France Télévisions, TF1, CANAL+, ARTE (France and Germany); commercials for TF1 Pub, France TV Publicité and via Extreme Reach | XDCAM HD422 · XAVC · MXF | −23 LUFS · ≤ −3 dBTP |
+| Spain & Portugal add-on | Loudness law RD 250/2025 and CNMC commercials criteria, Mediaset España HD and UHD (SDR/HDR10), RTVE, commercials for Canal Sur, Televisión Canaria and Aragón TV; Portugal: ERC loudness directive, RTP commercials | XDCAM HD422 · XAVC · AVC-Intra | −23 LUFS · ≤ −1 dBTP |
+| Italy add-on | AGCOM loudness rules, RAI HD commercials, institutional spots per the 2026 Guida tecnica, Mediaset / Publitalia ’80, spot delivery via Extreme Reach and Cape | XDCAM HD422 · ProRes 422 HQ | −23 / −24 LKFS · ≤ −2 dBTP |
+| Benelux add-on | Dutch commercials for Ster, Ad Alliance and Talpa (Screenforce v7) and billboards, online video via DigitalDeli, Talpa and NPO / AVROTROS programmes, VRT, Belgian commercials via Slingshot, IP Luxembourg (RTL, TF1 window) | XDCAM HD422 · AVC-Intra · MP4 | −23 LUFS · M ≤ −15 |
 | Nordics add-on | SVT, NRK, DR, Yle, TV 2 Danmark, TV 2 Norway; commercials for TV 2 Danmark, MTV Finland and TV4 / TV 2 Norway / Viaplay via Extreme Reach | XDCAM · XAVC · AVC-Intra · ProRes | −23 LUFS · ≤ −1 dBTP |
 | Czech Republic, Slovakia, Poland add-on | ČT, TV Nova, Prima, Barrandov, JOJ, TVP, Polsat, TVN; Czech and Slovak loudness law | XDCAM · XAVC · AVC-Intra | −23 LUFS · ≤ −1 dBTP |
-| Balkans add-on | HRT (2026), RTV Slovenija programmes and commercials, TV Pink, RTCG | XDCAM · AVC-Intra · ProRes | −23 LUFS · ≤ −1 dBTP |
+| Hungary and Lithuania add-on | Commercials for MTVA (M1–M5, Duna) and RTL Magyarország via Adstream and Honeycomb, LNK programmes | XDCAM · AVC-Intra · ProRes | −23 LUFS · ≤ −1/−3 dBTP |
+| Balkans & Greece add-on | HRT (2026), RTV Slovenija programmes and commercials, TV Pink, RTCG, ERT (Greece) | XDCAM · AVC-Intra · ProRes | −23 LUFS · ≤ −1 dBTP |
 | Australia and New Zealand add-on | Free TV OP-59, Network 10, commercials per OP-29/OP-52, TVNZ commercials | XDCAM HD50 · DNxHD | −24 LKFS · ≤ −2 dBTP |
 | Japan add-on | JBA/JAAA CM delivery standard 2023, T035-2026 programme exchange, T032 loudness | XDCAM · XAVC · 59.94i DF | ≤ −24.0 LKFS |
 | Asia-Pacific add-on | Doordarshan, Indian commercials, TVB, ViuTV, Mediacorp; loudness law South Korea and China | XDCAM HD422 · MXF | −23 / −24 LKFS |
 | Latin America add-on | Brazil (Portaria 354, EBC), Argentina, Chile (CNTV), Colombia (Teleantioquia, Señal Colombia), Mexico (IFT-013), Uruguay | XDCAM · ProRes · 59.94i DF | −23 / −24 LKFS · dBFS |
+| Middle East, Turkey & Africa add-on | SABC programmes (South Africa), SBC (Seychelles), Turkish RTÜK loudness directive; commercials for the MENA countries and South Africa (per a delivery service, marked unconfirmed) | AVC-Intra 100 · MXF · MP4 | −23 LUFS · ≤ −1 dBTP |
 | Germany, Austria & Switzerland private add-on | ProSiebenSat.1 / Seven.One, PULS 4 / ATV, RTL Deutschland, ServusTV; commercials for Seven.One Media, RTL AdAlliance, Sky Deutschland, CH Media (national and regional) and the Swiss ad windows via Goldbach | XDCAM HD422 · MXF | −23 LUFS · ≤ −1/−2 dBTP |
 | Online & Podcast add-on | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok, plus social ads for Meta, TikTok, YouTube (skippable, non-skippable, bumper) and LinkedIn – faststart, variable frame rate, portrait, ad length, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
 | United States add-on | ATSC A/85 base, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark, Hulu – with checks for closed captions (608/708, SCC), drop-frame timecode, black between acts and AFD; commercials for ABC, FOX, FX, NBCUniversal and Extreme Reach | XDCAM · ProRes · DNxHD · MXF/MOV | −24 LKFS ±2 · ≤ −2 dBTP |
+| Canada add-on | CBC and Radio-Canada (HD, UHD, commercials), Bell Media incl. Noovo and RDS commercials, Corus / Global (HD and UHD), Télé-Québec, AMI-télé; commercials per CRTC (ATSC A/85) | XDCAM · XAVC · ProRes · 29.97 DF | −24 LKFS ±2 · ≤ −2 dBTP |
 | Amazon MGM Studios add-on | Production masters per the Asset Technical Specifications – HD and UHD in SDR, UHD in HDR (PQ); the only Amazon deliverable that goes through QC | ProRes 4444 XQ / 422 HQ · MOV | −27 LKFS ±2 · ≤ −2 dBTP |
 | Netflix add-on | ProRes masters HD and UHD for licensed and creator/podcast titles, the MP4 route, Netflix Ads pre-roll and mid-roll, originals as IMF App 2E (JPEG 2000 level of every frame, Dolby Vision L1, language versions) and the sound mix as BWAV ADM (5.1 or Atmos) | ProRes · H.264/HEVC · IMF · ADM | −27 LKFS ±2 · ads −24 |
 | Apple TV add-on | Film and TV masters for the Apple TV store per the Video and Audio Asset Guide – HD, 4K (UHD and DCI) and the HDR source file, black frame at start and end | ProRes 422 HQ / 4444 · MOV | −24 LKFS (Apple table) |
 | Cinema (DCP) add-on | Digital Cinema Packages per DCI: SMPTE or Interop, ASSETMAP/PKL/CPL, SHA-1 hashes, ISDCF name, encryption, 2K/4K flat and scope, black and freeze across reels; trailers (TASA), cinema ads UK, Ireland, Germany and Switzerland, festivals Berlinale, Cannes, Venice, Visions du Réel, Sundance | JPEG 2000 · X′Y′Z′ · MXF | Leq(m) 85 trailer · 82 ads |
 
+Country packs are add-ons to the licence: EUR 99 (CHF 89 · USD 119) or EUR 149 (CHF 139 · USD 179) per pack, Cinema EUR 199 (CHF 179 · USD 239), Online & Podcast EUR 49 (CHF 45 · USD 59).
+
+**Complete** – everything in one: the licence and all packs including future ones, plus PodcastMagic 360 – EUR 1,299 (CHF 1,199 · USD 1,549).
+
+Company licences and several workstations on request: [support@vannuffel.ch](mailto:support@vannuffel.ch?subject=Company%20licence)
+
 Your own templates: duplicate a broadcaster, change thresholds and severities, export and share them with your team. Every value shows its source in the reference.
 
 Every template is checked regularly against its published source and updated with the app updates. Your broadcaster or platform is missing? [Send us its delivery spec](mailto:support@vannuffel.ch?subject=Delivery%20spec) – we build the template.
 
-[** All broadcasters, checks and repairs** Every template by country pack, the 35 checks and what the repair plan fixes](https://swissqcguru.com/broadcasters.html)
+[** All broadcasters, checks and repairs** Every template by country pack, the 41 checks and what the repair plan fixes](https://swissqcguru.com/broadcasters.html)
 
 ![Add-ons in the app: base templates included, country packs for the United Kingdom, France, Nordics, Germany, Austria and Switzerland, the United States and the online and podcast pack, each with its broadcasters](https://swissqcguru.com/img/app-addons.jpg?v=2)
 
@@ -174,7 +186,7 @@ Hover over a file to scrub through its thumbnails; a click opens the player at t
 
 ### Reference and export
 
-All 35 checks with their limits and spec sources in one reference. Export all templates and settings for a new computer or your team.
+All 41 checks with their limits and spec sources in one reference. Export all templates and settings for a new computer or your team.
 
 ### Watch folder
 
@@ -243,7 +255,7 @@ The trial checks the whole file and shows half of the findings, the most serious
 
 ### Trial
 
-$0 no key needed
+EUR 0 no key needed
 
 - Whole file checked, half of the findings shown
 - Player, overlays and scopes on the whole file
@@ -254,7 +266,7 @@ $0 no key needed
 
 ### Licence, version 1
 
-$199 once · all 1.x updates
+EUR 199 CHF 179 · USD 239 · once · all 1.x updates
 
 - Every frame of every file
 - Report, PDF, markers, delivery package
@@ -262,6 +274,8 @@ $199 once · all 1.x updates
 - One computer at a time, move it any time
 
 [Buy licence](https://buy.polar.sh/polar_cl_XA8YTzTnj9Zp6nyFRM60pPS3jcnzJm0ZEHHl921ZFtC)
+
+Country packs from EUR 99 (CHF 89 · USD 119) – prices by pack. Company licences and several workstations on request: [support@vannuffel.ch](mailto:support@vannuffel.ch?subject=Company%20licence)
 
 FAQ
 

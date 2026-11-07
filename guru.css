@@ -141,6 +141,7 @@ footer a { color: var(--muted); }
 /* Demo-Hinweis, Tabellen-Notiz, Zusätze in Vorbereitung */
 .trial-note { margin: 14px 0 0; max-width: 40em; color: var(--muted); font-size: 14px; }
 .table-note { margin: 12px 0 0; max-width: 60em; color: var(--muted); font-size: 14px; }
+.complete-note b { color: var(--white); }
 tr.soon td { color: var(--faint); }
 figure { margin: 0; }
 .cell code { color: var(--white); font-size: 13px; }
