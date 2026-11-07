@@ -170,6 +170,7 @@ figure { margin: 0; }
 .tag.in { border-color: var(--ok); color: var(--ok); }
 .names { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .names li { padding: 3px 8px; border-radius: 2px; background: var(--raised); color: var(--text); font-size: 13px; }
+.pack p.updated { margin: 14px 0 0; font: 12px var(--mono); color: var(--muted); }
 .check-list h3.group { margin: 28px 0 8px; color: var(--faint); font: 600 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .check-list h3.group:first-child { margin-top: 0; }
 .checks { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); margin: 0; border-top: 1px solid var(--line); }

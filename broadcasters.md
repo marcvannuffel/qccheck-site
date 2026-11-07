@@ -26,6 +26,8 @@ In every licence: the templates for ARD, ZDF, ORF and SRF per their delivery spe
 - EBU R 103 / R 128
 - Commercials: ARD Media, ZDF Werbefernsehen, ORF-Enterprise, admeira (SRG)
 
+Templates updated 6 Nov 2026
+
 ### United Kingdom: DPP / AS-11 Add-on
 
 The common delivery spec of the UK broadcasters (AS-11 UK DPP HD): AVC-Intra 100 1080i25, 4 or 16 audio tracks, −23 LUFS ±0.5 LU, true peak −1 dBTP, layout from 09:59:30:00 – plus the deviations of Channel 4, Channel 5 and Sky (HD and UHD). Also commercials per DPP012 / AS-11 X6 and ITV: clock from 09:59:50:00, spot from 10:00:00:00 frame-accurate to the second, −23 LUFS ±0.2 LU, short-term ≤ −18 LUFS.
@@ -37,6 +39,8 @@ The common delivery spec of the UK broadcasters (AS-11 UK DPP HD): AVC-Intra 100
 - Sky UHD
 - ITV, Channel 4, Channel 5, Sky (commercials, DPP012 / AS-11 X6)
 - ITV (commercials, DPP 1.3.2)
+
+Templates updated 6 Nov 2026
 
 ### France and ARTE Add-on
 
@@ -50,6 +54,8 @@ PAD (prêt à diffuser) delivery per CST-RT-040: XDCAM HD422 1080i25 in AS-10, �
 - TF1 Publicité (commercials/spots)
 - France Télévisions Publicité (commercials/spots)
 - France via XR (commercials/spots)
+
+Templates updated 6 Nov 2026
 
 ### Germany, Austria and Switzerland, private broadcasters Add-on
 
@@ -66,6 +72,8 @@ The delivery guidelines of the private broadcasters in Germany and Austria (HD) 
 - CH Media TV Regional: TeleZüri, Tele M1, Tele 1, TVO (commercials/spots)
 - Goldbach: Swiss advertising windows (commercials/spots)
 
+Templates updated 6 Nov 2026
+
 ### Nordic countries Add-on
 
 The delivery specs of the major broadcasters in Sweden, Norway, Denmark and Finland: formats, start timecode, loudness per R 128 with each broadcaster's tolerances. Plus commercials: TV 2 Danmark and MTV Finland (length in 5 s steps, frame-accurate) and delivery via XR to TV4, TV 2 Norway and Viaplay/TV3.
@@ -80,6 +88,8 @@ The delivery specs of the major broadcasters in Sweden, Norway, Denmark and Finl
 - MTV Finland via Spotgate (commercials/spots)
 - TV4, TV 2 Norway, Viaplay via XR (commercials/spots)
 
+Templates updated 6 Nov 2026
+
 ### Online and podcast Add-on
 
 Templates for platforms instead of broadcasters: loudness −14/−16 LUFS, H.264/AAC, vertical video – also for video podcasts from PodcastMagic 360. Plus social ads to the specs of Meta, TikTok, YouTube and LinkedIn: 9:16, 4:5, 1:1, 16:9, minimum resolution, length (bumper 5–6 s, non-skippable 15–60 s), safe zone.
@@ -92,6 +102,8 @@ Templates for platforms instead of broadcasters: loudness −14/−16 LUFS, H.26
 - TikTok ads
 - YouTube ads (skippable, non-skippable, bumper)
 - LinkedIn ads
+
+Templates updated 7 Nov 2026
 
 ### United States Add-on
 
@@ -112,6 +124,8 @@ The public delivery specs of US networks and platforms: ATSC A/85 (−24 LKFS ±
 - NBCUniversal (commercials)
 - Extreme Reach North America (commercials)
 
+Templates updated 6 Nov 2026
+
 ### Amazon MGM Studios Add-on
 
 The production masters for Amazon MGM Studios per the Asset Technical Specifications – HD and UHD in SDR, UHD in HDR (PQ, Rec.2020): ProRes 4444 XQ or 422 HQ in MOV, progressive, start TC 00:00:00:00, no bars, no slate, no tone, 24-bit PCM with 8 channels (5.1 + Lo/Ro) or 2 (Lo/Ro), −27 LKFS ±2 LU, true peak −2 dBTP. Swiss QC Guru measures loudness as programme loudness of the Lo/Ro mix, not dialogue-gated as Amazon does. Amazon changes the spec every few weeks; the pack is kept current. Not covered, as Amazon does not put them through QC: screeners, locked cuts, split track masters, DCPs, textless element reels, dailies – nor the Dolby Vision master (JPEG 2000 in MXF).
@@ -119,6 +133,8 @@ The production masters for Amazon MGM Studios per the Asset Technical Specificat
 - HD SDR production master
 - UHD SDR production master
 - UHD HDR production master (PQ, Rec.2020)
+
+Templates updated 6 Nov 2026
 
 ### Netflix Add-on
 
@@ -130,6 +146,8 @@ The Netflix deliveries that can be checked as a file: ProRes masters HD and UHD 
 - Netflix Ads pre-roll (commercials)
 - Netflix Ads mid-roll (commercials)
 
+Templates updated 6 Nov 2026
+
 ### Apple TV Add-on
 
 The film and TV masters for the Apple TV store (buy, rent, channels) per the Apple Video and Audio Asset Guide: ProRes 422 HQ, 4444 or 4444 XQ in MOV, HD (1080 and 720, also 1080i from video sources) and 4K (UHD 3840×2160 and DCI 4096×2160, progressive), tagged BT.709, at least one black frame at start and end, for TV episodes commercial black of at most 5 s, 16- or 24-bit LPCM from 48 kHz with stereo and 5.1/7.1. Plus the HDR source file: ProRes 4444 12-bit, PQ, BT.2020 or P3 D65. Apple states loudness only in a channel table (−24 LKFS, peaks −6 dB) – Swiss QC Guru therefore reports it as a warning only. Not checkable: Dolby Vision and HDR10 metadata (CM sidecar, ST 2086, MaxCLL/MaxFALL), channel labels, crop values and the metadata package, matching the HDR file against the SDR main file. Not included: Apple TV+ originals (no public spec) and commercials (Apple TV has no ads). The pack is kept current when Apple changes the guide.
@@ -140,6 +158,8 @@ The film and TV masters for the Apple TV store (buy, rent, channels) per the App
 - TV/episodic 4K (UHD and DCI)
 - Film HDR source file (PQ, BT.2020)
 - Film HDR source file (PQ, P3 D65)
+
+Templates updated 6 Nov 2026
 
 35 checks
 

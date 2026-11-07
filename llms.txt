@@ -1,6 +1,6 @@
 # Swiss QC Guru
 
-> Swiss QC Guru by NuNu Soft is a desktop app for Windows and Mac that checks a finished transmission master against the delivery specs of ARD, ZDF, ORF and SRF (EBU R 103, EBU R 128) before it is delivered. Every finding has a timecode, a frame and the line of the spec it breaks. One-time price: USD 199. Free trial: checks the whole file and shows half of the findings. Current version: 0.2.4 (6 November 2026).
+> Swiss QC Guru by NuNu Soft is a desktop app for Windows and Mac that checks a finished transmission master against the delivery specs of ARD, ZDF, ORF and SRF (EBU R 103, EBU R 128) before it is delivered. Every finding has a timecode, a frame and the line of the spec it breaks. One-time price: USD 199. Free trial: checks the whole file and shows half of the findings. Current version: 0.2.5 (7 November 2026). Every pack shows the date its templates were last updated.
 
 ## Key facts
 
