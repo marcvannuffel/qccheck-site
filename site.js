@@ -15,7 +15,7 @@
     const lang = l === "de" ? "de" : "en";
     document.documentElement.dataset.lang = lang;
     document.documentElement.lang = lang;
-    document.querySelectorAll("[data-lang-switch]").forEach((b) => { b.textContent = lang === "de" ? "English" : "Deutsch"; });
+    document.querySelectorAll("[data-lang-switch]").forEach((b) => { b.textContent = lang === "de" ? "English" : "Deutsch"; b.dataset.short = lang === "de" ? "EN" : "DE"; });
     document.querySelectorAll(".copy").forEach((b) => { if (!b.classList.contains("done")) b.textContent = copyLabel(lang); });
     store.set("qcLang", lang);
   }

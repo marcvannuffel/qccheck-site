@@ -7,7 +7,7 @@
     const lang = l === "de" ? "de" : "en";
     document.documentElement.dataset.lang = lang;
     document.documentElement.lang = lang;
-    document.querySelectorAll("[data-lang-switch]").forEach((b) => { b.textContent = lang === "de" ? "English" : "Deutsch"; });
+    document.querySelectorAll("[data-lang-switch]").forEach((b) => { b.textContent = lang === "de" ? "English" : "Deutsch"; b.dataset.short = lang === "de" ? "EN" : "DE"; });
     store.set("qcLang", lang);
   }
   setLang(new URLSearchParams(location.search).get("lang") || store.get("qcLang") || "en");
