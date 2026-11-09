@@ -133,6 +133,22 @@ version_newer() {
 main() {
   [[ "$release_key" != __* ]] || { echo "Dieser Installer hat noch keinen Release-Schluessel - nichts installiert. / This installer has no release key yet - nothing installed." >&2; exit 1; }
   get() { curl -fsSL -H "User-Agent: qccheck-install" "$@"; }
+  # Release-Dateien: direkter Link zuerst, bei Netzfehler oder 5xx über die GitHub-API (wie ghFetch in app/update.mjs;
+  # Marc, 8. Nov. 2026: github.com lieferte stundenweise HTTP 504, api.github.com dieselbe Datei problemlos)
+  rget() { # <url> <ziel>
+    local code repo tagv file rel id
+    code="$(curl -sSL -H "User-Agent: qccheck-install" -w '%{http_code}' -o "$2" "$1" 2>/dev/null || true)"
+    [[ "$code" == 2?? ]] && return 0
+    if [[ "$code" =~ ^[1-4][0-9][0-9]$ ]] || ! [[ "$1" =~ ^https://github\.com/([^/]+/[^/]+)/releases/(latest/download|download/(v[^/]+))/([^/]+)$ ]]; then
+      echo "Download fehlgeschlagen / failed: $1 (HTTP $code)" >&2; return 1
+    fi
+    repo="${BASH_REMATCH[1]}"; tagv="${BASH_REMATCH[3]}"; file="${BASH_REMATCH[4]}"; rel="latest"
+    [[ -n "$tagv" ]] && rel="tags/$tagv"
+    echo "github.com: HTTP $code - $file ueber die GitHub-API / via the GitHub API ..." >&2
+    id="$( (get "https://api.github.com/repos/$repo/releases/$rel" || true) | perl -MJSON::PP -e 'local $/; my $j = eval { decode_json(<STDIN>) } || {}; for (@{ $j->{assets} || [] }) { if (($_->{name} // "") eq $ARGV[0]) { print $_->{id}; last } }' "$file" || true)"
+    [[ "$id" =~ ^[0-9]+$ ]] || { echo "Download fehlgeschlagen / failed: $file (HTTP $code)" >&2; return 1; }
+    get -H "Accept: application/octet-stream" -o "$2" "https://api.github.com/repos/$repo/releases/assets/$id"
+  }
   # latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über das
   # Höhere von stabil und neuester Vorabversion der Release-Liste. Nur zum Testen: QC_INSTALL_TEST_BASE (<Quelle>/latest.json und
   # <Quelle>/download/<datei>) und QC_INSTALL_TEST_KEY – beide melden sich laut.
@@ -160,7 +176,9 @@ main() {
   else
     feed_url="https://github.com/$REPO/releases/latest/download/latest.json"
   fi
-  json="$(get "$feed_url")"
+  feedf="$(mktemp)"
+  rget "$feed_url" "$feedf"
+  json="$(cat "$feedf")"; rm -f "$feedf"
   version="$(printf '%s' "$json" | perl -MJSON::PP -e 'local $/; my $j = decode_json(<STDIN>); print $j->{version} // ""')"
   name="$(printf '%s' "$json" | perl -MJSON::PP -e 'local $/; my $j = decode_json(<STDIN>); print $j->{packages}{macos} // ""')"
   [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "Unerwartete Version / unexpected version '$version'." >&2; exit 1; }
@@ -176,8 +194,8 @@ main() {
   echo "Swiss QC Guru $version wird installiert / is being installed ..."
   tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT
   dl="https://github.com/$REPO/releases/download/v$version"; [[ -n "$BASE" ]] && dl="$BASE/download"
-  get -o "$tmp/$name" "$dl/$name"
-  get -o "$tmp/$name.sig" "$dl/$name.sig"
+  rget "$dl/$name" "$tmp/$name"
+  rget "$dl/$name.sig" "$tmp/$name.sig"
   echo "Signatur wird geprueft / checking signature ..."
   verify_sig "$tmp/$name" "$tmp/$name.sig" "$release_key" ||
     { echo "Signatur ungueltig - Paket nicht von Swiss QC Guru signiert oder beschaedigt. Nichts installiert. / Invalid signature - package not signed by Swiss QC Guru or damaged. Nothing installed." >&2; exit 1; }

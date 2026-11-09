@@ -142,6 +142,27 @@ if ($env:QC_INSTALL_TEST_BASE) {
 }
 if ($releaseKey -like '__*') { throw 'Dieser Installer hat noch keinen Release-Schluessel - nichts installiert. / This installer has no release key yet - nothing installed.' }
 $H = @{ 'User-Agent' = 'qccheck-install' }
+# Release-Dateien: direkter Link zuerst, bei Netzfehler oder 5xx über die GitHub-API (wie ghFetch in app/update.mjs;
+# Marc, 8. Nov. 2026: github.com lieferte stundenweise HTTP 504, api.github.com dieselbe Datei problemlos)
+function Get-ReleaseFile([string]$url, [string]$out) {
+  try { Invoke-WebRequest $url -Headers $H -OutFile $out -UseBasicParsing; return }
+  catch {
+    $first = $_
+    $code = 0
+    try { $code = [int]$first.Exception.Response.StatusCode } catch { }
+    $m = [regex]::Match($url, '^https://github\.com/([^/]+/[^/]+)/releases/(?:latest/download|download/(v[^/]+))/([^/]+)$')
+    if (($code -gt 0 -and $code -lt 500) -or -not $m.Success) { throw $first }
+    $rel = if ($m.Groups[2].Success) { "tags/$($m.Groups[2].Value)" } else { 'latest' }
+    $file = $m.Groups[3].Value
+    $why = if ($code -gt 0) { "HTTP $code" } else { "keine Antwort / no response" }
+    Write-Warning "github.com: $why - $file ueber die GitHub-API / via the GitHub API ..."
+    try {
+      $asset = (Invoke-RestMethod "https://api.github.com/repos/$($m.Groups[1].Value)/releases/$rel" -Headers $H).assets | Where-Object { $_.name -eq $file } | Select-Object -First 1
+    } catch { throw $first }
+    if (-not $asset) { throw $first }
+    Invoke-WebRequest "https://api.github.com/repos/$($m.Groups[1].Value)/releases/assets/$($asset.id)" -Headers ($H + @{ Accept = 'application/octet-stream' }) -OutFile $out -UseBasicParsing
+  }
+}
 # latest.json liegt als Asset in jedem Release: stabil über releases/latest (nie eine Vorabversion), Beta über das
 # Höhere von stabil und neuester Vorabversion (Höchstes aller Releases ausser Entwürfen – tools/release löscht ältere
 # Vorabversionen, sobald eine stabile erscheint; ohne Vorabversion also stabil, wie app/update.mjs); im Testmodus
@@ -162,7 +183,7 @@ elseif ($Channel -eq 'beta') {
 }
 # als Datei laden: GitHub liefert Assets als application/octet-stream (PowerShell 5.1 gäbe sonst Bytes zurück)
 $feedFile = [IO.Path]::GetTempFileName()
-Invoke-WebRequest $feedUrl -Headers $H -OutFile $feedFile -UseBasicParsing
+Get-ReleaseFile $feedUrl $feedFile
 $latest = Get-Content -LiteralPath $feedFile -Raw | ConvertFrom-Json
 Remove-Item -Force -LiteralPath $feedFile
 $version = "$($latest.version)"
@@ -185,9 +206,9 @@ $tmp = Join-Path ([IO.Path]::GetTempPath()) ("qccheck-" + [guid]::NewGuid().ToSt
 New-Item -ItemType Directory -Force $tmp | Out-Null
 $pkg = Join-Path $tmp $name
 $dl = if ($Base) { "$Base/download" } else { "https://github.com/$Repo/releases/download/v$version" }
-Invoke-WebRequest "$dl/$name" -Headers $H -OutFile $pkg -UseBasicParsing
+Get-ReleaseFile "$dl/$name" $pkg
 $sigFile = Join-Path $tmp "$name.sig"
-Invoke-WebRequest "$dl/$name.sig" -Headers $H -OutFile $sigFile -UseBasicParsing
+Get-ReleaseFile "$dl/$name.sig" $sigFile
 Write-Host 'Signatur wird geprueft / checking signature ...'
 if (-not (Test-Ed25519Signature $pkg (Get-Content -LiteralPath $sigFile -Raw) $releaseKey)) {
   Remove-Item -Recurse -Force -LiteralPath $tmp
