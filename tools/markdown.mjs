@@ -9,7 +9,7 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-export const PAGES = ["index", "broadcasters", "install"];
+export const PAGES = ["index", "broadcasters", "install", "guide"];
 const SITE = "https://swissqcguru.com/";
 
 // elements that are only for the eye or the hand: left out with everything in them

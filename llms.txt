@@ -32,6 +32,7 @@
 - [Product](https://swissqcguru.com/index.md): what it checks, player, findings, templates, features, price, FAQ
 - [Broadcasters, checks and repairs](https://swissqcguru.com/broadcasters.md): every broadcaster, commercials and platform template by country pack, all 41 checks with what they look for, and what the repair plan can fix
 - [Install](https://swissqcguru.com/install.md): install line for Windows and Mac, what's new, requirements
+- [Guide](https://swissqcguru.com/guide.md): how to use the app – first check, templates and strictness, several templates at once, player, repair, deliver, watch folder, own templates and rules, licence and add-ons, settings, command line
 
 ## Also from NuNu Soft
 

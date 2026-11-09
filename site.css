@@ -74,3 +74,9 @@ details p { color: var(--muted); }
   .term-body code { flex-basis: 100%; order: 2; font-size: 13px; }
   .term-body .copy { order: 1; margin-left: auto; }
 }
+/* Anleitung (guide.html): Inhalt als Kacheln */
+.toc { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.toc li { background: var(--panel); }
+.toc a { display: block; padding: 10px 14px; color: var(--text); text-decoration: none; font-size: 15px; }
+.toc a:hover { color: var(--white); background: rgba(255, 255, 255, .03); }
+section .shot { margin: 8px 0 20px; }

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Swiss QC Guru guide</title>
+<meta name="description" content="How to use Swiss QC Guru: check files against a broadcaster template, read the findings in the player, repair, deliver, check against several templates at once, watch folders and add-ons.">
+<link rel="canonical" href="https://swissqcguru.com/guide.html">
+<link rel="alternate" type="text/markdown" href="guide.md" title="This page as Markdown">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%231b1c1f'/%3E%3Cg fill='none' stroke='%23c9ccd2' stroke-width='3'%3E%3Cpath d='M7 14V7h7M26 7h7v7M33 26v7h-7M14 33H7v-7'/%3E%3C/g%3E%3Cpath d='M12.5 20 18 25.5 27.5 15' fill='none' stroke='%234cd964' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/IBMPlexSans-Var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="guru.css?v=14">
+<link rel="stylesheet" href="site.css?v=6">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#1b1c1f"/><g fill="none" stroke="#c9ccd2" stroke-width="3" stroke-linecap="square"><path d="M7 14V7h7"/><path d="M26 7h7v7"/><path d="M33 26v7h-7"/><path d="M14 33H7v-7"/></g><path d="M12.5 20 18 25.5 27.5 15" fill="none" stroke="#4cd964" stroke-width="4" stroke-linecap="square"/></svg>
+      Swiss QC Guru
+    </a>
+    <nav aria-label="On this page">
+      <a class="hide-s" href="index.html"><span lang="en">Product</span><span lang="de">Produkt</span></a>
+      <a class="m" href="broadcasters.html"><span lang="en">Broadcasters</span><span lang="de">Sender</span></a>
+      <a class="m" href="#start" aria-current="page"><span lang="en">Guide</span><span lang="de">Anleitung</span></a>
+      <a class="m" href="install.html"><span lang="en">Install</span><span lang="de">Installieren</span></a>
+      <button class="lang-switch" type="button" data-lang-switch>Deutsch</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Guide</span><span lang="de">Anleitung</span></p>
+    <h1><span lang="en">Swiss QC Guru in ten minutes</span><span lang="de">Swiss QC Guru in zehn Minuten</span></h1>
+    <p class="lead"><span lang="en">Drop the master in, pick the broadcaster, start. Everything else on this page is for the moment you need it.</span><span lang="de">Master hineinziehen, Sender wählen, starten. Alles Weitere auf dieser Seite ist für den Moment, in dem Sie es brauchen.</span></p>
+    <ul class="toc">
+      <li><a href="#start"><span lang="en">First check</span><span lang="de">Erste Prüfung</span></a></li>
+      <li><a href="#templates"><span lang="en">Templates and strictness</span><span lang="de">Vorlagen und Prüfstufe</span></a></li>
+      <li><a href="#several"><span lang="en">Several templates at once</span><span lang="de">Mehrere Vorlagen auf einmal</span></a></li>
+      <li><a href="#results"><span lang="en">Results and player</span><span lang="de">Ergebnis und Player</span></a></li>
+      <li><a href="#repair"><span lang="en">Repair</span><span lang="de">Reparieren</span></a></li>
+      <li><a href="#deliver"><span lang="en">Deliver</span><span lang="de">Liefern</span></a></li>
+      <li><a href="#watch"><span lang="en">Watch folder</span><span lang="de">Watch Folder</span></a></li>
+      <li><a href="#own"><span lang="en">Own templates and rules</span><span lang="de">Eigene Vorlagen und Regeln</span></a></li>
+      <li><a href="#reference"><span lang="en">Reference</span><span lang="de">Referenz</span></a></li>
+      <li><a href="#addons"><span lang="en">Licence and add-ons</span><span lang="de">Lizenz und Add-ons</span></a></li>
+      <li><a href="#settings"><span lang="en">Settings</span><span lang="de">Einstellungen</span></a></li>
+      <li><a href="#cli"><span lang="en">Command line</span><span lang="de">Kommandozeile</span></a></li>
+      <li><a href="#support"><span lang="en">Help and feedback</span><span lang="de">Hilfe und Rückmeldung</span></a></li>
+    </ul>
+  </div>
+  </section>
+
+  <section id="start">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Batch</span><span lang="de">Stapel</span></p>
+    <h2><span lang="en">First check</span><span lang="de">Erste Prüfung</span></h2>
+    <ol class="how">
+      <li><span lang="en"><b>Add files.</b> Drag files or folders onto the window, or click it to choose. MXF, MOV, MP4, WAV, IMF and DCP folders. “include subfolders” takes everything below a folder.</span><span lang="de"><b>Dateien hinzufügen.</b> Dateien oder Ordner ins Fenster ziehen oder hineinklicken und wählen. MXF, MOV, MP4, WAV, IMF- und DCP-Ordner. „mit Unterordnern“ nimmt alles unterhalb eines Ordners.</span></li>
+      <li><span lang="en"><b>Pick the template.</b> At the top for the whole batch, or per file in its row. “Automatic (rules)” picks one by your rules.</span><span lang="de"><b>Vorlage wählen.</b> Oben für den ganzen Stapel oder je Datei in ihrer Zeile. „Automatisch (Regeln)“ wählt nach Ihren Regeln.</span></li>
+      <li><span lang="en"><b>Start check.</b> Progress per stage on the right. Each row then shows its verdict and the most important findings.</span><span lang="de"><b>Prüfung starten.</b> Rechts der Fortschritt je Stufe. Danach zeigt jede Zeile ihr Urteil und die wichtigsten Befunde.</span></li>
+    </ol>
+    <img class="shot" src="img/app-batch.jpg" width="1600" height="1012" alt="Batch with verdict and most important findings per file" loading="lazy">
+    <ul class="req">
+      <li><span lang="en"><b>Verdicts:</b> Passed, Passed with warnings, Failed. Incomplete (a check could not run) counts as failed.</span><span lang="de"><b>Urteile:</b> Bestanden, Bestanden mit Warnungen, Durchgefallen. Unvollständig (eine Prüfung konnte nicht laufen) zählt als durchgefallen.</span></li>
+      <li><span lang="en"><b>Reports</b> are written next to the file in a folder <code>QC-Reports</code>: HTML (prints as PDF) and JSON.</span><span lang="de"><b>Berichte</b> liegen neben der Datei im Ordner <code>QC-Reports</code>: HTML (druckt als PDF) und JSON.</span></li>
+      <li><span lang="en"><b>Last batch:</b> after a restart the empty window offers “Open last batch”. Files already checked come back with their result, as long as the reports are still there and the file has not changed.</span><span lang="de"><b>Letzter Stapel:</b> nach einem Neustart bietet das leere Fenster „Letzten Stapel öffnen“ an. Schon geprüfte Dateien kommen mit ihrem Ergebnis zurück, solange die Berichte noch da sind und die Datei unverändert ist.</span></li>
+      <li><span lang="en"><b>Compact</b> makes the rows smaller for long batches.</span><span lang="de"><b>Kompakt</b> macht die Zeilen kleiner für lange Stapel.</span></li>
+    </ul>
+  </div>
+  </section>
+
+  <section id="templates">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Templates</span><span lang="de">Vorlagen</span></p>
+    <h2><span lang="en">Templates and strictness</span><span lang="de">Vorlagen und Prüfstufe</span></h2>
+    <p><span lang="en">A template is a broadcaster's or platform's delivery spec: format, codec, start timecode, levels, loudness and so on, each value with its source. The list of templates is on <a href="broadcasters.html">Broadcasters</a>.</span><span lang="de">Eine Vorlage ist das Pflichtenheft eines Senders oder einer Plattform: Format, Codec, Start-Timecode, Pegel, Lautheit usw., jeder Wert mit seiner Quelle. Die Liste der Vorlagen steht unter <a href="broadcasters.html">Sender</a>.</span></p>
+    <ul class="req">
+      <li><span lang="en"><b>Practice</b> (default, next to the template at the top) keeps only tolerances that have a source, e.g. EBU R 103 counts gamut errors only above 1 % of the picture.</span><span lang="de"><b>Praxis</b> (Vorgabe, oben neben der Vorlage) lässt nur Toleranzen mit Quelle zu, z. B. zählt EBU R 103 Gamut-Fehler erst ab 1 % des Bildes.</span></li>
+      <li><span lang="en"><b>Spec (strict)</b> checks the template exactly as written.</span><span lang="de"><b>Pflichtenheft (streng)</b> prüft die Vorlage genau wie geschrieben.</span></li>
+      <li><span lang="en">Loudness, True Peak, format, colour tags, black and freeze frames and flashes are strict in both.</span><span lang="de">Lautheit, True Peak, Format, Farbkennzeichnung, Schwarz- und Standbilder und Blitze sind in beiden streng.</span></li>
+    </ul>
+  </div>
+  </section>
+
+  <section id="several">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Full version</span><span lang="de">Vollversion</span></p>
+    <h2><span lang="en">Several templates at once</span><span lang="de">Mehrere Vorlagen auf einmal</span></h2>
+    <p><span lang="en">For distribution, co-productions and campaigns: one file against several broadcasters. The file is measured once and judged per template, about 2.5 times faster than one by one.</span><span lang="de">Für Vertrieb, Koproduktionen und Kampagnen: eine Datei gegen mehrere Sender. Gemessen wird einmal, geurteilt je Vorlage – etwa 2,5-mal schneller als einzeln.</span></p>
+    <ol class="how">
+      <li><span lang="en">In the row's template list, right below “Automatic”: <b>Choose several …</b></span><span lang="de">In der Vorlagen-Liste der Zeile, gleich unter „Automatisch“: <b>Mehrere wählen …</b></span></li>
+      <li><span lang="en">Tick the templates. Save them as a <b>group</b> (e.g. “My broadcasters”) to pick them again with one click. “For all waiting files” applies the choice to the whole batch.</span><span lang="de">Vorlagen ankreuzen. Als <b>Gruppe</b> speichern (z. B. „Meine Sender“), um sie mit einem Klick wieder zu wählen. „Für alle wartenden Dateien“ gilt für den ganzen Stapel.</span></li>
+      <li><span lang="en">Start. The row shows ✓ ▲ ■ per template with the main reason. Click a template for its player and report, <b>Matrix</b> for the overview.</span><span lang="de">Starten. Die Zeile zeigt ✓ ▲ ■ je Vorlage mit dem Hauptgrund. Klick auf eine Vorlage öffnet Player und Bericht, <b>Matrix</b> die Übersicht.</span></li>
+    </ol>
+    <p><span lang="en"><b>Build version:</b> for a template that fails, the wrench builds a repaired copy for exactly that broadcaster (e.g. <code>film_uk-dpp.mxf</code>) and checks it again. The original stays untouched.</span><span lang="de"><b>Fassung bauen:</b> für eine Vorlage, die nicht besteht, baut der Schraubenschlüssel eine reparierte Kopie für genau diesen Sender (z. B. <code>film_uk-dpp.mxf</code>) und prüft sie nach. Das Original bleibt unverändert.</span></p>
+  </div>
+  </section>
+
+  <section id="results">
+  <div class="wrap">
+    <p class="eyebrow">Player</p>
+    <h2><span lang="en">Results and player</span><span lang="de">Ergebnis und Player</span></h2>
+    <p><span lang="en">Click a row (or <b>Details</b>) to open the player. The <b>Report</b> tab next to it is the full report.</span><span lang="de">Klick auf eine Zeile (oder <b>Details</b>) öffnet den Player. Der Reiter <b>Bericht</b> daneben ist der ganze Bericht.</span></p>
+    <img class="shot" src="img/app-player.jpg" width="1600" height="1012" alt="Player with timeline, findings list and picture tools" loading="lazy">
+    <ul class="req">
+      <li><span lang="en"><b>Findings list:</b> errors first, then warnings and info (folded). The same check at several places is one line (“· 12 places”); click to unfold and jump.</span><span lang="de"><b>Befundliste:</b> zuerst die Fehler, dann Warnungen und Info (zugeklappt). Gleiche Prüfung an mehreren Stellen ist eine Zeile („· 12 Stellen“); Klick klappt auf und springt hin.</span></li>
+      <li><span lang="en"><b>Timeline:</b> every finding as a marker per lane, loudness and waveform below. Keys: ← → frame, Shift 1 s, J K L, ↑ ↓ next finding.</span><span lang="de"><b>Zeitleiste:</b> jeder Befund als Marke je Spur, darunter Lautheit und Wellenform. Tasten: ← → Bild, Shift 1 s, J K L, ↑ ↓ nächster Befund.</span></li>
+      <li><span lang="en"><b>Picture tools</b> (view only): safe areas 4:3 / 16:9 / 9:16, zebra, false colour, pixels, edges, single fields, scopes.</span><span lang="de"><b>Bildwerkzeuge</b> (nur Ansicht): Safe Areas 4:3 / 16:9 / 9:16, Zebra, Falschfarben, Pixel, Kanten, Halbbilder einzeln, Scopes.</span></li>
+      <li><span lang="en"><b>Accept</b> a finding with a note when it is intended (e.g. a black opener). It stays in the report, marked as accepted.</span><span lang="de">Einen Befund mit Notiz <b>akzeptieren</b>, wenn er gewollt ist (z. B. ein schwarzer Auftakt). Er bleibt im Bericht, als akzeptiert markiert.</span></li>
+      <li><span lang="en"><b>Markers …</b> saves every finding for the edit: Resolve EDL, Premiere XML, FCPXML, CSV.</span><span lang="de"><b>Marker …</b> speichert jeden Befund für den Schnitt: Resolve-EDL, Premiere-XML, FCPXML, CSV.</span></li>
+    </ul>
+  </div>
+  </section>
+
+  <section id="repair">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Full version</span><span lang="de">Vollversion</span></p>
+    <h2><span lang="en">Repair</span><span lang="de">Reparieren</span></h2>
+    <p><span lang="en">For emergencies, when there is no time to go back to the edit: <b>Repair</b> shows a plan (what gets fixed, what cannot be and why), writes a new file next to the original (<code>…_QC-fixed</code>) and checks it again. It fixes loudness, start timecode, pre- and post-roll, levels and the container. The clean way remains the correction in the edit or finishing project; the markers show you every place.</span><span lang="de">Für den Notfall, wenn keine Zeit für den Schnitt bleibt: <b>Reparieren</b> zeigt einen Plan (was behoben wird, was nicht geht und warum), schreibt eine neue Datei neben das Original (<code>…_QC-korrigiert</code>) und prüft sie nach. Behoben werden Lautheit, Start-Timecode, Vor- und Nachlauf, Pegel und der Container. Sauber bleibt die Korrektur im Schnitt- oder Finishing-Projekt; die Marker zeigen dort jede Stelle.</span></p>
+    <img class="shot" src="img/app-repair.jpg" width="1600" height="1012" alt="Repair plan with what gets fixed and what cannot be" loading="lazy">
+  </div>
+  </section>
+
+  <section id="deliver">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Full version</span><span lang="de">Vollversion</span></p>
+    <h2><span lang="en">Deliver</span><span lang="de">Liefern</span></h2>
+    <p><span lang="en"><b>Deliver</b> (per file) or <b>Deliver all …</b> builds a folder for the customer: report (prints as PDF), JSON, markers, checksums and a short summary. Optionally a <b>client view</b> (MP4 with gamma 2.4 → 2.2, so it looks right on an office screen).</span><span lang="de"><b>Liefern</b> (je Datei) oder <b>Alle liefern …</b> baut einen Ordner für den Kunden: Bericht (druckt als PDF), JSON, Marker, Prüfsummen und eine kurze Zusammenfassung. Wahlweise mit <b>Kundenansicht</b> (MP4 mit Gamma 2.4 → 2.2, damit es auf einem Büro-Bildschirm stimmt).</span></p>
+    <img class="shot" src="img/app-package.jpg" width="1600" height="1012" alt="Delivery package with report, markers and client view" loading="lazy">
+  </div>
+  </section>
+
+  <section id="watch">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Full version</span><span lang="de">Vollversion</span></p>
+    <h2><span lang="en">Watch folder</span><span lang="de">Watch Folder</span></h2>
+    <p><span lang="en">In the <b>Watch</b> tab on the right: choose a folder and switch it on. Every new file is checked as soon as it has been copied completely, with the template from your rules; optionally with a delivery package per file. Results appear in the batch.</span><span lang="de">Im Reiter <b>Überwachung</b> rechts: Ordner wählen und einschalten. Jede neue Datei wird geprüft, sobald sie fertig kopiert ist, mit der Vorlage nach Ihren Regeln; wahlweise mit Lieferpaket je Datei. Die Ergebnisse erscheinen im Stapel.</span></p>
+  </div>
+  </section>
+
+  <section id="own">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Templates · Auto-select</span><span lang="de">Vorlagen · Auto-Auswahl</span></p>
+    <h2><span lang="en">Own templates and rules</span><span lang="de">Eigene Vorlagen und Regeln</span></h2>
+    <ul class="req">
+      <li><span lang="en"><b>Templates</b> tab: an own template starts from a broadcaster template and stores only what you change: each check on or off, its level and thresholds. Export it as a file to hand your house standard to freelancers. Broadcaster templates stay read-only and come with updates.</span><span lang="de">Reiter <b>Vorlagen</b>: eine eigene Vorlage geht von einer Sender-Vorlage aus und speichert nur, was Sie ändern: jede Prüfung an oder aus, ihre Stufe und Schwellen. Als Datei exportieren, um den Haus-Standard an Freie weiterzugeben. Sender-Vorlagen bleiben schreibgeschützt und kommen mit Updates.</span></li>
+      <li><span lang="en"><b>Auto-select</b> tab: rules like “folder contains ZDF and codec is ProRes → template X”. The first rule that matches wins; “Automatic (rules)” uses them.</span><span lang="de">Reiter <b>Auto-Auswahl</b>: Regeln wie „Ordner enthält ZDF und Codec ist ProRes → Vorlage X“. Die erste passende Regel gewinnt; „Automatisch (Regeln)“ nutzt sie.</span></li>
+    </ul>
+    <img class="shot" src="img/app-editor.jpg" width="1600" height="1012" alt="Template editor with checks, levels and thresholds" loading="lazy">
+  </div>
+  </section>
+
+  <section id="reference">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Reference</span><span lang="de">Referenz</span></p>
+    <h2><span lang="en">What each check does</span><span lang="de">Was jede Prüfung tut</span></h2>
+    <p><span lang="en">The <b>Reference</b> tab lists every check with what it measures and the values of each broadcaster template; quotes from the specs stay word for word. From a finding in the player, “Open in reference” jumps there.</span><span lang="de">Der Reiter <b>Referenz</b> listet jede Prüfung mit dem, was sie misst, und den Werten jeder Sender-Vorlage; Zitate aus den Pflichtenheften stehen im Wortlaut. Von einem Befund im Player springt „In der Referenz öffnen“ dorthin.</span></p>
+  </div>
+  </section>
+
+  <section id="addons">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Licence</span><span lang="de">Lizenz</span></p>
+    <h2><span lang="en">Licence and add-ons</span><span lang="de">Lizenz und Add-ons</span></h2>
+    <ul class="req">
+      <li><span lang="en"><b>Demo:</b> checks the whole file and shows half of the findings. Deliver, repair, markers, PDF, client view, several templates and the watch folder need the full version.</span><span lang="de"><b>Demo:</b> prüft die ganze Datei und zeigt die Hälfte der Befunde. Liefern, Reparieren, Marker, PDF, Kundenansicht, mehrere Vorlagen und Watch Folder brauchen die Vollversion.</span></li>
+      <li><span lang="en"><b>Licence:</b> one key per computer, no time limit. Enter it under Settings › Licence. “Release this computer” frees it for another one.</span><span lang="de"><b>Lizenz:</b> ein Schlüssel je Rechner, unbefristet. Eintragen unter Einstellungen › Lizenz. „Diesen Rechner freigeben“ macht ihn für einen anderen frei.</span></li>
+      <li><span lang="en"><b>Add-ons</b> tab: more broadcaster and platform packs, looks for the client view and Complete (all packs, also future ones). What you have comes first under “Your add-ons”. A pack's key goes into the field at the top of the tab.</span><span lang="de">Reiter <b>Add-ons</b>: weitere Sender- und Plattform-Pakete, Looks für die Kundenansicht und Complete (alle Pakete, auch künftige). Was Sie haben, steht zuoberst unter „Ihre Add-ons“. Den Schlüssel eines Pakets ins Feld oben im Reiter eintragen.</span></li>
+    </ul>
+    <img class="shot" src="img/app-addons.jpg" width="1600" height="1012" alt="Add-ons with your packs first, then popular, streaming and by continent" loading="lazy">
+  </div>
+  </section>
+
+  <section id="settings">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Settings</span><span lang="de">Einstellungen</span></p>
+    <h2><span lang="en">Settings and updates</span><span lang="de">Einstellungen und Updates</span></h2>
+    <ul class="req">
+      <li><span lang="en"><b>Language:</b> English or German for the window, findings, reports and delivery packages.</span><span lang="de"><b>Sprache:</b> Englisch oder Deutsch für Fenster, Befunde, Berichte und Lieferpakete.</span></li>
+      <li><span lang="en"><b>Privacy:</b> an anonymous usage count once a day (version, Windows or Mac, demo or licence, language, a random ID of this installation) – only if you agree. Files are checked locally and never uploaded.</span><span lang="de"><b>Datenschutz:</b> eine anonyme Nutzungszählung einmal am Tag (Version, Windows oder Mac, Demo oder Lizenz, Sprache, eine zufällige Kennung dieser Installation) – nur wenn Sie zustimmen. Geprüft wird lokal, nichts wird hochgeladen.</span></li>
+      <li><span lang="en"><b>Back up settings:</b> export and import templates, rules and settings, for a second computer or as a backup.</span><span lang="de"><b>Einstellungen sichern:</b> Vorlagen, Regeln und Einstellungen exportieren und importieren, für einen zweiten Rechner oder als Sicherung.</span></li>
+      <li><span lang="en"><b>Updates:</b> when a new version is out, a blue “Update” button appears in the title bar. One click installs it; every package is checked against its signature.</span><span lang="de"><b>Updates:</b> gibt es eine neue Version, erscheint oben ein blauer Knopf „Update“. Ein Klick installiert sie; jedes Paket wird gegen seine Signatur geprüft.</span></li>
+    </ul>
+  </div>
+  </section>
+
+  <section id="cli">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Terminal</span><span lang="de">Terminal</span></p>
+    <h2><span lang="en">Command line</span><span lang="de">Kommandozeile</span></h2>
+    <p><span lang="en">The installer also sets up <code>qccheck</code>, for scripts and render farms. Exit code: 0 passed, 1 failed, 2 incomplete.</span><span lang="de">Der Installer richtet auch <code>qccheck</code> ein, für Skripte und Renderfarmen. Exit-Code: 0 bestanden, 1 durchgefallen, 2 unvollständig.</span></p>
+    <div class="term term-win">
+      <div class="term-bar"><span class="term-title">qccheck</span></div>
+      <div class="term-body"><code>qccheck film.mxf --profile zdf<br>qccheck film.mxf --profiles ard-zdf-orf,srf,uk-dpp<br>qccheck fix film.mxf --profile zdf<br>qccheck deliver film.mxf --profile zdf --customer "…"<br>qccheck watch D:\Abgabe --recursive --deliver</code></div>
+    </div>
+  </div>
+  </section>
+
+  <section id="support">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Support</span><span lang="de">Support</span></p>
+    <h2><span lang="en">Help and feedback</span><span lang="de">Hilfe und Rückmeldung</span></h2>
+    <p><span lang="en">The speech bubble in the title bar sends feedback straight to us, with a screenshot if you like. Or write to <a href="mailto:support@vannuffel.ch">support@vannuffel.ch</a>. A broadcaster missing? Send us its delivery spec.</span><span lang="de">Die Sprechblase oben in der Titelleiste schickt eine Rückmeldung direkt an uns, auf Wunsch mit Bildschirmfoto. Oder schreiben Sie an <a href="mailto:support@vannuffel.ch">support@vannuffel.ch</a>. Ein Sender fehlt? Schicken Sie uns sein Pflichtenheft.</span></p>
+    <p class="hint"><span lang="en">Swiss QC Guru is a technical pre-check. It does not replace the broadcaster's acceptance, and the flash check is not a Harding test.</span><span lang="de">Swiss QC Guru ist eine technische Vorprüfung. Sie ersetzt nicht die Abnahme des Senders, und die Blitz-Prüfung ist kein Harding-Test.</span></p>
+  </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Swiss QC Guru by NuNu Soft · <a href="index.html"><span lang="en">Product</span><span lang="de">Produkt</span></a> · <a href="broadcasters.html"><span lang="en">Broadcasters, checks, repairs</span><span lang="de">Sender, Prüfungen, Reparaturen</span></a> · <a href="install.html"><span lang="en">Install</span><span lang="de">Installieren</span></a> · <a href="https://podcastmagic360.com/" rel="noopener">PodcastMagic 360</a></span>
+    <span><span lang="en">ARD, ZDF, ORF and SRF are trademarks of their owners. Swiss QC Guru is not affiliated with any broadcaster; the templates follow their published delivery specs.</span><span lang="de">ARD, ZDF, ORF und SRF sind Marken ihrer Inhaber. Swiss QC Guru ist mit keinem Sender verbunden; die Vorlagen folgen den veröffentlichten Pflichtenheften.</span></span>
+  </div>
+</footer>
+
+<script src="site.js?v=5"></script>
+</body>
+</html>

@@ -95,13 +95,16 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 
 | Template | Source | Format | Loudness |
 | --- | --- | --- | --- |
+| Included in the licence – Germany, Austria, Switzerland and EBU |
 | ARD / ZDF / ORF | Joint technical production guidelines (TPR 2025) | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | ZDF | ZDF delivery spec 3.0 | AVC-Intra 100 · MXF | −23 LUFS · ≤ −1 dBTP |
 | ZDF ProRes | Alternative format for acquired programmes | ProRes 422 HQ · MOV | −23 LUFS · ≤ −1 dBTP |
 | ORF | ORF technical spec 05.005a | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | SRF | SRF technical guidelines 2026 | XDCAM HD422 · MXF | −23 LUFS · ≤ −1 dBTP |
 | EBU generic | EBU R 103 / R 128 – for pre-checks without a broadcaster | HD · UHD | −23 LUFS · ≤ −1 dBTP |
-| Commercials included | ARD Media, ZDF Werbefernsehen, ORF-Enterprise, admeira (SRG) – frame-accurate spot length, black frames at start and end, short-form loudness | XDCAM · AVC-Intra · XAVC · MXF | −23 LUFS · ST ≤ −18 |
+| Commercials | ARD Media, ZDF Werbefernsehen, ORF-Enterprise, admeira (SRG) – frame-accurate spot length, black frames at start and end, short-form loudness | XDCAM · AVC-Intra · XAVC · MXF | −23 LUFS · ST ≤ −18 |
+| Add-on packs – only if you deliver there |
+| Germany, Austria & Switzerland private add-on | ProSiebenSat.1 / Seven.One, PULS 4 / ATV, RTL Deutschland, ServusTV; commercials for Seven.One Media, RTL AdAlliance, Sky Deutschland, CH Media (national and regional) and the Swiss ad windows via Goldbach | XDCAM HD422 · MXF | −23 LUFS · ≤ −1/−2 dBTP |
 | United Kingdom & Ireland (DPP) add-on | AS-11 UK DPP – BBC, ITV, Channel 4, Channel 5, Sky (HD and UHD), STV; Ireland: RTÉ, Virgin Media Television, TG4; line-up before 10:00:00:00 excluded from loudness; commercials per DPP012 / AS-11 X6 and ITV | AVC-Intra 100 · XDCAM · DNxHD | −23 LUFS ±0.5 · ≤ −1 dBTP |
 | France add-on | PAD per CST-RT-040 – France Télévisions, TF1, CANAL+, ARTE (France and Germany); commercials for TF1 Pub, France TV Publicité and via Extreme Reach | XDCAM HD422 · XAVC · MXF | −23 LUFS · ≤ −3 dBTP |
 | Spain & Portugal add-on | Loudness law RD 250/2025 and CNMC commercials criteria, Mediaset España HD and UHD (SDR/HDR10), RTVE, commercials for Canal Sur, Televisión Canaria and Aragón TV; Portugal: ERC loudness directive, RTP commercials | XDCAM HD422 · XAVC · AVC-Intra | −23 LUFS · ≤ −1 dBTP |
@@ -116,7 +119,6 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | Asia-Pacific add-on | Doordarshan, Indian commercials, TVB, ViuTV, Mediacorp; loudness law South Korea and China | XDCAM HD422 · MXF | −23 / −24 LKFS |
 | Latin America add-on | Brazil (Portaria 354, EBC), Argentina, Chile (CNTV), Colombia (Teleantioquia, Señal Colombia), Mexico (IFT-013), Uruguay | XDCAM · ProRes · 59.94i DF | −23 / −24 LKFS · dBFS |
 | Middle East, Turkey & Africa add-on | SABC programmes (South Africa), SBC (Seychelles), Turkish RTÜK loudness directive; commercials for the MENA countries and South Africa (per a delivery service, marked unconfirmed) | AVC-Intra 100 · MXF · MP4 | −23 LUFS · ≤ −1 dBTP |
-| Germany, Austria & Switzerland private add-on | ProSiebenSat.1 / Seven.One, PULS 4 / ATV, RTL Deutschland, ServusTV; commercials for Seven.One Media, RTL AdAlliance, Sky Deutschland, CH Media (national and regional) and the Swiss ad windows via Goldbach | XDCAM HD422 · MXF | −23 LUFS · ≤ −1/−2 dBTP |
 | Online & Podcast add-on | YouTube, Spotify video, Apple Podcasts, Instagram / TikTok, plus social ads for Meta, TikTok, YouTube (skippable, non-skippable, bumper) and LinkedIn – faststart, variable frame rate, portrait, ad length, keyframes | H.264 · AAC · MP4 | −14 / −16 LUFS · ≤ −1 dBTP |
 | United States add-on | ATSC A/85 base, FOX, PBS, A+E, Warner Bros. Discovery, Paramount, Hallmark, Hulu – with checks for closed captions (608/708, SCC), drop-frame timecode, black between acts and AFD; commercials for ABC, FOX, FX, NBCUniversal and Extreme Reach | XDCAM · ProRes · DNxHD · MXF/MOV | −24 LKFS ±2 · ≤ −2 dBTP |
 | Canada add-on | CBC and Radio-Canada (HD, UHD, commercials), Bell Media incl. Noovo and RDS commercials, Corus / Global (HD and UHD), Télé-Québec, AMI-télé; commercials per CRTC (ATSC A/85) | XDCAM · XAVC · ProRes · 29.97 DF | −24 LKFS ±2 · ≤ −2 dBTP |
@@ -125,9 +127,7 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | Apple TV add-on | Film and TV masters for the Apple TV store per the Video and Audio Asset Guide – HD, 4K (UHD and DCI) and the HDR source file, black frame at start and end | ProRes 422 HQ / 4444 · MOV | −24 LKFS (Apple table) |
 | Cinema (DCP) add-on | Digital Cinema Packages per DCI: SMPTE or Interop, ASSETMAP/PKL/CPL, SHA-1 hashes, ISDCF name, encryption, 2K/4K flat and scope, black and freeze across reels; trailers (TASA), cinema ads UK, Ireland, Germany and Switzerland, festivals Berlinale, Cannes, Venice, Visions du Réel, Sundance | JPEG 2000 · X′Y′Z′ · MXF | Leq(m) 85 trailer · 82 ads |
 
-Country packs are add-ons to the licence: EUR 99 (CHF 89 · USD 119) or EUR 149 (CHF 139 · USD 179) per pack, Cinema EUR 199 (CHF 179 · USD 239), Online & Podcast EUR 49 (CHF 45 · USD 59).
-
-**Complete** – everything in one: the licence and all packs including future ones, plus PodcastMagic 360 – EUR 1,299 (CHF 1,199 · USD 1,549).
+The licence already includes ARD, ZDF, ORF, SRF, their commercials and the EBU templates. Country packs are optional add-ons: EUR 99 (CHF 89 · USD 119) or EUR 149 (CHF 139 · USD 179) per pack, Cinema EUR 199 (CHF 179 · USD 239), Online & Podcast EUR 49 (CHF 45 · USD 59).
 
 Company licences and several workstations on request: [support@vannuffel.ch](mailto:support@vannuffel.ch?subject=Company%20licence)
 
@@ -274,28 +274,22 @@ CHF 179 · USD 239
 
 once · all 1.x updates
 
+Included templates
+
+- **Germany, Austria, Switzerland:** ARD, ZDF, ORF, SRF
+- Their commercials: ARD Media, ZDF, ORF-Enterprise, admeira
+- EBU R 103 / R 128 for any other broadcaster
+
+Everything the app does
+
 - Every frame of every file
 - Report, PDF, markers, delivery package
 - Repair, watch folder, client view
 - One computer at a time, move it any time
 
-[Buy licence](https://buy.polar.sh/polar_cl_z73A6UxmpzHiMYisy7AP1gSUsaMoakmvpTl073L9bPq)
+Other countries: optional packs from EUR 99 – see the list
 
-### Complete
-
-EUR 1'299
-
-CHF 1'199 · USD 1'549
-
-once · instead of EUR 2'777 bought one by one
-
-- The licence, version 1
-- All 22 broadcaster and country packs
-- Every future pack included
-- PodcastMagic 360 as a bonus
-- One key unlocks everything
-
-[Buy Complete](https://buy.polar.sh/polar_cl_TgcRoNQ0Zd8Q3DPgrt2iCGnegaNLjTncRfkiJ4P5UqK)
+[Buy licence](https://buy.polar.sh/polar_cl_XA8YTzTnj9Zp6nyFRM60pPS3jcnzJm0ZEHHl921ZFtC)
 
 Country packs from EUR 99 (CHF 89 · USD 119) – prices by pack. Company licences and several workstations on request: [support@vannuffel.ch](mailto:support@vannuffel.ch?subject=Company%20licence)
 
