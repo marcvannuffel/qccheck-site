@@ -63,8 +63,8 @@
   <div class="wrap hero-grid hero-player">
     <div class="hero-text">
       <p class="lead">
-        <span lang="en">Swiss QC Guru checks your finished master against the delivery spec before it leaves the house: container, codec, timecode, levels, gamut, loudness and true peak. Every finding comes with timecode, frame and the line of the spec it breaks – so you fix it in the edit, not after a rejection.</span>
-        <span lang="de">Swiss QC Guru prüft den fertigen Sendemaster gegen das Pflichtenheft, bevor er das Haus verlässt: Container, Codec, Timecode, Pegel, Gamut, Lautheit und True Peak. Jeder Befund kommt mit Timecode, Bild und der Stelle im Pflichtenheft – Sie korrigieren im Schnitt, nicht nach einer Rückweisung.</span>
+        <span lang="en">Swiss QC Guru checks your finished master against the delivery spec before it leaves the house: container, codec, timecode, levels, gamut, loudness and true peak – and the picture itself: stuck and sparkling pixels, jumping bars, broken frames, stutter, interlace. Every finding comes with timecode, frame and the line of the spec it breaks – so you fix it in the edit, not after a rejection.</span>
+        <span lang="de">Swiss QC Guru prüft den fertigen Sendemaster gegen das Pflichtenheft, bevor er das Haus verlässt: Container, Codec, Timecode, Pegel, Gamut, Lautheit und True Peak – und das Bild selbst: hängende und aufblitzende Pixel, springende Balken, kaputte Bilder, Ruckeln, Halbbilder. Jeder Befund kommt mit Timecode, Bild und der Stelle im Pflichtenheft – Sie korrigieren im Schnitt, nicht nach einer Rückweisung.</span>
       </p>
       <div class="actions">
         <a class="btn go" href="install.html"><span lang="en">Download the free trial</span><span lang="de">Kostenlose Demo laden</span></a>
@@ -89,9 +89,35 @@
       <div class="cell"><h3><span lang="en">Levels and gamut</span><span lang="de">Pegel und Gamut</span></h3><p><span lang="en">Luma, RGB and chroma per frame, small areas reported separately; illegal codes and TRS.</span><span lang="de">Luma, RGB und Chroma je Bild, kleine Flächen getrennt gemeldet; verbotene Codes und TRS.</span></p><span class="std">EBU R 103 v3.0</span></div>
       <div class="cell"><h3><span lang="en">Loudness and audio</span><span lang="de">Lautheit und Ton</span></h3><p><span lang="en">Integrated loudness, true peak and LRA per track pair, short-term and momentary limits, sample peak in dBFS, clipping, phase, silence – also required silence at the programme edges – missing audio, Dolby E.</span><span lang="de">Integrierte Lautheit, True Peak und LRA je Spurpaar, Grenzen für Short-Term und Momentary, Sample-Peak in dBFS, Clipping, Phase, Stille – auch verlangte Stille am Programmrand –, fehlender Ton, Dolby E.</span></p><span class="std">EBU R 128</span></div>
       <div class="cell"><h3><span lang="en">Black, freeze, cadence</span><span lang="de">Schwarz, Standbild, Kadenz</span></h3><p><span lang="en">Black inside the programme, freeze frames, repeated frames and stutter, single-frame hits.</span><span lang="de">Schwarz im Programm, Standbilder, doppelte Bilder und Ruckeln, Einzelbild-Treffer.</span></p><span class="std">TPR 2025</span></div>
-      <div class="cell"><h3><span lang="en">Picture</span><span lang="de">Bild</span></h3><p><span lang="en">Interlace against flag and format, bars and borders, pixel defects, banding, a hint on possible flashes (not a certified Harding test).</span><span lang="de">Halbbilder gegen Markierung und Format, Balken und Ränder, Pixelfehler, Banding, ein Hinweis auf mögliche Blitze (kein zertifizierter Harding-Test).</span></p><span class="std">ITU-R BT.709</span></div>
+      <div class="cell"><h3><span lang="en">Picture</span><span lang="de">Bild</span></h3><p><span lang="en">Interlace against flag and format, bars and borders, <a href="#picture">pixel defects</a>, banding, a hint on possible flashes (not a certified Harding test).</span><span lang="de">Halbbilder gegen Markierung und Format, Balken und Ränder, <a href="#picture">Pixelfehler</a>, Banding, ein Hinweis auf mögliche Blitze (kein zertifizierter Harding-Test).</span></p><span class="std">ITU-R BT.709</span></div>
       <div class="cell"><h3><span lang="en">Timecode and line-up</span><span lang="de">Timecode und Vorspann</span></h3><p><span lang="en">Continuity and jumps, drop frame, programme start on a whole hour, colour bars and line-up tone at the head.</span><span lang="de">Kontinuität und Sprünge, Drop-Frame, Programmbeginn auf voller Stunde, Farbbalken und Messton am Anfang.</span></p><span class="std">SMPTE 12M</span></div>
     </div>
+  </div>
+</section>
+
+<section id="picture">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Picture faults</span><span lang="de">Bildfehler</span></p>
+    <h2><span lang="en">Not just the file format – the picture, frame by frame</span><span lang="de">Nicht nur das Dateiformat – das Bild, Bild für Bild</span></h2>
+    <p class="sub"><span lang="en">The faults a broadcaster's QC system rejects, found at their frame and marked in the player. Professional QC systems cost many times as much, usually every year – Swiss QC Guru is EUR 199 once, made for a small throughput.</span><span lang="de">Die Fehler, an denen die QC-Anlage des Senders zurückweist, gefunden am genauen Bild und im Player markiert. Professionelle QC-Systeme kosten ein Vielfaches, meist jedes Jahr – Swiss QC Guru kostet EUR 199 einmalig, gemacht für kleinen Durchsatz.</span></p>
+    <dl class="checks">
+      <dt><span lang="en">Stuck and dead pixels</span><span lang="de">Hängende und tote Pixel</span></dt>
+      <dd><span lang="en">Bright or dark single pixels and groups up to 3×3 that stay in place – in the whole film or in a single shot from 1 s, with position and box in the frame.</span><span lang="de">Helle oder dunkle Einzelpixel und Gruppen bis 3×3, die stehen bleiben – im ganzen Film oder in einer einzigen Einstellung ab 1 s, mit Stelle und Rahmen im Bild.</span></dd>
+      <dt><span lang="en">Sparkling pixels</span><span lang="de">Aufblitzende Pixel</span></dt>
+      <dd><span lang="en">Pixels that light up for exactly one frame – sensor sparkles as some digital cinema cameras produce them. Reads every frame at full resolution; switch it on in your template. Moving glints and light chains are filtered out.</span><span lang="de">Pixel, die für genau ein Bild aufleuchten – Sensor-Sparkles, wie sie manche digitale Kinokameras liefern. Liest jedes Bild in voller Auflösung; in der eigenen Vorlage einschalten. Bewegte Glanzpunkte und Lichterketten werden ausgefiltert.</span></dd>
+      <dt><span lang="en">Bars, borders, jumping bars</span><span lang="de">Balken, Ränder, springende Balken</span></dt>
+      <dd><span lang="en">Letterbox and pillarbox where the spec wants the full picture, a one-sided border after a reframe, and bars that change size from shot to shot or drop out for a shot.</span><span lang="de">Letterbox und Pillarbox, wo das Pflichtenheft das volle Bild verlangt, ein einseitiger Rand nach einem Reframe und Balken, die von Einstellung zu Einstellung die Grösse wechseln oder wegfallen.</span></dd>
+      <dt><span lang="en">Broken single frames</span><span lang="de">Kaputte Einzelbilder</span></dt>
+      <dd><span lang="en">One frame out of line – blocky, damaged or from another shot – and decoder errors.</span><span lang="de">Ein Bild, das aus der Reihe fällt – verblockt, beschädigt oder aus einer anderen Einstellung –, und Dekodierfehler.</span></dd>
+      <dt><span lang="en">Stutter and frame rate</span><span lang="de">Ruckeln und Bildrate</span></dt>
+      <dd><span lang="en">Repeated and missing frames, irregular stutter and conversions such as 24 → 25, freeze frames, black inside the programme.</span><span lang="de">Doppelte und fehlende Bilder, unregelmässiges Ruckeln und Wandlungen wie 24 → 25, Standbilder, Schwarz im Programm.</span></dd>
+      <dt><span lang="en">Interlace</span><span lang="de">Halbbilder</span></dt>
+      <dd><span lang="en">Combing in a progressive film – also just in one inserted clip – and field order against the flag.</span><span lang="de">Halbbilder in einem progressiven Film – auch nur in einem eingeschnittenen Zuspieler – und Halbbild-Reihenfolge gegen die Markierung.</span></dd>
+      <dt><span lang="en">Banding and gamut</span><span lang="de">Banding und Gamut</span></dt>
+      <dd><span lang="en">Posterised gradients after grading, superwhite, oversaturated colours and illegal codes per EBU R 103.</span><span lang="de">Tonwertabrisse nach dem Grading, Superweiss, übersättigte Farben und verbotene Codes nach EBU R 103.</span></dd>
+      <dt><span lang="en">Flashes</span><span lang="de">Blitze</span></dt>
+      <dd><span lang="en">A hint on rapid luminance changes per ITU-R BT.1702 – not a certified Harding test.</span><span lang="de">Ein Hinweis auf schnelle Helligkeitswechsel nach ITU-R BT.1702 – kein zertifizierter Harding-Test.</span></dd>
+    </dl>
   </div>
 </section>
 

@@ -6,7 +6,7 @@ ARD · ZDF · ORF · SRF · BBC · ITV · Channel 4 · Sky · TF1 · France TV �
 
 # Pass the broadcaster's QC the first time.
 
-Swiss QC Guru checks your finished master against the delivery spec before it leaves the house: container, codec, timecode, levels, gamut, loudness and true peak. Every finding comes with timecode, frame and the line of the spec it breaks – so you fix it in the edit, not after a rejection.
+Swiss QC Guru checks your finished master against the delivery spec before it leaves the house: container, codec, timecode, levels, gamut, loudness and true peak – and the picture itself: stuck and sparkling pixels, jumping bars, broken frames, stutter, interlace. Every finding comes with timecode, frame and the line of the spec it breaks – so you fix it in the edit, not after a rejection.
 
 [Download the free trial](https://swissqcguru.com/install.html) EUR 199 once · licence
 
@@ -57,6 +57,60 @@ ITU-R BT.709
 Continuity and jumps, drop frame, programme start on a whole hour, colour bars and line-up tone at the head.
 
 SMPTE 12M
+
+Picture faults
+
+## Not just the file format – the picture, frame by frame
+
+The faults a broadcaster's QC system rejects, found at their frame and marked in the player. Professional QC systems cost many times as much, usually every year – Swiss QC Guru is EUR 199 once, made for a small throughput.
+
+** Stuck and dead pixels
+
+**
+
+Bright or dark single pixels and groups up to 3×3 that stay in place – in the whole film or in a single shot from 1 s, with position and box in the frame.
+
+** Sparkling pixels
+
+**
+
+Pixels that light up for exactly one frame – sensor sparkles as some digital cinema cameras produce them. Reads every frame at full resolution; switch it on in your template. Moving glints and light chains are filtered out.
+
+** Bars, borders, jumping bars
+
+**
+
+Letterbox and pillarbox where the spec wants the full picture, a one-sided border after a reframe, and bars that change size from shot to shot or drop out for a shot.
+
+** Broken single frames
+
+**
+
+One frame out of line – blocky, damaged or from another shot – and decoder errors.
+
+** Stutter and frame rate
+
+**
+
+Repeated and missing frames, irregular stutter and conversions such as 24 → 25, freeze frames, black inside the programme.
+
+** Interlace
+
+**
+
+Combing in a progressive film – also just in one inserted clip – and field order against the flag.
+
+** Banding and gamut
+
+**
+
+Posterised gradients after grading, superwhite, oversaturated colours and illegal codes per EBU R 103.
+
+** Flashes
+
+**
+
+A hint on rapid luminance changes per ITU-R BT.1702 – not a certified Harding test.
 
 Player and timeline
 
