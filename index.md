@@ -74,7 +74,7 @@ Bright or dark single pixels and groups up to 3×3 that stay in place – in the
 
 **
 
-Pixels that light up for exactly one frame – sensor sparkles as some digital cinema cameras produce them. Reads every frame at full resolution; switch it on in your template. Moving glints and light chains are filtered out.
+Pixels that light up for exactly one frame – sensor sparkles as some digital cinema cameras produce them. Reads every frame at full resolution; switch it on once in the settings (Thorough) or per template. Moving glints and light chains are filtered out.
 
 ** Bars, borders, jumping bars
 

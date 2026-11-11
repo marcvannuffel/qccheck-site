@@ -2,7 +2,7 @@
 
 > Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.
 
-Install · version 0.2.15
+Install · version 0.2.16
 
 # QC before delivery – in one window
 
@@ -46,6 +46,7 @@ Release notes
 
 ## What's new in 0.2
 
+- **0.2.16** – Settings › Check › Thorough: check for sparkling pixels turns the sparkle check on for every template at once. The settings panel closes reliably again, and the error, warning and info headings in the player list are aligned left.
 - **0.2.15: two new picture checks** – [jumping bars](https://swissqcguru.com/index.html#picture): a letterbox or pillarbox that changes size from shot to shot or drops out for a shot, also where bars are allowed. Sparkling pixels: pixels that light up for exactly one frame, as some digital cinema cameras produce them – reads every frame at full resolution, so switch it on in your own template (Pixel defects and banding › Sparkling pixels).
 - **0.2.14: service release** – reopen the last batch at startup, with the results of files already checked. “Choose several …” and your groups now sit right below Automatic in the template list. Add-ons: what you have comes first, then popular packs, streaming and countries by continent, with a filter. A new [guide](https://swissqcguru.com/guide.html), linked from the app (ⓘ in the title bar). Updates and the installer fall back to the GitHub API when GitHub's download server has a hiccup. Title bar tidier at normal window width.
 - **0.2.13: check level Practice or Spec** – next to the template you choose how strictly to check, saved per template. Practice (the default) applies only tolerances with a source: levels/gamut below 1 % of the picture count as info (EBU R 103), the chroma limit and advisory checks no spec requires are one step milder. Spec checks the template exactly as written. Loudness and true peak are strict in both. Report and PDF name the level.
