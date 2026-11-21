@@ -10,7 +10,7 @@ Swiss QC Guru checks your finished master against the delivery spec before it le
 
 [Download the free trial](https://swissqcguru.com/install.html) EUR 199 once · licence
 
-**Christmas offer** Buy the licence by 25 December and get one pack of your choice free – any country, streaming or cinema pack, worth up to EUR 199. How it works
+**Christmas offer** Buy the licence by 25 December and get one pack of your choice free – any country, streaming or cinema pack, worth up to EUR 199. Already have a licence? You get one too. How it works
 
 The trial installs with one line on Windows 10/11 or macOS 12+, needs no account and no key, and checks the whole file – you see half of the findings, the most serious one always.
 
@@ -185,7 +185,7 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 
 The licence already includes ARD, ZDF, ORF, SRF, their commercials and the EBU templates. Country packs are optional add-ons: EUR 99 (CHF 89 · USD 119) or EUR 149 (CHF 139 · USD 179) per pack, Cinema EUR 199 (CHF 179 · USD 239), Online & Podcast EUR 49 (CHF 45 · USD 59).
 
-**Christmas offer** Until 25 December one pack comes free with every licence – details.
+**Christmas offer** Until 25 December one pack comes free with every licence, existing ones included – details.
 
 Company licences and several workstations on request: [support@vannuffel.ch](mailto:support@vannuffel.ch?subject=Company%20licence)
 
@@ -347,7 +347,7 @@ Everything the app does
 
 Other countries: optional packs from EUR 99 – see the list
 
-**Christmas offer** Bought by 25 December: one pack of your choice free. After checkout, Polar shows you a code (also in your customer portal). Pick the pack in the app under Add-ons or in the list and enter the code at checkout – valid until 31 January.
+**Christmas offer** Bought by 25 December – or earlier: one pack of your choice free. Once your licence is active, the app shows your personal code under Add-ons (update to version 0.2.19). Pick the pack there or in the list and enter the code at checkout – single use, valid until 31 January.
 
 [Buy licence](https://buy.polar.sh/polar_cl_XA8YTzTnj9Zp6nyFRM60pPS3jcnzJm0ZEHHl921ZFtC)
 
