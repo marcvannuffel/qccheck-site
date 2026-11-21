@@ -10,6 +10,8 @@
     document.querySelectorAll("[data-lang-switch]").forEach((b) => { b.textContent = lang === "de" ? "English" : "Deutsch"; b.dataset.short = lang === "de" ? "EN" : "DE"; });
     store.set("qcLang", lang);
   }
+  // Befristete Hinweise (Aktionen): nach data-until ausblenden, auch wenn die Seite nicht rechtzeitig angepasst wird
+  document.querySelectorAll("[data-until]").forEach((n) => { if (Date.now() >= Date.parse(n.dataset.until)) n.hidden = true; });
   setLang(new URLSearchParams(location.search).get("lang") || store.get("qcLang") || "en");
   document.querySelectorAll("[data-lang-switch]").forEach((b) => b.addEventListener("click", () => setLang(document.documentElement.dataset.lang === "de" ? "en" : "de")));
 })();

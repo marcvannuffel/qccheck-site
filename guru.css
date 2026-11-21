@@ -145,6 +145,11 @@ footer a { color: var(--muted); }
 }
 
 /* Demo-Hinweis, Tabellen-Notiz, Zusätze in Vorbereitung */
+/* Aktion (Weihnachten 2026): blau wie der Kaufknopf; verschwindet nach data-until (guru.js) */
+.promo { margin: 16px 0 0; max-width: 40em; padding: 10px 14px; border-left: 3px solid var(--go); background: rgba(47, 116, 208, .14); color: var(--text); font-size: 15px; }
+.promo b { color: var(--white); margin-right: 4px; }
+.plan .promo { margin: 0 0 16px; font-size: 14px; }
+.promo[hidden] { display: none; }
 .trial-note { margin: 14px 0 0; max-width: 40em; color: var(--muted); font-size: 14px; }
 .table-note { margin: 12px 0 0; max-width: 60em; color: var(--muted); font-size: 14px; }
 .plan .plan-inc { margin: 14px 0 4px; color: var(--faint); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }

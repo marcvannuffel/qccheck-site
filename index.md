@@ -10,6 +10,8 @@ Swiss QC Guru checks your finished master against the delivery spec before it le
 
 [Download the free trial](https://swissqcguru.com/install.html) EUR 199 once · licence
 
+**Christmas offer** Buy the licence by 25 December and get one pack of your choice free – any country, streaming or cinema pack, worth up to EUR 199. How it works
+
 The trial installs with one line on Windows 10/11 or macOS 12+, needs no account and no key, and checks the whole file – you see half of the findings, the most serious one always.
 
 ![The player with all findings of a file: the open finding with its timecode range on the right, every finding listed by time below it, and the timeline with markers per lane for picture, audio and timecode, loudness and waveform](https://swissqcguru.com/img/app-player.jpg?v=2)
@@ -74,7 +76,7 @@ Bright or dark single pixels and groups up to 3×3 that stay in place – in the
 
 **
 
-Pixels that light up for exactly one frame – sensor sparkles as some digital cinema cameras produce them. Reads every frame at full resolution; switch it on once in the settings (Thorough) or per template. Moving glints and light chains are filtered out.
+Pixels that light up for exactly one frame – sensor sparkles as some digital cinema cameras produce them. Reads every frame at full resolution; switch it on in the Options menu in the title bar (Thorough) or per template. Moving glints and light chains are filtered out.
 
 ** Bars, borders, jumping bars
 
@@ -182,6 +184,8 @@ Pick the broadcaster, or let auto-select choose by folder or file name. Duplicat
 | Cinema (DCP) add-on | Digital Cinema Packages per DCI: SMPTE or Interop, ASSETMAP/PKL/CPL, SHA-1 hashes, ISDCF name, encryption, 2K/4K flat and scope, black and freeze across reels; trailers (TASA), cinema ads UK, Ireland, Germany and Switzerland, festivals Berlinale, Cannes, Venice, Visions du Réel, Sundance | JPEG 2000 · X′Y′Z′ · MXF | Leq(m) 85 trailer · 82 ads |
 
 The licence already includes ARD, ZDF, ORF, SRF, their commercials and the EBU templates. Country packs are optional add-ons: EUR 99 (CHF 89 · USD 119) or EUR 149 (CHF 139 · USD 179) per pack, Cinema EUR 199 (CHF 179 · USD 239), Online & Podcast EUR 49 (CHF 45 · USD 59).
+
+**Christmas offer** Until 25 December one pack comes free with every licence – details.
 
 Company licences and several workstations on request: [support@vannuffel.ch](mailto:support@vannuffel.ch?subject=Company%20licence)
 
@@ -342,6 +346,8 @@ Everything the app does
 - One computer at a time, move it any time
 
 Other countries: optional packs from EUR 99 – see the list
+
+**Christmas offer** Bought by 25 December: one pack of your choice free. After checkout, Polar shows you a code (also in your customer portal). Pick the pack in the app under Add-ons or in the list and enter the code at checkout – valid until 31 January.
 
 [Buy licence](https://buy.polar.sh/polar_cl_XA8YTzTnj9Zp6nyFRM60pPS3jcnzJm0ZEHHl921ZFtC)
 
