@@ -2,7 +2,7 @@
 
 > Install Swiss QC Guru – file-based QC before delivery to ARD, ZDF, ORF and SRF. One line on Windows or Mac, signed packages, automatic updates.
 
-Install · version 0.2.18
+Install · version 0.2.19
 
 # QC before delivery – in one window
 
@@ -46,6 +46,7 @@ Release notes
 
 ## What's new in 0.2
 
+- **0.2.19** – Christmas offer: with an active licence (bought by 25 December, earlier ones included) the app shows your personal code under Add-ons – one pack of your choice free, single use, valid until 31 January. The feedback log now always fits the server limit.
 - **0.2.18** – New 100 % button in the player (key Z): shows the picture of the file pixel for pixel, not the smaller playback copy – drag to move around, the position stays when you step through frames. A discount code typed into the licence field is now recognised, with a link to the checkout where it belongs.
 - **0.2.17** – New Options menu in the title bar, next to template and check level: switches that apply to the whole batch. First entry: Thorough: sparkling pixels (moved here from Settings). The button shows Options · 1 while something is on, and the batch row and the report say when a file was checked thoroughly.
 - **0.2.16** – Settings › Check › Thorough: check for sparkling pixels turns the sparkle check on for every template at once. The settings panel closes reliably again, and the error, warning and info headings in the player list are aligned left.
